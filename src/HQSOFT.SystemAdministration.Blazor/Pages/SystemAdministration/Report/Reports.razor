@@ -1,0 +1,259 @@
+﻿@page "/SystemAdministration/Reports/{Id}"
+
+
+@attribute [Authorize(CoreBackendPermissions.Reports.Default)]
+
+@using global::HQSOFT.Common.Blazor.Pages.Component
+@using global::HQSOFT.Common.Blazor.Pages.Component.Toolbar
+@using global::HQSOFT.Common.Blazor.Pages.Component.Validation
+
+@using global::HQSOFT.CoreBackend.ReportRuntimes
+@using global::HQSOFT.CoreBackend.SystemSettings
+@using global::HQSOFT.CoreBackend.ReportParameters
+@using global::HQSOFT.CoreBackend.Reports
+@using global::HQSOFT.CoreBackend.Utils
+@using global::HQSOFT.CoreBackend.EnumList
+@using global::HQSOFT.CoreBackend.Permissions
+@using global::HQSOFT.CoreBackend.Localization
+@using global::HQSOFT.CoreBackend.Shared  @using global::HQSOFT.CoreBackend.Workspaces
+
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.Extensions.Localization
+@using Microsoft.AspNetCore.Components
+@using Microsoft.JSInterop
+@using Microsoft.Extensions.Configuration
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+@using DevExpress.Blazor
+@using Blazorise
+@using Blazorise.DataGrid
+@using Blazorise.Components
+
+@using Volo.Abp.BlazoriseUI
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.ObjectMapping
+@using Volo.Abp.Http.Client
+@using Volo.Abp.Authorization.Permissions
+@using Volo.Abp.AspNetCore.Components.BlockUi
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+@using Volo.Abp.AspNetCore.Components.Web
+@using Volo.Abp.AspNetCore.Components.Notifications
+
+@inherits SystemAdministrationComponentBase
+@inject NavigationManager NavigationManager
+@inject ChangeIconToggleSidebar ChangeIconToggleSidebar
+@inject ValidationFormHelper ValidationFormHelper
+
+@inject IUiNotificationService UiNotificationService
+@inject IUiMessageService UiMessageService
+@inject IPageProgressService PageProgressService
+@inject IBlockUiService BlockUiService
+
+@inject IJSRuntime JSRuntime
+@inject ILocalStorageService LocalStorage
+@inject IRemoteServiceConfigurationProvider RemoteServiceConfigurationProvider  
+@inject IWorkspacesAppService WorkspacesAppService
+
+@inject IUtilsAppService UtilsAppService
+@inject IReportsAppService ReportsAppService
+@inject IReportRuntimesAppService ReportRuntimesAppService
+@inject IReportParametersAppService ReportParametersAppService
+@inject ISystemSettingsAppService SystemSettingsAppService
+
+
+@* ************************* PAGE HEADER ************************* *@
+@{
+    string code = string.Empty;
+    if (EditingDoc.ReportCode != null && EditingDoc.ReportCode != null)
+    {
+        code = EditingDoc.ReportCode.Length > 20 ? EditingDoc.ReportCode.Substring(0, 20) + "..." : EditingDoc.ReportCode;
+    }
+}
+<PageHeader Title="@(code + (IsDataEntryChanged? " (*)":""))" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
+</PageHeader>
+
+<NavigationLock OnBeforeInternalNavigation="OnBeforeInternalNavigation" />
+
+
+
+@* ************************* FORM HEADER ************************* *@
+<Row>
+    <Column>
+        <Card>
+            <CardBody>
+                <Row>
+                    <EditForm @ref="EditFormMain" Model="@EditingDoc" Context="EditFormContext">
+                        <DataAnnotationsValidator />
+                        <DxFormLayout CaptionPosition="CaptionPosition.Vertical" CssClass="w-100">
+
+                            <DxFormLayoutItem Caption="@(L["ReportCode"] + " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.ReportCode" Enabled="IsEditEnabled"
+                                           TextExpression="@(() => EditingDoc.ReportCode)"
+                                           TextChanged="@(async (newValue) => {
+                                                            EditingDoc.ReportCode = newValue.ToUpper();
+                                                            await HandleValidSubmit();
+                                                            IsDataEntryChanged = true;
+                        await UpdateDataChangeStatus(true);
+                                })"
+                                           BindValueMode="BindValueMode.OnDelayedInput"
+                                           InputDelay="600" InputCssClass="focus-value"
+                                           ShowValidationIcon="true">
+                                </DxTextBox>
+                                <ValidationMessage For="@(() => EditingDoc.ReportCode)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["ReportName"] + " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.ReportName"
+                                           TextExpression="@(() => EditingDoc.ReportName)"
+                                           TextChanged="@(async (newValue) => {
+                                                    IsDataEntryChanged = true;
+                                                    EditingDoc.ReportName = newValue;
+                        await UpdateDataChangeStatus(true);
+                                                })"
+                                           BindValueMode="BindValueMode.OnDelayedInput"
+                                           InputDelay="600" InputCssClass="focus-value"
+                                           ShowValidationIcon="true">
+                                </DxTextBox>
+                                <ValidationMessage For="@(() => EditingDoc.ReportName)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["FileName"] + " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxComboBox Data="@ReportFiles"
+                                            Value="@EditingDoc.FileName"
+                                            ValueExpression="(() => EditingDoc.FileName)"
+                                            ValueChanged="@(async (string newValue) => {
+                                                                        EditingDoc.FileName = newValue;
+                                                                        IsDataEntryChanged = true;
+                        await UpdateDataChangeStatus(true); })"
+                                            InputCssClass="focus-value" ShowValidationIcon="true"
+                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                            SearchMode="ListSearchMode.AutoSearch"
+                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                            SearchFilterCondition="ListSearchFilterCondition.Contains">
+                                </DxComboBox>
+                                <ValidationMessage For="@(() => EditingDoc.FileName)" />
+                            </DxFormLayoutItem>
+
+                            @********************************************CURRENCY***********************************@
+                            <DxFormLayoutGroup ColSpanMd="12" Caption="@L["Parameter"]"
+                                               ExpandButtonDisplayMode="GroupExpandButtonDisplayMode.Start"
+                                               AnimationType="LayoutAnimationType.Slide">
+                                <DxGrid ShowAllRows="true" @ref="GridReportParameter" Data="ReportParameters"
+                                        @bind-SelectedDataItems="@SelectedReportParameters"
+                                        CustomizeEditModel="GridReportParameter_OnCustomizeEditModel"
+                                        EditModelSaving="GridReportParameter_EditModelSaving"
+                                        CustomizeDataRowEditor="GridReportParameter_CustomizeDataRowEditor"
+                                        SelectionMode="GridSelectionMode.Multiple" EditMode="GridEditMode.EditCell"
+                                        EditNewRowPosition="GridEditNewRowPosition.Bottom" FocusedRowEnabled="true"
+                                        EditorRenderMode="GridEditorRenderMode.Integrated" AllowSort="false">
+                                    <Columns>
+                                        <DxGridSelectionColumn Width="5px" />
+
+                                        <DxGridDataColumn FieldName="Description" Caption="@L["Description"]" />
+
+                                        <DxGridDataColumn FieldName="Type" Caption="@L["Type"]">
+                                            <CellEditTemplate>
+                                                @{
+                                                    var reportParameter = (ReportParameterUpdateDto)context.EditModel;
+                                                }
+                                                <DxComboBox Data="@ReportParameterTypeCollection"
+                                                            Value="@reportParameter.Type"
+                                                            ValueExpression="(() => reportParameter.Type)"
+                                                            ValueChanged="@(async (string newValue) => {
+                                                                        reportParameter.Type = newValue;
+                                                                        IsDataEntryChanged = true;
+                                                                        await UpdateDataChangeStatus(true);})"
+                                                            ValueFieldName="@nameof(ReportParameterTypeList.Value)"
+                                                            TextFieldName="@nameof(ReportParameterTypeList.DisplayName)"
+                                                            InputCssClass="focus-value"
+                                                            ShowValidationIcon="true"
+                                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                                            SearchMode="ListSearchMode.AutoSearch"
+                                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                                            SearchFilterCondition="ListSearchFilterCondition.Contains">
+                                                    <Columns>
+                                                        <DxListEditorColumn Caption="@L["Code"]" FieldName="@nameof(ReportParameterTypeList.Value)" />
+                                                        <DxListEditorColumn Caption="@L["Description"]" FieldName="@nameof(ReportParameterTypeList.DisplayName)" />
+                                                    </Columns>
+                                                </DxComboBox>
+                                                <ValidationMessage For="@(() => reportParameter.Type)" />
+                                            </CellEditTemplate>
+                                        </DxGridDataColumn>
+
+                                        <DxGridDataColumn FieldName="ParmCode" Caption="@L["ParmCode"]">
+                                            <CellEditTemplate>
+                                                @{
+                                                    var reportParameter = (ReportParameterUpdateDto)context.EditModel;
+                                                }
+                                                <DxTextBox Text="@reportParameter.ParmCode"
+                                                           TextExpression="@(() => reportParameter.ParmCode)"
+                                                           TextChanged="@(async (newValue) => {
+                                                                reportParameter.ParmCode = newValue.ToUpper();
+                                                                IsDataEntryChanged = true;
+                        await UpdateDataChangeStatus(true);
+                                                            })"
+                                                           BindValueMode="BindValueMode.OnLostFocus"
+                                                           InputCssClass="focus-value"
+                                                           ShowValidationIcon="true"
+                                                           maxlength="50">
+                                                </DxTextBox>
+                                                <ValidationMessage For="@(() => reportParameter.ParmCode)" />
+                                            </CellEditTemplate>
+                                        </DxGridDataColumn>
+
+                                        <DxGridDataColumn FieldName="GetParmsFrom" Caption="@L["GetParmsFrom"]" />
+                                        <DxGridDataColumn FieldName="StoredProcedure" Caption="@L["StoredProcedure"]" />
+                                        <DxGridDataColumn FieldName="ApiEndPoint" Caption="@L["ApiEndPoint"]" />
+                                        <DxGridDataColumn FieldName="LanguageCode" Caption="@L["LanguageKey"]" />
+                                    </Columns>
+                                </DxGrid>
+                                <Div class="ml-5 mt-1 bt-1">
+                                    <Button Clicked="GridReportParameterNew_Click" Size="Blazorise.Size.Small"
+                                            Color="Color.Primary"
+                                            Visibility="@((CanCreateReportParameter || CanEditReportParameter)? Visibility.Visible : Visibility.Invisible)">
+                                        @L["AddRow"]
+                                    </Button>
+                                    <Button Clicked="GridReportParameterDelete_Click" Size="Blazorise.Size.Small"
+                                            Color="Color.Danger"
+                                            Visibility="@((CanDeleteReportParameter && SelectedReportParameters.Any()) ? Visibility.Visible : Visibility.Invisible)">
+                                        @L["Delete"]
+                                    </Button>
+                                </Div>
+                            </DxFormLayoutGroup>
+                            @********************************************CURRENCY***********************************@
+                        </DxFormLayout>
+                    </EditForm>
+                </Row>
+            </CardBody>
+        </Card>
+        @if (EditingDocId != Guid.Empty)
+        {
+            <Div>
+                <HQSOFTComment TableName="@L["Menu:Reports"]" OnCommentAdded="HandleCommentAdded"
+                               ScreenUrl='SystemAdministration/Reports/' DocId="EditingDocId" />
+            </Div>
+            <Div>
+                <HQSOFTFormActivity DocId="EditingDocId" ScreenUrl='SystemAdministration/Reports/' @ref="@formActivity" />
+            </Div>
+        }
+    </Column>
+    @* ************************* InteractionForm Section ************************* *@ 
+    <Div Class="col-2 layout-side-section" Style="@(ShowInteractionForm?"display: none":"display: block")">
+        <Div Class="list-sidebar overlay-sidebar hidden-xs hidden-sm opened">
+            <HQSOFTInteractionForm TableName="@L["Menu:Reports"]" TypeTable="content" DocId="@EditingDocId"
+                                   Url='/SystemAdministration/Reports' IsInteractionFormDisabled="@(EditingDocId != Guid.Empty ? false : true)" />
+        </Div>
+    </Div>
+</Row>
+
+
+
+<HotkeyHandler OnCtrlS="HandleCtrlS" OnCtrlB="HandleCtrlB" />
+<HQSOFTBreadcrumbScreen @ref="BreadcrumbScreen"
+                        BreadcrumbItems="BreadcrumbItems" ModuleCode="SA"
+                        ScreenUrl="/SystemAdministration/Reports" ScreenName="Menu:Reports" IsEditForm="true" /> 

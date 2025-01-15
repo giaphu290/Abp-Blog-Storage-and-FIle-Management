@@ -1,0 +1,208 @@
+﻿@page "/SystemAdministration/HangfireConfigs/{Id}"
+
+
+
+@attribute [Authorize(CoreBackendPermissions.HangfireConfigs.Default)]
+
+@using Microsoft.AspNetCore.Components.Routing
+@using global::HQSOFT.Common.Blazor.Pages.Component
+@using global::HQSOFT.Common.Blazor.Pages.Component.Toolbar
+@using global::HQSOFT.Common.Blazor.Pages.Component.Validation
+
+@using global::HQSOFT.CoreBackend.FiscalPeriods
+@using global::HQSOFT.CoreBackend.FiscalYears
+@using global::HQSOFT.CoreBackend.Numberings
+@using global::HQSOFT.CoreBackend.HangfireConfigs
+@using global::HQSOFT.CoreBackend.EnumList
+@using global::HQSOFT.CoreBackend.Permissions
+@using global::HQSOFT.CoreBackend.Localization
+@using global::HQSOFT.CoreBackend.Shared  @using global::HQSOFT.CoreBackend.Workspaces
+
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@using Microsoft.AspNetCore.Components.Web
+
+@using Blazorise
+@using Blazorise.Components
+@using Blazorise.DataGrid
+@using Blazorise.Snackbar
+@using DevExpress.Blazor
+
+@using Volo.Abp.BlazoriseUI
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.ObjectMapping
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Toolbars
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.BlockUi
+@using Volo.Abp.AspNetCore.Components.Notifications
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+@using Volo.Abp.AspNetCore.Components.Web
+@using Volo.Abp.Http.Client
+
+@inject IUiNotificationService UiNotificationService
+@inject IUiMessageService UiMessageService
+@inject IPageProgressService PageProgressService
+@inject IBlockUiService BlockUiService
+
+@inherits SystemAdministrationComponentBase
+@inject NavigationManager NavigationManager
+@inject ValidationFormHelper ValidationFormHelper
+
+@inject IJSRuntime JSRuntime
+@inject IRemoteServiceConfigurationProvider RemoteServiceConfigurationProvider  
+@inject IWorkspacesAppService WorkspacesAppService
+
+@inject INumberingsAppService NumberingsAppService
+@inject IFiscalYearsAppService FiscalYearsAppService
+@inject IFiscalPeriodsAppService FiscalPeriodsAppService
+@inject IHangfireConfigsAppService HangfireConfigsAppService
+
+@* ************************* PAGE HEADER ************************* *@
+@{
+    string code = string.Empty;
+    if (EditingDoc != null && EditingDoc.RecurringJobId != null)
+    {
+        code = EditingDoc.RecurringJobId.Length > 30 ? EditingDoc.RecurringJobId.Substring(0, 30) + "..." : EditingDoc.Queue;
+    }
+}
+<PageHeader Title="@(code + (IsDataEntryChanged? " (*)":""))" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
+    <p></p>
+</PageHeader>
+
+<NavigationLock OnBeforeInternalNavigation="OnBeforeInternalNavigation" />
+
+
+
+<Row>
+    <Column>
+        @* ************************* Edit Form Section ************************* *@
+        <Card>
+            <CardBody>
+                <Row>
+                    <EditForm @ref="EditFormMain"
+                              Model="@EditingDoc"
+                              Context="EditFormContext">
+                        <DataAnnotationsValidator />
+                        <DxFormLayout CaptionPosition="CaptionPosition.Vertical" CssClass="w-100">
+
+                            <DxFormLayoutItem Caption="@(L["JobMethodName"]+ " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.JobMethodName"
+                                           TextExpression="@(() => EditingDoc.JobMethodName)"
+                                           TextChanged="@(async (newValue) => {
+                                                            EditingDoc.JobMethodName = newValue;
+                                                            await HandleValidSubmit();
+                                                            IsDataEntryChanged = true;})"
+                                           BindValueMode="BindValueMode.OnLostFocus"
+                                           InputCssClass="focus-value"
+                                           ShowValidationIcon="true" />
+                                <ValidationMessage For="@(() => EditingDoc.JobMethodName)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["CronExpression"]+ " *")" ColSpanLg="3" ColSpanMd="12" Enabled="false">
+                                <DxComboBox Data="@CronExpressionList"
+                                            Value="EditingDoc.CronExpression"
+                                            ValueExpression="(() => EditingDoc.CronExpression)"
+                                            ValueChanged="@(async (string newValue) => CronExpressionChangedAsync(newValue))"
+                                            TextFieldName="@nameof(CronExpressionTypeList.DisplayName)"
+                                            ValueFieldName="@nameof(CronExpressionTypeList.Value)"
+                                            InputCssClass="focus-value"
+                                            ShowValidationIcon="true"
+                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                            SearchMode="ListSearchMode.AutoSearch"
+                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                            SearchFilterCondition="ListSearchFilterCondition.Contains">
+                                </DxComboBox>
+                                <ValidationMessage For="@(() => EditingDoc.CronExpression)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["TimeSpan"]+ " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxSpinEdit Enabled="IsTimeSpanEnabled"
+                                            Value="EditingDoc?.TimeSpan"
+                                            ValueExpression="(() => EditingDoc.TimeSpan)"
+                                            ValueChanged="@(async (int? newValue) => {
+                                                            EditingDoc.TimeSpan = newValue;
+                                                            IsDataEntryChanged = true; })"
+                                            CssClass="cw-320"
+                                            MinValue="@MinTimeSpan"
+                                            MaxValue="@MaxTimeSpan"
+                                            InputId="seOverview" />
+                                <ValidationMessage For="@(() => EditingDoc.TimeSpan)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["Queue"]+ " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.Queue" Enabled="@false"
+                                           TextExpression="@(() => EditingDoc.Queue)"
+                                           TextChanged="@(async (newValue) => {
+                                                            EditingDoc.Queue = newValue.ToLower();
+                                                            IsDataEntryChanged = true;
+															})"
+                                           BindValueMode="BindValueMode.OnInput"
+                                           InputCssClass="focus-value"
+                                           ShowValidationIcon="true" />
+                                <ValidationMessage For="@(() => EditingDoc.Queue)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["RecurringJobId"]+ " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.RecurringJobId"
+                                           TextExpression="@(() => EditingDoc.RecurringJobId)"
+                                           TextChanged="@(async (newValue) => {
+                                                            EditingDoc.RecurringJobId =newValue;
+                                                            await HandleValidSubmit();
+                                                            IsDataEntryChanged = true;
+															})"
+                                           BindValueMode="BindValueMode.OnInput"
+                                           InputCssClass="focus-value"
+                                           ShowValidationIcon="true" />
+                                <ValidationMessage For="@(() => EditingDoc.RecurringJobId)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["TimeZoneInfo"]+ " *")" ColSpanLg="3" ColSpanMd="12" Enabled="false">
+                                <DxComboBox Data="@TimeZoneInfoList"
+                                            Value="EditingDoc.TimeZoneInfo"
+                                            ValueExpression="(() => EditingDoc.TimeZoneInfo)"
+                                            TextFieldName="@nameof(TimeZoneInfoTypeList.DisplayName)"
+                                            ValueFieldName="@nameof(TimeZoneInfoTypeList.Value)"
+                                            InputCssClass="focus-value"
+                                            ValueChanged="@(async (string newValue) => TimeZoneInfoChangedAsync(newValue))"
+                                            ShowValidationIcon="true"
+                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                            SearchMode="ListSearchMode.AutoSearch"
+                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                            SearchFilterCondition="ListSearchFilterCondition.Contains">
+                                </DxComboBox>
+                                <ValidationMessage For="@(() => EditingDoc.TimeZoneInfo)" />
+                            </DxFormLayoutItem>
+
+                        </DxFormLayout>
+                    </EditForm>
+                </Row>
+            </CardBody>
+        </Card>
+        @if (EditingDocId != Guid.Empty)
+        {
+            <Div>
+                <HQSOFTComment TableName="@L["Menu:HangfireConfigs"]" OnCommentAdded="HandleCommentAdded"
+                               ScreenUrl='SystemAdministration/HangfireConfigs/' DocId="EditingDocId" />
+            </Div>
+            <Div>
+                <HQSOFTFormActivity DocId="EditingDocId" ScreenUrl='SystemAdministration/HangfireConfigs/' @ref="@formActivity" />
+            </Div>
+        }
+    </Column>
+    @* ************************* InteractionForm Section ************************* *@ 
+    <Div Class="col-2 layout-side-section" Style="@(ShowInteractionForm?"display: none":"display: block")">
+        <Div Class="list-sidebar overlay-sidebar hidden-xs hidden-sm opened">
+            <HQSOFTInteractionForm TableName="@L["Menu:HangfireConfigs"]" TypeTable="content" DocId="@EditingDocId"
+                                   Url='/SystemAdministration/HangfireConfigs' IsInteractionFormDisabled="@(EditingDocId != Guid.Empty ? false : true)" />
+        </Div>
+    </Div>
+</Row>
+
+
+<HotkeyHandler OnCtrlS="HandleCtrlS" OnCtrlB="HandleCtrlB" />
+<HQSOFTBreadcrumbScreen @ref="BreadcrumbScreen"
+                        BreadcrumbItems="BreadcrumbItems" ModuleCode="SA"
+                        ScreenUrl="/SystemAdministration/HangfireConfigs" ScreenName="Menu:HangfireConfigs" IsEditForm="true" /> 

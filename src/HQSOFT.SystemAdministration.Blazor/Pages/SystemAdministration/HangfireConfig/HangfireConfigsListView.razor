@@ -1,0 +1,302 @@
+@page "/SystemAdministration/HangfireConfigs"
+
+
+
+@attribute [Authorize(CoreBackendPermissions.HangfireConfigs.Default)]
+
+
+@using global::HQSOFT.Common.Blazor.Pages.Component
+@using global::HQSOFT.CoreBackend.EnumList
+@using global::HQSOFT.CoreBackend.Permissions
+@using global::HQSOFT.CoreBackend.HangfireConfigs
+@using global::HQSOFT.CoreBackend.Localization
+@using global::HQSOFT.CoreBackend.Shared  
+@using global::HQSOFT.CoreBackend.Workspaces
+
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@using Microsoft.AspNetCore.Components.Web
+
+@using Blazorise
+@using Blazorise.Components
+@using Blazorise.DataGrid
+
+@using Volo.Abp.Http.Client
+@using Volo.Abp.BlazoriseUI
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.ObjectMapping
+@using Volo.Abp.AspNetCore.Components.Web
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.BlockUi
+@using Volo.Abp.AspNetCore.Components.Notifications
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+
+
+@inherits SystemAdministrationComponentBase
+@inject NavigationManager NavigationManager
+
+@inject IUiNotificationService UiNotificationService
+@inject IUiMessageService UiMessageService
+@inject IPageProgressService PageProgressService
+@inject IBlockUiService BlockUiService
+
+@inject IJSRuntime JSRuntime
+@inject IRemoteServiceConfigurationProvider RemoteServiceConfigurationProvider
+
+@inject IWorkspacesAppService WorkspacesAppService 
+@inject IHangfireConfigsAppService HangfireConfigsAppService
+
+
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["HangfireConfigs"]" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
+
+</PageHeader>
+
+@* ************************* SEARCH ************************* *@
+<Card>
+    <CardBody>
+        <div style="display: @(!ShowAdvancedFilters ? "none" : "block")">
+            <Row>
+                <Column ColumnSize="ColumnSize.Is4">
+                    <Field>
+                        <FieldLabel>@L["JobMethodName"]</FieldLabel>
+                        <DxTextBox Text="@Filter.JobMethodName" BindValueMode="BindValueMode.OnInput"
+                                   TextExpression="@(() => Filter.JobMethodName)"
+                                   TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.JobMethodName), value))" />
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is4">
+                    <Field>
+                        <FieldLabel>@L["TimeZoneInfo"]</FieldLabel>
+                        <DxComboBox Data="@TimeZoneInfoList"
+                                    Value="@Filter.TimeZoneInfo"
+                                    ValueExpression="(() => Filter.TimeZoneInfo)"
+                                    ValueChanged="@(async (string newValue) => {
+                                                          Filter.TimeZoneInfo = newValue;
+                                                          await OnFilterChanged(nameof(Filter.TimeZoneInfo),newValue);})"
+                                    ValueFieldName="@nameof(TimeZoneInfoTypeList.Value)"
+                                    TextFieldName="@nameof(TimeZoneInfoTypeList.DisplayName)"
+                                    InputCssClass="focus-value" ShowValidationIcon="true"
+                                    DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                    SearchMode="ListSearchMode.AutoSearch"
+                                    SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                    SearchFilterCondition="ListSearchFilterCondition.Contains">
+                        </DxComboBox>
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is4">
+                    <Field>
+                        <FieldLabel>@L["RecurringJobId"]</FieldLabel>
+                        <DxTextBox Text="@Filter.RecurringJobId" BindValueMode="BindValueMode.OnInput"
+                                   TextExpression="@(() => Filter.RecurringJobId)"
+                                   TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.RecurringJobId), value))" />
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is4">
+                    <Field>
+                        <FieldLabel>@L["CronExpression"]</FieldLabel>
+                        <DxComboBox Data="@CronExpressionList"
+                                    Value="@Filter.CronExpression"
+                                    ValueExpression="(() => Filter.CronExpression)"
+                                    ValueChanged="@(async (string newValue) => {
+                                                           Filter.CronExpression = newValue;
+                                                           await OnFilterChanged(nameof(Filter.CronExpression),newValue);})"
+                                    ValueFieldName="@nameof(CronExpressionTypeList.Value)"
+                                    TextFieldName="@nameof(CronExpressionTypeList.DisplayName)"
+                                    InputCssClass="focus-value" ShowValidationIcon="true"
+                                    DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                    SearchMode="ListSearchMode.AutoSearch"
+                                    SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                    SearchFilterCondition="ListSearchFilterCondition.Contains">
+                        </DxComboBox>
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is4">
+                    <Field>
+                        <FieldLabel>@L["Queue"]</FieldLabel>
+                        <TextEdit Text="@Filter.Queue" TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.Queue),value))" />
+                    </Field>
+                </Column> 
+            </Row>
+        </div>
+
+        <Row>
+            <Column ColumnSize="ColumnSize.Is6">
+                @if (!ShowAdvancedFilters)
+                {
+                    <Form id="DocSearchForm" class="mb-3">
+                        <Addons>
+                            <Addon AddonType="AddonType.Body">
+                                <TextEdit Text="@Filter.FilterText" TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.FilterText),value))"
+                                          Autofocus="true"
+                                          Placeholder="@L["Search"]">
+                                </TextEdit>
+                            </Addon>
+                            <Addon AddonType="AddonType.End">
+                                <SubmitButton Form="DocSearchForm" Clicked="@(()=>GetDataAsync(true))">
+                                    <Icon Name="IconName.Search" Class="me-1"></Icon>@L["Search"]
+                                </SubmitButton>
+                            </Addon>
+                        </Addons>
+                    </Form>
+                }
+            </Column>
+
+            <Column ColumnSize="ColumnSize.Is6">
+                <Div Style="text-align: right;">
+                    <Button Background="Background.Default" Clicked="() => ShowAdvancedFilters = !ShowAdvancedFilters">
+                        @L["SeeAdvancedFilters"]
+                        <Icon Name="@(ShowAdvancedFilters ? IconName.ExpandLess : IconName.ExpandMore)" Class="me-1" />
+                    </Button>
+                </Div>
+            </Column>
+        </Row>
+    </CardBody>
+</Card>
+
+@* ************************* DATA GRID ************************* *@
+<Card>
+    <CardBody>
+
+        <DataGrid TItem="HangfireConfigDto"
+                  Data="DocList"
+                  ReadData="OnDataGridReadAsync"
+                  TotalItems="TotalCount"
+                  Sortable
+                  ShowPager
+                  Responsive
+                  ShowPageSizes
+                  PageSize="PageSize"
+                  PageSizeChanged="PageSizeChanged"
+                  SortMode="DataGridSortMode.Single"
+                  PageSizes="@(new int[] { 20, 100, 500, 2500 })"
+                  SelectedRows="SelectedDocs"
+                  SelectionMode="Blazorise.DataGrid.DataGridSelectionMode.Multiple"
+                  SelectedRowsChanged="@((List<HangfireConfigDto> e) => SelectedRowsChanged(e))"
+                  Class="datagrid-detail">
+            <LoadingTemplate>
+                <Row Class="w-100 align-items-center" Style="height: 150px;">
+                    <Column>
+                        <RadarSpinner />
+                    </Column>
+                </Row>
+            </LoadingTemplate>
+            <EmptyTemplate>
+                <Row Class="w-100 align-items-center" Style="height: 150px;">
+                    <Column>
+                        <Heading Size="HeadingSize.Is4" TextAlignment="TextAlignment.Center">@L["NoDataAvailable"]</Heading>
+                    </Column>
+                </Row>
+            </EmptyTemplate>
+            <DataGridColumns>
+                <DataGridMultiSelectColumn TItem="HangfireConfigDto" Width="1rem" />
+
+                <DataGridColumn TItem="HangfireConfigDto"
+                                Field="JobMethodName"
+                                Filterable="false"
+                                Sortable="false"
+                                Caption="#"
+                                Width="2rem">
+                    <DisplayTemplate>
+                        @{
+                            if (context != null && DocList != null)
+                            {
+                                int index = (CurrentPage - 1) * PageSize + DocList.ToList().IndexOf(context) + 1;
+                                @index
+                            }
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="HangfireConfigDto"
+                                Field="JobMethodName"
+                                Caption="@L["JobMethodName"]"
+                                Sortable="true">
+                    <DisplayTemplate>
+                        @if (context.JobMethodName != null)
+                        {
+                            string truncatedCode = TruncateText(context.JobMethodName, 20);
+                            <a title="@L[$"{context.JobMethodName}"]" class="d-block text-left" href="javascript:;"
+                               @onclick="() => GotoEditPage(context.Id)">
+                                @truncatedCode
+                            </a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="HangfireConfigDto"
+                                Field="TimeZoneInfo"
+                                Caption="@L["TimeZoneInfo"]">
+                    <DisplayTemplate>
+                        @if (context.TimeZoneInfo != null)
+                        {
+                            string truncatedCode = TruncateText(context.TimeZoneInfo, 30);
+                            <a title="@L[$"{context.TimeZoneInfo}"]">@truncatedCode</a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="HangfireConfigDto"
+                                Field="RecurringJobId"
+                                Caption="@L["RecurringJobId"]">
+                    <DisplayTemplate>
+                        @if (context.RecurringJobId != null)
+                        {
+                            string truncatedCode = TruncateText(context.RecurringJobId, 30);
+                            <a title="@L[$"{context.RecurringJobId}"]">@truncatedCode</a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="HangfireConfigDto"
+                                Field="CronExpression"
+                                Caption="@L["CronExpression"]">
+                    <DisplayTemplate>
+                        @if (context.CronExpression != null)
+                        {
+                            if (context.CronExpression == CronExpressionType.Minutely.ToString())
+                            {
+                                <a>@L["Minutely"]</a>
+                            }
+                            else if (context.CronExpression == CronExpressionType.Hourly.ToString())
+                            {
+                                <a>@L["Hourly"]</a>
+                            }
+                            else if (context.CronExpression == CronExpressionType.Daily.ToString())
+                            {
+                                <a>@L["Daily"]</a>
+                            }
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="HangfireConfigDto"
+                                Field="Queue"
+                                Caption="@L["Queue"]">
+                    <DisplayTemplate>
+                        @if (context.Queue != null)
+                        {
+                            string truncatedCode = TruncateText(context.Queue, 30);
+                            <a title="@L[$"{context.Queue}"]">@truncatedCode</a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+            </DataGridColumns>
+
+
+        </DataGrid>
+    </CardBody>
+</Card> 
+
+
+<HQSOFTBreadcrumbScreen @ref="BreadcrumbScreen"
+                        BreadcrumbItems="BreadcrumbItems" ModuleCode="SA"
+                        ScreenUrl="/SystemAdministration/HangfireConfigs" ScreenName="Menu:HangfireConfigs" IsEditForm="false" /> 

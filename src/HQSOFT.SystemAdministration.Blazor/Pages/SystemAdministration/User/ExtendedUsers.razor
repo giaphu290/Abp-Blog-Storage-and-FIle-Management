@@ -1,0 +1,384 @@
+﻿@page "/SystemAdministration/Users/{Id}"
+
+@attribute [Authorize(CoreBackendPermissions.ExtendedUsers.Default)]
+
+@using global::HQSOFT.Common.Blazor.Pages.Component
+@using global::HQSOFT.Common.Blazor.Pages.Component.Toolbar
+@using global::HQSOFT.Common.Blazor.Pages.Component.Validation
+
+@using global::HQSOFT.CoreBackend.EnumList
+@using global::HQSOFT.CoreBackend.SalesAndDeliveries
+@using global::HQSOFT.CoreBackend.Companies
+@using global::HQSOFT.CoreBackend.Territories
+@using global::HQSOFT.CoreBackend.States
+@using global::HQSOFT.CoreBackend.Provinces
+@using global::HQSOFT.CoreBackend.SalesChannels
+@using global::HQSOFT.CoreBackend.ExtendedUsers
+@using global::HQSOFT.CoreBackend.RouteTypes
+@using global::HQSOFT.CoreBackend.SubRoutes
+@using global::HQSOFT.CoreBackend.Localization
+@using global::HQSOFT.CoreBackend.Shared  @using global::HQSOFT.CoreBackend.Workspaces
+@using global::HQSOFT.CoreBackend.Permissions
+
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components
+@using Microsoft.Extensions.Localization
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.Extensions.Configuration
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+@using Blazorise
+@using Blazorise.DataGrid
+@using Blazorise.Components
+@using DevExpress.Blazor
+
+@using Volo.Abp.Identity
+@using Volo.Abp.Http.Client
+@using Volo.Abp.BlazoriseUI
+@using Volo.Abp.ObjectMapping
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.AspNetCore.Components.BlockUi
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.Progression
+@using Volo.Abp.AspNetCore.Components.Notifications
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+
+@inherits SystemAdministrationComponentBase
+@inject NavigationManager NavigationManager
+@inject ChangeIconToggleSidebar ChangeIconToggleSidebar
+@inject ValidationFormHelper ValidationFormHelper
+
+@inject IUiNotificationService UiNotificationService
+@inject IUiMessageService UiMessageService
+@inject IPageProgressService PageProgressService
+@inject IBlockUiService BlockUiService
+
+@inject IJSRuntime JSRuntime
+@inject IRemoteServiceConfigurationProvider RemoteServiceConfigurationProvider  
+@inject IWorkspacesAppService WorkspacesAppService
+
+@inject IIdentityUserAppService CompaniesAppService
+@inject IIdentityUserAppService IdentityUserAppService
+
+@inject IStatesAppService StatesAppService
+@inject IIdentityRoleAppService RoleAppService
+@inject ICompaniesAppService CompaniesAppService
+@inject IProvincesAppService ProvincesAppService
+@inject IRouteTypesAppService RouteTypesAppService
+@inject ITerritoriesAppService TerritoriesAppService
+@inject IExtendedUsersAppService ExtendedUsersAppService
+@inject ISalesChannelsAppService SalesChannelsAppService
+@inject ISalesAndDeliveriesAppService SalesAndDeliveriesAppService
+
+
+@* ************************* PAGE HEADER ************************* *@
+
+@{
+    string code = string.Empty;
+    if (EditingDoc != null && EditingDoc.Code != null)
+    {
+        code = EditingDoc.Code.Length > 20 ? EditingDoc.Code.Substring(0, 20) + "..." : EditingDoc.Code;
+    }
+}
+<PageHeader Title="@(code + (IsDataEntryChanged? " (*)":""))" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
+</PageHeader>
+
+<NavigationLock OnBeforeInternalNavigation="OnBeforeInternalNavigation" />
+
+
+<Row>
+    <Column>
+        @* ************************* Edit Form Section ************************* *@
+
+        <Card>
+            <CardBody>
+                <Row>
+                    <EditForm @ref="EditFormMain"
+                              Model="@EditingDoc"
+                              Context="EditFormContext">
+                        <DataAnnotationsValidator />
+                        <DxFormLayout CaptionPosition="CaptionPosition.Vertical" CssClass="w-100">
+
+                            <DxFormLayoutItem Caption="@(L["Code"] + " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.Code" Enabled="IsEditEnabled"
+                                           TextExpression="@(() => EditingDoc.Code)"
+                                           TextChanged="@(async (newValue) => {
+                                                            EditingDoc.Code = newValue.ToUpper();
+                                                             await HandleValidSubmit();
+                                                            IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+                                                        })"
+                                           BindValueMode="BindValueMode.OnLostFocus"
+                                           InputCssClass="focus-value" ShowValidationIcon="true" />
+                                <ValidationMessage For="@(() => EditingDoc.Code)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["Position"]+ " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxComboBox Data="@PositionCollection" 
+                                            TextFieldName="@nameof(IdentityRoleDto.Name)"
+                                            ValueFieldName="@nameof(IdentityRoleDto.Name)"
+                                            Value="@EditingDoc.Position"
+                                            ValueExpression="(()=>EditingDoc.Position)"
+                                            ValueChanged="@(async (string e) => {
+																	PositionValueChanged(e);
+                                                                    IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+                                                                    })"
+                                            InputCssClass="focus-value" ShowValidationIcon="true"
+                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                            SearchMode="ListSearchMode.AutoSearch"
+                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                            SearchFilterCondition="ListSearchFilterCondition.Contains">
+                                </DxComboBox>
+                                <ValidationMessage For="@(() => EditingDoc.Position)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["UserName"]+ " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.UserName"
+                                           TextExpression="@(() => EditingDoc.UserName)"
+                                           TextChanged="@(async (string newValue) => {
+                                                EditingDoc.UserName = newValue;
+                                                await HandleValidSubmit();
+                                                IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+                                            })"
+                                           BindValueMode="BindValueMode.OnDelayedInput"
+                                           InputDelay="600"
+                                           InputCssClass="focus-value"
+                                           ShowValidationIcon="true" />
+
+                                <ValidationMessage For="@(() => EditingDoc.UserName)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["Email"]+ " *")" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.Email"
+                                           TextExpression="@(() => EditingDoc.Email)"
+                                           TextChanged="@(async (string newValue) => {
+                                                EditingDoc.Email = newValue;
+                                                await HandleValidSubmit();
+                                                IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+                                            })"
+                                           BindValueMode="BindValueMode.OnDelayedInput"
+                                           InputDelay="600"
+                                           InputCssClass="focus-value"
+                                           ShowValidationIcon="true" />
+                                <ValidationMessage For="@(() => EditingDoc.Email)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["Name"])" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.Name"
+                                           TextExpression="@(() => EditingDoc.Name)"
+                                           TextChanged="@(async (string newValue) => {
+                                                            EditingDoc.Name = newValue;
+                                                            IsDataEntryChanged = true;
+                                        })" BindValueMode="BindValueMode.OnDelayedInput" InputDelay="600" InputCssClass="focus-value"
+                                           ShowValidationIcon="true" />
+                                <ValidationMessage For="@(() => EditingDoc.Name)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["Surname"])" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.Surname"
+                                           TextExpression="@(() => EditingDoc.Surname)"
+                                           TextChanged="@(async (string newValue) => {
+                                                            EditingDoc.Surname = newValue;
+                                                            IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+                                        })"
+                                           BindValueMode="BindValueMode.OnDelayedInput" InputDelay="600"
+                                           InputCssClass="focus-value" ShowValidationIcon="true" />
+
+                                <ValidationMessage For="@(() => EditingDoc.Surname)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["PhoneNumber"])" ColSpanLg="3" ColSpanMd="12">
+                                <DxTextBox Text="@EditingDoc.PhoneNumber"
+                                           TextExpression="@(() => EditingDoc.PhoneNumber)"
+                                           TextChanged="@(async (string newValue) => {
+                                                           EditingDoc.PhoneNumber = newValue;
+                                                           IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+                                                       })"
+                                           BindValueMode="BindValueMode.OnDelayedInput" InputDelay="600"
+                                           InputCssClass="focus-value" ShowValidationIcon="true" />
+
+                                <ValidationMessage For="@(() => EditingDoc.PhoneNumber)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["CompanyId"])" ColSpanLg="3" ColSpanMd="12">
+                                <DxComboBox TData="CompanyDto" TValue="Guid?"
+                                            Data="@CompanyCollection" 
+                                            ValueFieldName="@nameof(CompanyDto.Id)"
+                                            TextFieldName="@nameof(CompanyDto.Code)"
+                                            Value="@EditingDoc.CompanyId"
+                                            ValueExpression="(()=>EditingDoc.CompanyId)"
+                                            ValueChanged="@(async (Guid? companyId) => {
+															CompanyValueChanged(companyId);
+															IsDataEntryChanged = true;
+                                                            await UpdateDataChangeStatus(true);
+														})"
+                                            EditFormat="{0} - {1}"
+                                            DisplayFormat="{0} - {1}"
+                                            InputCssClass="focus-value"
+                                            ShowValidationIcon="true"
+                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                            SearchMode="ListSearchMode.AutoSearch"
+                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                            SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                                    <Columns>
+                                        <DxListEditorColumn FieldName="@nameof(CompanyDto.Code)"
+                                                            Caption="@L["Code"]" />
+                                        <DxListEditorColumn FieldName="@nameof(CompanyDto.Description)"
+                                                            Caption="@L["Description"]" />
+                                    </Columns>
+                                </DxComboBox>
+                                <ValidationMessage For="@(() => EditingDoc.CompanyId)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["Territory"])" ColSpanLg="3" ColSpanMd="12">
+                                <DxComboBox Data="@TerritoryCollection"
+                                            TextFieldName="@nameof(TerritoryDto.Code)"
+                                            ValueFieldName="@nameof(TerritoryDto.Id)"
+                                            Value="@EditingDoc.TerritoryId"
+                                            ValueExpression="(()=>EditingDoc.TerritoryId)"
+                                            ValueChanged="@(async (Guid? territoryId) => {
+															TerritoryValueChanged(territoryId);
+															IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+														})"
+                                            EditFormat="{0} - {1}"
+                                            DisplayFormat="{0} - {1}"
+                                            InputCssClass="focus-value" ShowValidationIcon="true"
+                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                            SearchMode="ListSearchMode.AutoSearch"
+                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                            SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                                    <Columns>
+                                        <DxListEditorColumn FieldName="@nameof(TerritoryDto.Code)"
+                                                            Caption="@L["Code"]" />
+                                        <DxListEditorColumn FieldName="@nameof(TerritoryDto.Description)"
+                                                            Caption="@L["Description"]" />
+                                    </Columns>
+                                </DxComboBox>
+                                <ValidationMessage For="@(() => EditingDoc.TerritoryId)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["ProvinceId"])" ColSpanLg="3" ColSpanMd="12">
+                                <DxComboBox Data="@ProvinceCollection.Where(x=>x.TerritoryId == EditingDoc?.TerritoryId)"
+                                            TextFieldName="@nameof(ProvinceDto.Code)"
+                                            ValueFieldName="@nameof(ProvinceDto.Id)"
+                                            Value="@EditingDoc.ProvinceId"
+                                            ValueExpression="(()=>EditingDoc.ProvinceId)"
+                                            ValueChanged="@(async (Guid? provinceId) => {
+															ProvinceValueChanged(provinceId);
+															IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+														})"
+                                            EditFormat="{0} - {1}"
+                                            DisplayFormat="{0} - {1}"
+                                            InputCssClass="focus-value" ShowValidationIcon="true"
+                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                            SearchMode="ListSearchMode.AutoSearch"
+                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                            SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                                    <Columns>
+                                        <DxListEditorColumn FieldName="@nameof(ProvinceDto.Code)"
+                                                            Caption="@L["Code"]" />
+                                        <DxListEditorColumn FieldName="@nameof(ProvinceDto.Description)"
+                                                            Caption="@L["Description"]" />
+                                    </Columns>
+                                </DxComboBox>
+                                <ValidationMessage For="@(() => EditingDoc.ProvinceId)" />
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@(L["StateId"])" ColSpanLg="3" ColSpanMd="12">
+                                <DxComboBox Data="@StateCollection"
+                                            TextFieldName="@nameof(StateDto.Code)"
+                                            ValueFieldName="@nameof(StateDto.Id)"
+                                            Value="@EditingDoc.StateId"
+                                            ValueExpression="(()=>EditingDoc.StateId)"
+                                            ValueChanged="@(async (Guid? stateId) => {
+															EditingDoc.StateId = stateId;
+															IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+														})"
+                                            EditFormat="{0} - {1}"
+                                            DisplayFormat="{0} - {1}"
+                                            InputCssClass="focus-value" ShowValidationIcon="true"
+                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                            SearchMode="ListSearchMode.AutoSearch"
+                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                            SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                                    <Columns>
+                                        <DxListEditorColumn FieldName="@nameof(StateDto.Code)"
+                                                            Caption="@L["Code"]" />
+                                        <DxListEditorColumn FieldName="@nameof(StateDto.Description)"
+                                                            Caption="@L["Description"]" />
+                                    </Columns>
+                                </DxComboBox>
+                                <ValidationMessage For="@(() => EditingDoc.StateId)" />
+                            </DxFormLayoutItem>
+
+                            @if (EditingDocId == Guid.Empty)
+                            {
+                                <DxFormLayoutItem Caption="@(L["Password"] + " *")" ColSpanLg="3" ColSpanMd="12">
+                                    <DxTextBox Text="@EditingDoc.Password" Password
+                                               TextExpression="@(() => EditingDoc.Password)"
+                                               TextChanged="@(async (string newValue) => {
+                                                            EditingDoc.Password = newValue;
+                                                            IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+                                                })"
+                                               BindValueMode="BindValueMode.OnDelayedInput" InputDelay="600"
+                                               InputCssClass="focus-value" ShowValidationIcon="true">
+                                    </DxTextBox>
+                                    <ValidationMessage For="@(() => EditingDoc.Password)" />
+                                </DxFormLayoutItem>
+                            }
+
+                            <DxFormLayoutItem Caption="@(L["Active"])" ColSpanLg="3" ColSpanMd="12">
+                                <DxCheckBox Checked="@EditingDoc.Status"
+                                            CheckedExpression="@(() => EditingDoc.Status)"
+                                            CheckedChanged="@(async (bool newValue) => {
+                                                        EditingDoc.Status = newValue;
+                                                        IsDataEntryChanged = true;
+            await UpdateDataChangeStatus(true);
+                                    })">
+                                </DxCheckBox>
+                                <ValidationMessage For="@(() => EditingDoc.Status)" />
+                            </DxFormLayoutItem>
+                        </DxFormLayout>
+                    </EditForm>
+                </Row>
+            </CardBody>
+        </Card>
+        @if (EditingDocId != Guid.Empty)
+        {
+            <Div>
+                <HQSOFTComment TableName="@L["Menu:ExtendedUsers"]" OnCommentAdded="HandleCommentAdded" ScreenUrl="SystemAdministration/Users/" DocId="EditingDocId" />
+            </Div>
+            <Div>
+                <HQSOFTFormActivity ScreenUrl="SystemAdministration/Users/" DocId="EditingDocId" @ref="@formActivity" />
+            </Div>
+        }
+    </Column>
+
+    <Div Class="col-2 layout-side-section" Style="@(ShowInteractionForm?"display: none":"display: block")">
+        <Div Class="list-sidebar overlay-sidebar hidden-xs hidden-sm opened">
+            @* ************************* InteractionForm Section ************************* *@ 
+            <HQSOFTInteractionForm TableName="@L["Menu:ExtendedUsers"]" TypeTable="content" DocId="@EditingDocId" Url="/SystemAdministration/Users" IsInteractionFormDisabled="@(EditingDocId != Guid.Empty ? false : true)" />
+        </Div>
+    </Div>
+</Row>
+ 
+<HotkeyHandler OnCtrlS="HandleCtrlS" OnCtrlB="HandleCtrlB" />
+<HQSOFTBreadcrumbScreen @ref="BreadcrumbScreen"
+                        BreadcrumbItems="BreadcrumbItems" ModuleCode="SA"
+                        ScreenUrl="/SystemAdministration/Users" ScreenName="Menu:Users" IsEditForm="true" /> 

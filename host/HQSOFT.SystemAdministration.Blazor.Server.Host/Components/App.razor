@@ -1,0 +1,71 @@
+﻿@using System.Globalization
+@using Microsoft.Extensions.Hosting
+@using Volo.Abp.AspNetCore.Components.Server.LeptonTheme.Bundling
+@using Volo.Abp.Localization
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Bundling
+@inject IHostEnvironment Env
+@{
+    var rtl = CultureHelper.IsRtl ? "rtl" : string.Empty;
+}
+
+<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentCulture.Name" dir="@rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SystemAdministration</title>
+    <base href="/" />
+    
+    <AbpStyles BundleName="@BlazorLeptonThemeBundles.Styles.Global" />
+    
+    <HeadOutlet @rendermode="InteractiveServer" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <link href="css/bootstrap-external.bs5.min.css" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <!-- Include the Quill library -->
+    <link href="css/quill/quill.snow.css" rel="stylesheet" />
+    <link href="css/quill/quill.mention.min.css" rel="stylesheet" />
+    <link href="css/quill/quill.mention.css" rel="stylesheet" />
+    <!-- Include the Quill library -->
+    
+</head>
+<body class="abp-application-layout @rtl">
+
+    <Routes @rendermode="InteractiveServer" />
+
+    <div id="blazor-error-ui">
+        @if (Env.IsDevelopment())
+        {
+            <text>An unhandled exception has occurred. See browser dev tools for details.</text>
+        }
+        else if (Env.IsStaging() || Env.IsProduction())
+        {
+            <text>An error has occurred. This application may no longer respond until reloaded.</text>
+        }
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    
+    <AbpScripts BundleName="@BlazorLeptonThemeBundles.Scripts.Global" />
+
+    <script src="_framework/blazor.web.js"></script>
+
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- Include the Quill library -->
+    <!-- Initialize Quill editor -->
+    <script src="js/webcam.js"></script>
+    <script src="js/Configuration.js"></script>
+    <!-- Initialize Quill editor -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="js/quill/image-resize.min.js"></script>
+    <script src="js/quill/quill.mention.min.js"></script>
+    <script src="js/quill/HQSoftRichTextEdit.js"></script>
+    <!-- Initialize Quill editor -->
+    <!-- MudBlazor -->
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src="js/HQSoftUtils.js"></script>
+    <!-- MudBlazor -->
+    <script src="js/quill/folder.js"> </script>
+</body>
+</html>

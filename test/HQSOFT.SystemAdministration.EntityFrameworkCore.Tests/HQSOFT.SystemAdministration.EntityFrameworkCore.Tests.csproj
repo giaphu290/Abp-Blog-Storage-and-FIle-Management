@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>HQSOFT.SystemAdministration</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="8.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\HQSOFT.SystemAdministration.EntityFrameworkCore\HQSOFT.SystemAdministration.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\HQSOFT.SystemAdministration.Application.Tests\HQSOFT.SystemAdministration.Application.Tests.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,708 @@
+﻿@page "/SystemAdministration/Workspaces/{Id}"
+
+@attribute [Authorize(CoreBackendPermissions.Workspaces.Default)]
+@attribute [Authorize(CoreBackendPermissions.Modules.Default)]
+ 
+@using global::HQSOFT.Common.Blazor.Pages.Component
+@using global::HQSOFT.Common.Blazor.Pages.Component.Toolbar
+@using global::HQSOFT.Common.Blazor.Pages.Component.Validation
+
+@using global::HQSOFT.CoreBackend.EnumList
+@using global::HQSOFT.CoreBackend.Modules
+@using global::HQSOFT.CoreBackend.Reports
+@using global::HQSOFT.CoreBackend.Screens
+@using global::HQSOFT.CoreBackend.ExtendedUsers
+@using global::HQSOFT.CoreBackend.WorkspaceRoles
+@using global::HQSOFT.CoreBackend.WorkspaceUsers
+@using global::HQSOFT.CoreBackend.Permissions
+@using global::HQSOFT.CoreBackend.Localization
+@using global::HQSOFT.CoreBackend.Shared
+@using global::HQSOFT.CoreBackend.Workspaces
+@using global::HQSOFT.CoreBackend.WorkspaceShortcuts
+@using global::HQSOFT.CoreBackend.WorkspaceLinks
+
+@using System.Net.Http
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.Extensions.Localization
+@using Microsoft.AspNetCore.Components
+@using Microsoft.JSInterop
+@using Microsoft.Extensions.Configuration
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+@using DevExpress.Blazor
+@using Blazorise
+@using Blazorise.DataGrid
+@using Blazorise.Components
+
+@using Volo.Abp.Identity
+@using Volo.Abp.BlazoriseUI
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.ObjectMapping
+@using Volo.Abp.Http.Client
+@using Volo.Abp.AspNetCore.Components.BlockUi
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.Notifications
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+@using Volo.Abp.AspNetCore.Components.Web
+
+@inherits SystemAdministrationComponentBase
+@inject NavigationManager NavigationManager
+@inject ChangeIconToggleSidebar ChangeIconToggleSidebar
+@inject ValidationFormHelper ValidationFormHelper
+@inject HttpClient HttpClient
+
+@inject IBlockUiService BlockUiService
+@inject IPageProgressService PageProgressService
+@inject IUiNotificationService UiNotificationService
+@inject IUiMessageService UiMessageService
+
+@inject IJSRuntime JSRuntime
+@inject IRemoteServiceConfigurationProvider RemoteServiceConfigurationProvider
+@inject IWorkspacesAppService WorkspacesAppService
+
+@inject IExtendedUsersAppService ExtendedUsersAppService
+@inject IIdentityRoleAppService IdentityRoleAppService
+@inject IWorkspaceRolesAppService WorkspaceRolesAppService
+@inject IWorkspaceUsersAppService WorkspaceUsersAppService
+@inject IScreensAppService ScreensAppService
+@inject IReportsAppService ReportsAppService
+@inject IWorkspacesAppService WorkspacesAppService
+@inject IWorkspaceLinksAppService WorkspaceLinksAppService
+@inject IWorkspaceShortcutsAppService WorkspaceShortcutsAppService
+
+
+@* ************************* PAGE HEADER ************************* *@
+@{
+    string code = string.Empty;
+    if (EditingDoc.Code != null && EditingDoc.Code != null)
+    {
+        code = EditingDoc.Code.Length > 20 ? EditingDoc.Code.Substring(0, 20) + "..." : EditingDoc.Code;
+    }
+}
+<PageHeader Title="@(code + (IsDataEntryChanged? " (*)":""))" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
+</PageHeader>
+
+<NavigationLock OnBeforeInternalNavigation="OnBeforeInternalNavigation" />
+
+
+
+
+@* ************************* FORM BODY ************************* *@
+
+<Row>
+    <Column>
+        <Card>
+            <CardBody>
+                <Row>
+                    <EditForm @ref="EditFormMain" Model="@EditingDoc" Context="EditFormContext">
+                        <DataAnnotationsValidator />
+                        <DxFormLayout CaptionPosition="CaptionPosition.Vertical" CssClass="w-100">
+                            <DxFormLayoutTabPages>
+
+                                @* ************************************** General Tab Page ************************************ *@ 
+
+                                <DxFormLayoutTabPage Caption="General">
+                                    <DxFormLayoutGroup>
+
+                                        <DxFormLayoutItem Caption="@(L["Code"] + " *")" ColSpanLg="3" ColSpanMd="12">
+                                            <DxTextBox Text="@EditingDoc.Code" Enabled="IsEditEnabled"
+                                                       TextExpression="@(() => EditingDoc.Code)"
+                                                       TextChanged="@(async (newValue) => {
+                                                            EditingDoc.Code = newValue.ToUpper();
+                                                            await HandleValidSubmit();
+                                                            IsDataEntryChanged = true;
+                        await UpdateDataChangeStatus(true);
+                                                        })"
+                                                       BindValueMode="BindValueMode.OnLostFocus"
+                                                       InputCssClass="focus-value" ShowValidationIcon="true" />
+                                            <ValidationMessage For="@(() => EditingDoc.Code)" />
+                                        </DxFormLayoutItem>
+
+                                        <DxFormLayoutItem Caption="@(L["Title"] + " *")" ColSpanLg="3" ColSpanMd="12">
+                                            <DxTextBox Text="@EditingDoc.Title"
+                                                       TextExpression="@(() => EditingDoc.Title)"
+                                                       TextChanged="@(async (newValue) => {
+												                    EditingDoc.Title = newValue;
+												                    IsDataEntryChanged = true;
+                        await UpdateDataChangeStatus(true);})"
+                                                       BindValueMode="BindValueMode.OnInput"
+                                                       InputCssClass="focus-value" ShowValidationIcon="true" />
+                                            <ValidationMessage For="@(() => EditingDoc.Title)" />
+                                        </DxFormLayoutItem>
+
+                                        <DxFormLayoutItem Caption="@(L["Icon"])" ColSpanLg="3" ColSpanMd="12">
+                                            <DxComboBox DropDownWidthMode="DropDownWidthMode.EditorWidth" Data="@FontAwesomeIcons"
+                                                        SearchMode="ListSearchMode.AutoSearch"
+                                                        SearchTextParseMode="ListSearchTextParseMode.ExactMatch"
+                                                        SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                                        Value="@EditingDoc.Icon"
+                                                        ValueExpression="@(() => EditingDoc.Icon)"
+                                                        TextFieldName="@nameof(FontAwesomeIcon.Code)"
+                                                        ValueFieldName="@nameof(FontAwesomeIcon.Code)"
+                                                        ValueChanged="@(async (string code) => {
+                                                                    EditingDoc.Icon = code;
+                                                                    IsDataEntryChanged = true;
+                        await UpdateDataChangeStatus(true);})">
+                                                <ItemDisplayTemplate Context="item">
+                                                    @if (item.DataItem != null)
+                                                    {
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="@item.DataItem.Code" style="font-size: 20px; margin-right: 8px;"></i>
+                                                            @item.DataItem.Code
+                                                        </div>
+                                                    }
+                                                </ItemDisplayTemplate>
+                                            </DxComboBox>
+                                            <ValidationMessage For="@(() => EditingDoc.Icon)" />
+                                        </DxFormLayoutItem>
+
+                                        <DxFormLayoutItem Caption="@(L["LanguageKey"])" ColSpanLg="3" ColSpanMd="12">
+                                            <DxTextBox Text="@EditingDoc.LanguageKey"
+                                                       TextExpression="@(() => EditingDoc.LanguageKey)"
+                                                       TextChanged="@(async (newValue) => {
+												                    EditingDoc.LanguageKey = newValue;
+												                    IsDataEntryChanged = true;
+                        await UpdateDataChangeStatus(true); })"
+                                                       BindValueMode="BindValueMode.OnInput"
+                                                       InputCssClass="focus-value" ShowValidationIcon="true" />
+                                            <ValidationMessage For="@(() => EditingDoc.LanguageKey)" />
+                                        </DxFormLayoutItem>
+
+                                        <DxFormLayoutItem Caption="@(L["Sequence"])" ColSpanLg="3" ColSpanMd="12">
+                                            <DxSpinEdit Value="@EditingDoc.SequenceId"
+                                                        ValueExpression="@(() => EditingDoc.SequenceId)"
+                                                        ValueChanged="@(async (int newValue) => {
+												                        EditingDoc.SequenceId = newValue;
+												                        IsDataEntryChanged = true;
+                        await UpdateDataChangeStatus(true); })"
+                                                        BindValueMode="BindValueMode.OnInput"
+                                                        InputCssClass="focus-value"
+                                                        MinValue="0" MaxValue="999999999" ShowValidationIcon="true">
+                                            </DxSpinEdit>
+                                            <ValidationMessage For="@(() => EditingDoc.SequenceId)" />
+                                        </DxFormLayoutItem>
+
+                                        <DxFormLayoutItem Caption="@(L["IsHide"])" ColSpanLg="3" ColSpanMd="12">
+                                            <DxCheckBox Checked="@EditingDoc.IsHide"
+                                                        CheckedExpression="@(() => EditingDoc.IsHide)"
+                                                        CheckedChanged="@(async (bool newValue) => {
+												                        IsDataEntryChanged = true;
+												                        EditingDoc.IsHide = newValue;
+                        await UpdateDataChangeStatus(true); })">
+                                            </DxCheckBox>
+                                            <ValidationMessage For="@(() => EditingDoc.IsHide)" />
+                                        </DxFormLayoutItem>
+
+                                    </DxFormLayoutGroup>
+
+
+                                    @* *************************** Roles & Members - Layout Group ***************************** *@ 
+
+                                    @* Roles & Members - Layout Group *@
+                                    <DxFormLayoutGroup Caption="@L["Roles & Members"]" ColSpanMd="12"
+                                                       ExpandButtonDisplayMode="GroupExpandButtonDisplayMode.Start"
+                                                       AnimationType="LayoutAnimationType.Slide">
+                                        <Items>
+                                            <Row>
+                                                @* Roles Group *@
+                                                <Column ColumnSize="ColumnSize.Is6">
+                                                    <h5 style="padding: 10px 10px 0 10px">
+                                                        @L["Roles"]
+                                                    </h5>
+                                                    <DxGrid ShowAllRows="true" @ref="GridWorkspaceRole" Data="@WorkspaceRoles"
+                                                            PopupEditFormHeaderText="@L["Add role"]"
+                                                            @bind-SelectedDataItems="@SelectedWorkspaceRoles"
+                                                            CustomizeEditModel="GridWorkspaceRole_OnCustomizeEditModel"
+                                                            EditModelSaving="GridWorkspaceRole_EditModelSaving"
+                                                            FocusedRowChanged="GridWorkspaceRole_FocusedRowChanged"
+                                                            SelectionMode="GridSelectionMode.Multiple"
+                                                            AllowSelectRowByClick="true" EditMode="GridEditMode.PopupEditForm"
+                                                            TextWrapEnabled EditNewRowPosition="GridEditNewRowPosition.Bottom"
+                                                            FocusedRowEnabled="true"
+                                                            EditorRenderMode="GridEditorRenderMode.Integrated"
+                                                            AllowSort="false">
+                                                        <Columns>
+                                                            <DxGridSelectionColumn Width="5px" />
+
+                                                            <DxGridDataColumn FieldName="RoleId" Caption="@L["Name"]">
+                                                                <CellDisplayTemplate>
+                                                                    @if (context.Value != null)
+                                                                    {
+                                                                        var value = (Guid)context.Value;
+                                                                        var valueCode = RoleCollection.FirstOrDefault(x => x.Id == value)?.Name;
+                                                                        <span>@valueCode</span>
+                                                                    }
+                                                                </CellDisplayTemplate>
+                                                                <CellEditTemplate>
+                                                                    <DxComboBox DropDownWidthMode="DropDownWidthMode.EditorWidth" Data="@RolesNotInWorkspaceRoles"
+                                                                                @bind-Value="(((WorkspaceRoleUpdateDto)context.EditModel).RoleId)"
+                                                                                ValueFieldName="@nameof(IdentityRoleDto.Id)"
+                                                                                TextFieldName="@nameof(IdentityRoleDto.Name)"
+                                                                                DisplayFormat="{0}" EditFormat="{0}">
+                                                                        <Columns>
+                                                                            <DxListEditorColumn FieldName="@nameof(IdentityRoleDto.Name)"
+                                                                                                Caption="@L["Name"]" />
+                                                                        </Columns>
+                                                                    </DxComboBox>
+                                                                </CellEditTemplate>
+                                                            </DxGridDataColumn>
+                                                        </Columns>
+                                                        <EditFormTemplate Context="WorkspaceRoleEditFormContext">
+                                                            @{
+                                                                var supplier =
+                                                                (WorkspaceRoleUpdateDto)WorkspaceRoleEditFormContext.EditModel;
+                                                            }
+                                                            <DxFormLayout CssClass="w-100">
+                                                                <DxFormLayoutItem Caption="@L["Name"]" ColSpanMd="12">
+                                                                    <DxComboBox DropDownWidthMode="DropDownWidthMode.EditorWidth" Data="@RolesNotInWorkspaceRoles"
+                                                                                @bind-Value="@supplier.RoleId"
+                                                                                ValueFieldName="@nameof(IdentityRoleDto.Id)"
+                                                                                TextFieldName="@nameof(IdentityRoleDto.Name)"
+                                                                                DisplayFormat="{0}" EditFormat="{0}">
+                                                                        <Columns>
+                                                                            <DxListEditorColumn FieldName="@nameof(IdentityRoleDto.Name)"
+                                                                                                Caption="@L["Name"]" />
+                                                                        </Columns>
+                                                                    </DxComboBox>
+                                                                </DxFormLayoutItem>
+                                                            </DxFormLayout>
+                                                        </EditFormTemplate>
+                                                    </DxGrid>
+                                                    <Div class="mt-1 bt-1">
+                                                        <Button Clicked="GridWorkspaceRoleNew_Click"
+                                                                Size="Blazorise.Size.Small"
+                                                                Visibility="@((CanCreateWorkspaceRole || CanEditWorkspaceRole)? Visibility.Visible : Visibility.Invisible)">
+                                                            <Icon Name="IconName.Add" TextColor="TextColor.Primary" />
+                                                        </Button>
+                                                        <Button Clicked="GridWorkspaceRoleDelete_Click"
+                                                                Size="Blazorise.Size.Small"
+                                                                Visibility="@((CanDeleteWorkspaceRole && SelectedWorkspaceRoles.Any())? Visibility.Visible : Visibility.Invisible)">
+                                                            <Icon Name="IconName.Delete" TextColor="TextColor.Danger" />
+                                                        </Button>
+                                                    </Div>
+                                                </Column>
+
+                                                @* Members Group *@
+                                                <Column ColumnSize="ColumnSize.Is6">
+                                                    <h5 style="padding: 10px 10px 0 10px">
+                                                        @L["Members"]
+                                                    </h5>
+                                                    <DxGrid ShowAllRows="true" @ref="GridWorkspaceUser" Data="@WorkspaceUsers"
+                                                            PopupEditFormHeaderText="@L["Add member"]"
+                                                            @bind-SelectedDataItems="@SelectedWorkspaceUsers"
+                                                            CustomizeEditModel="GridWorkspaceUser_OnCustomizeEditModel"
+                                                            EditModelSaving="GridWorkspaceUser_EditModelSaving"
+                                                            FocusedRowChanged="GridWorkspaceUser_FocusedRowChanged"
+                                                            SelectionMode="GridSelectionMode.Multiple"
+                                                            AllowSelectRowByClick="true" EditMode="GridEditMode.PopupEditForm"
+                                                            TextWrapEnabled EditNewRowPosition="GridEditNewRowPosition.Bottom"
+                                                            FocusedRowEnabled="true"
+                                                            EditorRenderMode="GridEditorRenderMode.Integrated"
+                                                            AllowSort="false">
+                                                        <Columns>
+                                                            <DxGridSelectionColumn Width="5px" />
+
+                                                            <DxGridDataColumn FieldName="UserId" Caption="@L["Username"]"
+                                                                              DataRowEditorVisible="false">
+                                                                <CellDisplayTemplate>
+                                                                    @if (context.Value != null)
+                                                                    {
+                                                                        var value = (Guid)context.Value;
+                                                                        var valueCode = UserCollection.FirstOrDefault(x => x.Id
+                                                                        == value)?.FullName;
+                                                                        <span>@valueCode</span>
+                                                                    }
+                                                                </CellDisplayTemplate>
+                                                                <CellEditTemplate>
+                                                                    <DxComboBox DropDownWidthMode="DropDownWidthMode.EditorWidth" Data="@UsersNotInWorkspaceUsers"
+                                                                                @bind-Value="(((WorkspaceUserUpdateDto)context.EditModel).UserId)"
+                                                                                ValueFieldName="@nameof(ExtendedUserDto.Id)"
+                                                                                TextFieldName="@nameof(ExtendedUserDto.Code)"
+                                                                                DisplayFormat="{1}" EditFormat="{1}">
+                                                                        <Columns>
+                                                                            <DxListEditorColumn FieldName="@nameof(ExtendedUserDto.Code)"
+                                                                                                Caption="@L["Code"]" />
+                                                                            <DxListEditorColumn FieldName="@nameof(ExtendedUserDto.FullName)"
+                                                                                                Caption="@L["Full Name"]" />
+                                                                        </Columns>
+                                                                    </DxComboBox>
+                                                                </CellEditTemplate>
+                                                            </DxGridDataColumn>
+
+                                                            <DxGridDataColumn FieldName="UserId" Caption="@L["Email"]"
+                                                                              DataRowEditorVisible="false">
+                                                                <CellDisplayTemplate>
+                                                                    @if (context.Value != null)
+                                                                    {
+                                                                        var value = (Guid)context.Value;
+                                                                        var valueCode = UserCollection.FirstOrDefault(x => x.Id
+                                                                        == value)?.Email;
+                                                                        <span>@valueCode</span>
+                                                                    }
+                                                                </CellDisplayTemplate>
+                                                                <CellEditTemplate>
+                                                                    <DxComboBox DropDownWidthMode="DropDownWidthMode.EditorWidth" Data="@UsersNotInWorkspaceUsers"
+                                                                                @bind-Value="(((WorkspaceUserUpdateDto)context.EditModel).UserId)"
+                                                                                ValueFieldName="@nameof(ExtendedUserDto.Id)"
+                                                                                TextFieldName="@nameof(ExtendedUserDto.Code)"
+                                                                                DisplayFormat="{0}" EditFormat="{0}"
+                                                                                ShowDropDownButton="false">
+                                                                        <Columns>
+                                                                            <DxListEditorColumn FieldName="@nameof(ExtendedUserDto.Email)"
+                                                                                                Caption="@L["Email"]" />
+                                                                        </Columns>
+                                                                    </DxComboBox>
+                                                                </CellEditTemplate>
+                                                            </DxGridDataColumn>
+                                                        </Columns>
+                                                        <EditFormTemplate Context="WorkspaceUserEditFormContext">
+                                                            @{
+                                                                var supplier =
+                                                                (WorkspaceUserUpdateDto)WorkspaceUserEditFormContext.EditModel;
+                                                            }
+                                                            <DxFormLayout CssClass="w-100">
+                                                                <DxFormLayoutItem Caption="@L["Username"]" ColSpanMd="12">
+                                                                    <DxComboBox DropDownWidthMode="DropDownWidthMode.EditorWidth" Data="@UsersNotInWorkspaceUsers"
+                                                                                @bind-Value="supplier.UserId"
+                                                                                ValueFieldName="@nameof(ExtendedUserDto.Id)"
+                                                                                TextFieldName="@nameof(ExtendedUserDto.Code)"
+                                                                                DisplayFormat="{1}" EditFormat="{1}">
+                                                                        <Columns>
+                                                                            <DxListEditorColumn FieldName="@nameof(ExtendedUserDto.Code)"
+                                                                                                Caption="@L["Code"]" />
+                                                                            <DxListEditorColumn FieldName="@nameof(ExtendedUserDto.FullName)"
+                                                                                                Caption="@L["FullName"]" />
+                                                                        </Columns>
+                                                                    </DxComboBox>
+                                                                </DxFormLayoutItem>
+                                                                <DxFormLayoutItem Caption="@L["Email"]" ColSpanMd="12">
+                                                                    <DxComboBox DropDownWidthMode="DropDownWidthMode.EditorWidth" Data="@UsersNotInWorkspaceUsers"
+                                                                                @bind-Value="supplier.UserId"
+                                                                                ValueFieldName="@nameof(ExtendedUserDto.Id)"
+                                                                                TextFieldName="@nameof(ExtendedUserDto.Email)"
+                                                                                ReadOnly Enabled="false" ShowDropDownButton="false"
+                                                                                style="background:#e7e7e7">
+                                                                    </DxComboBox>
+                                                                </DxFormLayoutItem>
+                                                            </DxFormLayout>
+                                                        </EditFormTemplate>
+                                                    </DxGrid>
+                                                    <Div class="mt-1 bt-1">
+                                                        <Button Clicked="GridWorkspaceUserNew_Click"
+                                                                Size="Blazorise.Size.Small"
+                                                                Visibility="@((CanCreateWorkspaceUser || CanEditWorkspaceUser) ? Visibility.Visible : Visibility.Invisible)">
+                                                            <Icon Name="IconName.Add" TextColor="TextColor.Primary" />
+                                                        </Button>
+                                                        <Button Clicked="GridWorkspaceUserDelete_Click"
+                                                                Size="Blazorise.Size.Small"
+                                                                Visibility="@((CanDeleteWorkspaceUser && SelectedWorkspaceUsers.Any())? Visibility.Visible : Visibility.Invisible)">
+                                                            <Icon Name="IconName.Delete" TextColor="TextColor.Danger" />
+                                                        </Button>
+                                                    </Div>
+                                                </Column>
+                                            </Row>
+                                        </Items>
+                                    </DxFormLayoutGroup>
+
+                                </DxFormLayoutTabPage>
+
+
+                                @* ************************************** Shortcut Tab Page *********************************** *@ 
+
+                                <DxFormLayoutTabPage Caption="Shortcut">
+                                    <DxFormLayoutGroup>
+                                        <DxGrid ShowAllRows="true" @ref="GridWorkspaceShortcut" Data="WorkspaceShortcuts"
+                                                @bind-SelectedDataItems="@SelectedWorkspaceShortcuts"
+                                                CustomizeEditModel="GridWorkspaceShortcut_OnCustomizeEditModel"
+                                                EditModelSaving="GridWorkspaceShortcut_EditModelSaving"
+                                                CustomizeDataRowEditor="GridWorkspaceShortcut_CustomizeDataRowEditor"
+                                                SelectionMode="GridSelectionMode.Multiple" AllowSelectRowByClick="true"
+                                                EditMode="GridEditMode.EditCell"
+                                                EditNewRowPosition="GridEditNewRowPosition.Bottom" FocusedRowEnabled="true"
+                                                EditorRenderMode="GridEditorRenderMode.Integrated" AllowSort="false">
+                                            <Columns>
+                                                <DxGridSelectionColumn Width="5px" />
+
+                                                <DxGridDataColumn FieldName="Type" Caption="@L["Type"]">
+                                                    <CellDisplayTemplate>
+                                                        @{
+                                                            var value = (string?)context.Value;
+                                                            var valueCode = value != null ? TypeCollection.FirstOrDefault(p
+                                                            => p.Value == value)?.Value : null;
+                                                        }
+                                                        <span>@valueCode</span>
+                                                    </CellDisplayTemplate>
+                                                    <CellEditTemplate>
+                                                        <DxComboBox DropDownWidthMode="DropDownWidthMode.EditorWidth" Data="@TypeCollection"
+                                                                    @bind-Value="((WorkspaceShortcutUpdateDto)context.EditModel).Type"
+                                                                    TextFieldName="DisplayName" ValueFieldName="Value"
+                                                                    SelectedItemChanged="@((WorkspacesType e) =>
+															{
+																SelectedType = e.Value;
+																((WorkspaceShortcutUpdateDto)context.EditModel).Shortcut = Guid.Empty;
+                                                            })" InputCssClass="focus-value" ShowValidationIcon="true">
+                                                        </DxComboBox>
+                                                    </CellEditTemplate>
+                                                </DxGridDataColumn>
+                                                <DxGridDataColumn FieldName="Shortcut" Caption="@L["Screen"]"
+                                                                  ReadOnly="@(SelectedType !="" ? false : true )">
+                                                    <CellDisplayTemplate>
+                                                        @{
+                                                            var value = (Guid?)context.Value;
+                                                            string valueCode = "";
+
+                                                            SelectedType = ((WorkspaceShortcutUpdateDto)context.DataItem) !=
+                                                            null ? ((WorkspaceShortcutUpdateDto)context.DataItem).Type : "";
+
+                                                            if (SelectedType == "Screen")
+                                                            {
+                                                                valueCode = value != null ? ScreensCollection.FirstOrDefault(p => p.Id == value)?.ScreenName : null;
+                                                            }
+                                                            else if (SelectedType == "Report")
+                                                            {
+                                                                valueCode = value != null ? ReportsCollection.FirstOrDefault(p => p.Id == value)?.ReportName : null;
+                                                            }
+                                                            <span>@valueCode</span>
+                                                        }
+                                                    </CellDisplayTemplate>
+                                                    <CellEditTemplate>
+                                                        @{
+                                                            SelectedType = ((WorkspaceShortcutUpdateDto)context.EditModel)
+                                                            != null ? ((WorkspaceShortcutUpdateDto)context.EditModel).Type :
+                                                            "";
+
+                                                            if (SelectedType == "Screen")
+                                                            {
+                                                                <DxComboBox Data="@ScreensCollection"
+                                                                            @bind-Value="((WorkspaceShortcutUpdateDto)context.EditModel).Shortcut"
+                                                                            TextFieldName="ScreenName" ValueFieldName="Id"
+                                                                            InputCssClass="focus-value" ShowValidationIcon="true"
+                                                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                                                            SearchMode="ListSearchMode.AutoSearch"
+                                                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                                                            SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                                                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                                                                    <Columns>
+                                                                        <DxListEditorColumn FieldName="@nameof(ScreenDto.Code)"
+                                                                                            Caption="@L["Code"]" />
+                                                                        <DxListEditorColumn FieldName="@nameof(ScreenDto.ScreenName)"
+                                                                                            Caption="@L["Name"]" />
+                                                                    </Columns>
+                                                                </DxComboBox>
+                                                            }
+                                                            else if (SelectedType == "Report")
+                                                            {
+                                                                <DxComboBox Data="@ReportsCollection"
+                                                                            @bind-Value="((WorkspaceShortcutUpdateDto)context.EditModel).Shortcut"
+                                                                            TextFieldName="ReportName" ValueFieldName="Id"
+                                                                            InputCssClass="focus-value" ShowValidationIcon="true"
+                                                                            DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                                                            SearchMode="ListSearchMode.AutoSearch"
+                                                                            SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                                                            SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                                                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                                                                    <Columns>
+                                                                        <DxListEditorColumn FieldName="@nameof(ReportDto.ReportCode)"
+                                                                                            Caption="@L["Code"]" />
+                                                                        <DxListEditorColumn FieldName="@nameof(ReportDto.ReportName)"
+                                                                                            Caption="@L["Name"]" />
+                                                                    </Columns>
+                                                                </DxComboBox>
+                                                            }
+                                                        }
+                                                    </CellEditTemplate>
+                                                </DxGridDataColumn>
+                                            </Columns>
+                                        </DxGrid>
+                                        <Div class="mt-1 bt-1">
+                                            <Button Clicked="GridWorkspaceShortcutNew_Click" Size="Blazorise.Size.Small"
+                                                    Visibility="@((CanCreateWorkspaceShortcut || CanEditWorkspaceShortcut)? Visibility.Visible : Visibility.Invisible)">
+                                                <Icon Name="IconName.Add" TextColor="TextColor.Primary" />
+                                            </Button>
+                                            <Button Clicked="GridWorkspaceShortcutDelete_Click"
+                                                    Size="Blazorise.Size.Small"
+                                                    Visibility="@((CanDeleteWorkspaceShortcut && SelectedWorkspaceShortcuts.Any())? Visibility.Visible : Visibility.Invisible)">
+                                                <Icon Name="IconName.Delete" TextColor="TextColor.Danger" />
+                                            </Button>
+                                        </Div>
+                                    </DxFormLayoutGroup>
+                                </DxFormLayoutTabPage>
+
+                                @* **************************************** Link Tab Page ************************************* *@ 
+
+                                <DxFormLayoutTabPage Caption="Link">
+                                    <DxFormLayoutGroup>
+                                        <Items>
+                                            <DxGrid ShowAllRows="true" @ref="GridWorkspaceLink" Data="@WorkspaceLinks"
+                                                    @bind-SelectedDataItems="@SelectedWorkspaceLinks"
+                                                    CustomizeEditModel="GridWorkspaceLink_OnCustomizeEditModel"
+                                                    EditModelSaving="GridWorkspaceLink_EditModelSaving"
+                                                    CustomizeDataRowEditor="GridWorkspaceLink_CustomizeDataRowEditor"
+                                                    SelectionMode="GridSelectionMode.Multiple" AllowSelectRowByClick="true"
+                                                    EditMode="GridEditMode.EditCell"
+                                                    EditNewRowPosition="GridEditNewRowPosition.Bottom"
+                                                    FocusedRowEnabled="true" EditorRenderMode="GridEditorRenderMode.Integrated" AllowSort="false">
+                                                <Columns>
+                                                    <DxGridSelectionColumn Width="5px" />
+
+                                                    <DxGridDataColumn FieldName="LinkType" Caption="@L["LinkType"]">
+                                                        <EditSettings>
+                                                            <DxComboBoxSettings Data="@LinkTypeCollection"
+                                                                                TextFieldName="DisplayName" ValueFieldName="Value"
+                                                                                FilteringMode="DataGridFilteringMode.Contains"
+                                                                                InputCssClass="focus-value" ShowValidationIcon="true">
+                                                            </DxComboBoxSettings>
+                                                        </EditSettings>
+                                                    </DxGridDataColumn>
+
+                                                    <DxGridDataColumn FieldName="Group" Caption="@L["Group"]">
+                                                    </DxGridDataColumn>
+
+                                                    <DxGridDataColumn Name="Type" FieldName="Type" Caption="@L["Type"]">
+                                                        <CellDisplayTemplate>
+                                                            @{
+                                                                var value = (string?)context.Value;
+                                                                var valueCode = value != null ?
+                                                                TypeCollection.FirstOrDefault(p => p.Value == value)?.Value
+                                                                : null;
+                                                            }
+                                                            <span>@valueCode</span>
+                                                        </CellDisplayTemplate>
+                                                        <CellEditTemplate>
+                                                            <DxComboBox DropDownWidthMode="DropDownWidthMode.EditorWidth" Data="@TypeCollection"
+                                                                        @bind-Value="((WorkspaceLinkUpdateDto)context.EditModel).Type"
+                                                                        TextFieldName="DisplayName" ValueFieldName="Value"
+                                                                        SelectedItemChanged="@((WorkspacesType e) => {
+                                                                SelectedType = e.Value;
+                                                                ((WorkspaceLinkUpdateDto)context.EditModel).Link = Guid.Empty; })"
+                                                                        InputCssClass="focus-value" ShowValidationIcon="true">
+                                                            </DxComboBox>
+                                                        </CellEditTemplate>
+                                                    </DxGridDataColumn>
+
+                                                    <DxGridDataColumn FieldName="Link" Caption="@L["Screen"]"
+                                                                      ReadOnly="@(SelectedType !="" ? false : true )">
+                                                        <CellDisplayTemplate>
+                                                            @{
+                                                                var value = (Guid?)context.Value;
+                                                                string valueCode = "";
+
+                                                                SelectedType = ((WorkspaceLinkUpdateDto)context.DataItem) !=
+                                                                null ? ((WorkspaceLinkUpdateDto)context.DataItem).Type : "";
+
+                                                                if (SelectedType == "Screen")
+                                                                {
+                                                                    valueCode = value != null ?
+                                                                    ScreensCollection.FirstOrDefault(p => p.Id ==
+                                                                    value)?.ScreenName : null;
+                                                                }
+                                                                else if (SelectedType == "Report")
+                                                                {
+                                                                    valueCode = value != null ?
+                                                                    ReportsCollection.FirstOrDefault(p => p.Id ==
+                                                                    value)?.ReportName : null;
+                                                                }
+                                                                <span>@valueCode</span>
+                                                            }
+                                                        </CellDisplayTemplate>
+
+                                                        <CellEditTemplate>
+                                                            @{
+                                                                SelectedType = ((WorkspaceLinkUpdateDto)context.EditModel)
+                                                                != null ? ((WorkspaceLinkUpdateDto)context.EditModel).Type :
+                                                                "";
+
+                                                                if (SelectedType == "Screen")
+                                                                {
+                                                                    <DxComboBox Data="@ScreensCollection"
+                                                                                @bind-Value="((WorkspaceLinkUpdateDto)context.EditModel).Link"
+                                                                                TextFieldName="ScreenName" ValueFieldName="Id"
+                                                                                InputCssClass="focus-value" ShowValidationIcon="true"
+                                                                                DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                                                                SearchMode="ListSearchMode.AutoSearch"
+                                                                                SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                                                                SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                                                                ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                                                                        <Columns>
+                                                                            <DxListEditorColumn FieldName="@nameof(ScreenDto.Code)"
+                                                                                                Caption="@L["Code"]" />
+                                                                            <DxListEditorColumn FieldName="@nameof(ScreenDto.ScreenName)"
+                                                                                                Caption="@L["Name"]" />
+                                                                        </Columns>
+                                                                    </DxComboBox>
+                                                                }
+                                                                else if (SelectedType == "Report")
+                                                                {
+                                                                    <DxComboBox Data="@ReportsCollection"
+                                                                                @bind-Value="((WorkspaceLinkUpdateDto)context.EditModel).Link"
+                                                                                TextFieldName="ReportName" ValueFieldName="Id"
+                                                                                InputCssClass="focus-value" ShowValidationIcon="true"
+                                                                                DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                                                                SearchMode="ListSearchMode.AutoSearch"
+                                                                                SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                                                                SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                                                                ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                                                                        <Columns>
+                                                                            <DxListEditorColumn FieldName="@nameof(ReportDto.ReportCode)"
+                                                                                                Caption="@L["Code"]" />
+                                                                            <DxListEditorColumn FieldName="@nameof(ReportDto.ReportName)"
+                                                                                                Caption="@L["Name"]" />
+                                                                        </Columns>
+                                                                    </DxComboBox>
+                                                                }
+                                                            }
+                                                        </CellEditTemplate>
+
+                                                    </DxGridDataColumn>
+                                                </Columns>
+                                            </DxGrid>
+                                            <Div class="mt-1 bt-1">
+                                                <Button Clicked="GridWorkspaceLinkNew_Click" Size="Blazorise.Size.Small"
+                                                        Visibility="@((CanCreateWorkspaceLink || CanEditWorkspaceLink)? Visibility.Visible : Visibility.Invisible)">
+                                                    <Icon Name="IconName.Add" TextColor="TextColor.Primary" />
+                                                </Button>
+                                                <Button Clicked="GridWorkspaceLinkDelete_Click"
+                                                        Size="Blazorise.Size.Small"
+                                                        Visibility="@((CanDeleteWorkspaceLink && SelectedWorkspaceLinks.Any())? Visibility.Visible : Visibility.Invisible)">
+                                                    <Icon Name="IconName.Delete" TextColor="TextColor.Danger" />
+                                                </Button>
+                                            </Div>
+                                        </Items>
+                                    </DxFormLayoutGroup>
+                                </DxFormLayoutTabPage>
+                            </DxFormLayoutTabPages>
+                        </DxFormLayout>
+                    </EditForm>
+                </Row>
+            </CardBody>
+        </Card>
+        @if (EditingDocId != Guid.Empty)
+        {
+            <Div>
+                <HQSOFTComment TableName="@L["Menu:Workspaces"]" OnCommentAdded="HandleCommentAdded"
+                               ScreenUrl='SystemAdministration/Workspaces/' DocId="EditingDocId" />
+            </Div>
+            <Div>
+                <HQSOFTFormActivity DocId="EditingDocId" ScreenUrl='SystemAdministration/Workspaces/'
+                                    @ref="@formActivity" />
+            </Div>
+        }
+    </Column>
+    @* **************************************** InteractionForm Section ************************************ *@ 
+    <Div Class="col-2 layout-side-section" Style="@(ShowInteractionForm?"display: none":"display: block")">
+        <Div Class="list-sidebar overlay-sidebar hidden-xs hidden-sm opened">
+            <HQSOFTInteractionForm TableName="@L["Menu:Workspaces"]" TypeTable="content" DocId="@EditingDocId"
+                                   Url='/SystemAdministration/Workspaces' IsInteractionFormDisabled="@(EditingDocId != Guid.Empty ? false : true)" />
+        </Div>
+    </Div>
+</Row>
+ 
+
+<HotkeyHandler OnCtrlS="HandleCtrlS" OnCtrlB="HandleCtrlB" />
+<HQSOFTBreadcrumbScreen @ref="BreadcrumbScreen"
+                        BreadcrumbItems="BreadcrumbItems" ModuleCode="SA"
+                        ScreenUrl="/SystemAdministration/Workspaces" ScreenName="Menu:Workspaces" IsEditForm="true" /> 

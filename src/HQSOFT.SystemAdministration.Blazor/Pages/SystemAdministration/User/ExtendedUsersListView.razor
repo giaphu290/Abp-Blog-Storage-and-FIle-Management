@@ -1,0 +1,375 @@
+@page "/SystemAdministration/Users"
+
+
+@attribute [Authorize(CoreBackendPermissions.ExtendedUsers.Default)]
+@using global::HQSOFT.Common.Blazor.Pages.Component
+@using global::HQSOFT.Common.Blazor.Pages.Component.Toolbar
+@using global::HQSOFT.CoreBackend.SalesAndDeliveries
+@using global::HQSOFT.CoreBackend.Territories
+@using global::HQSOFT.CoreBackend.States
+@using global::HQSOFT.CoreBackend.Provinces
+@using global::HQSOFT.CoreBackend.SalesChannels
+@using global::HQSOFT.CoreBackend.ExtendedUsers
+@using global::HQSOFT.CoreBackend.RouteTypes
+@using global::HQSOFT.CoreBackend.Permissions
+@using global::HQSOFT.CoreBackend.Localization
+@using global::HQSOFT.CoreBackend.Shared  @using global::HQSOFT.CoreBackend.Workspaces
+
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Forms
+
+@using Blazorise
+@using Blazorise.Components
+@using Blazorise.DataGrid
+
+@using Volo.Abp.BlazoriseUI
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.ObjectMapping
+@using Volo.Abp.AspNetCore.Components.BlockUi
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.Notifications
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+
+@using Volo.Abp.AspNetCore.Components.Web
+@using Volo.Abp.Http.Client
+
+@inherits SystemAdministrationComponentBase
+@inject NavigationManager NavigationManager
+
+@inject IUiNotificationService UiNotificationService
+@inject IUiMessageService UiMessageService
+@inject IPageProgressService PageProgressService
+@inject IBlockUiService BlockUiService
+
+@inject IJSRuntime JSRuntime
+@inject IRemoteServiceConfigurationProvider RemoteServiceConfigurationProvider  
+@inject IWorkspacesAppService WorkspacesAppService
+
+@inject IStatesAppService StatesAppService
+@inject IProvincesAppService ProvincesAppService
+@inject IRouteTypesAppService RouteTypesAppService
+@inject ITerritoriesAppService TerritoriesAppService
+@inject ISalesChannelsAppService SalesChannelsAppService
+@inject IExtendedUsersAppService ExtendedUsersAppService
+@inject ISalesAndDeliveriesAppService SalesAndDeliveriesAppService
+
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["Menu:ExtendedUser"]" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
+
+</PageHeader>
+
+
+
+@* ************************* SEARCH ************************* *@
+<Card>
+    <CardBody>
+        <div style="display: @(!ShowAdvancedFilters ? "none" : "block")">
+            <Row>
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["Code"]</FieldLabel>
+                        <DxTextBox Text="@Filter.Code" BindValueMode="BindValueMode.OnInput"
+                                   TextExpression="@(() => Filter.Code)"
+                                   TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.Code), value))" />
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["Name"]</FieldLabel>
+                        <DxTextBox Text="@Filter.Name" BindValueMode="BindValueMode.OnInput"
+                                   TextExpression="@(() => Filter.Name)"
+                                   TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.Name), value))" />
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["Surname"]</FieldLabel>
+                        <DxTextBox Text="@Filter.Surname" BindValueMode="BindValueMode.OnInput"
+                                   TextExpression="@(() => Filter.Surname)"
+                                   TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.Surname), value))" />
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["TerritoryId"]</FieldLabel>
+                        <DxComboBox Data="@FilterTerritoriesCollection"
+                                    Value="@Filter.TerritoryId"
+                                    ValueExpression="(() => Filter.TerritoryId)"
+                                    ValueChanged="@(async (Guid? newValue) => {
+                                                          Filter.TerritoryId = newValue;
+                                                          await OnFilterChanged(nameof(Filter.TerritoryId),newValue);})"
+                                    ValueFieldName="@nameof(TerritoryDto.Id)"
+                                    TextFieldName="@nameof(TerritoryDto.Description)"
+                                    EditFormat="{1}"
+                                    DisplayFormat="{1}"
+                                    InputCssClass="focus-value"
+                                    ShowValidationIcon="true"
+                                    DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                    SearchMode="ListSearchMode.AutoSearch"
+                                    SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                    SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                    ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                            <Columns>
+                                <DxListEditorColumn FieldName="@nameof(TerritoryDto.Code)"
+                                                    Caption="@L["Code"]" />
+                                <DxListEditorColumn FieldName="@nameof(TerritoryDto.Description)"
+                                                    Caption="@L["Description"]" />
+                            </Columns>
+                        </DxComboBox>
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["ProvinceId"]</FieldLabel>
+                        <DxComboBox Data="@FilterProvincesCollection"
+                                    Value="@Filter.ProvinceId"
+                                    ValueExpression="(() => Filter.ProvinceId)"
+                                    ValueChanged="@(async (Guid? newValue) => {
+                                                          Filter.ProvinceId = newValue;
+                                                          await OnFilterChanged(nameof(Filter.ProvinceId),newValue);})"
+                                    ValueFieldName="@nameof(ProvinceDto.Id)"
+                                    TextFieldName="@nameof(ProvinceDto.Description)"
+                                    EditFormat="{1}"
+                                    DisplayFormat="{1}"
+                                    InputCssClass="focus-value"
+                                    ShowValidationIcon="true"
+                                    DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                    SearchMode="ListSearchMode.AutoSearch"
+                                    SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                    SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                    ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                            <Columns>
+                                <DxListEditorColumn FieldName="@nameof(ProvinceDto.Code)"
+                                                    Caption="@L["Code"]" />
+                                <DxListEditorColumn FieldName="@nameof(ProvinceDto.Description)"
+                                                    Caption="@L["Description"]" />
+                            </Columns>
+                        </DxComboBox>
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["Status"]</FieldLabel>
+                        <DxComboBox Data="@StatusOptions"
+                                    Value="@Filter.Status"
+                                    ValueExpression="(() => Filter.Status)"
+                                    ValueChanged="@(async (bool? newValue) => {
+                                        Filter.Status = newValue;
+                                        await OnFilterChanged(nameof(Filter.Status), newValue);
+                                    })"
+                                    ValueFieldName="Key"
+                                    TextFieldName="Value"
+                                    EditFormat="{0}"
+                                    DisplayFormat="{0}"
+                                    InputCssClass="focus-value"
+                                    ShowValidationIcon="true"
+                                    DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                    SearchMode="ListSearchMode.AutoSearch"
+                                    SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                    SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                    ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                            <Columns>
+                                <DxListEditorColumn FieldName="Value" Caption="@L["DisplayName"]" />
+                            </Columns>
+                        </DxComboBox>
+                    </Field>
+                </Column>
+            </Row>
+        </div>
+
+        <Row>
+            <Column ColumnSize="ColumnSize.Is6">
+                @if (!ShowAdvancedFilters)
+                {
+                    <Form id="DocSearchForm" class="mb-3">
+                        <Addons>
+                            <Addon AddonType="AddonType.Body">
+                                <TextEdit Text="@Filter.FilterText" TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.FilterText),value))"
+                                          Autofocus="true"
+                                          Placeholder="@L["Search"]">
+                                </TextEdit>
+                            </Addon>
+                            <Addon AddonType="AddonType.End">
+                                <SubmitButton Form="DocSearchForm" Clicked="@(()=>GetDataAsync(true))">
+                                    <Icon Name="IconName.Search" Class="me-1"></Icon>@L["Search"]
+                                </SubmitButton>
+                            </Addon>
+                        </Addons>
+                    </Form>
+                }
+            </Column>
+
+            <Column ColumnSize="ColumnSize.Is6">
+                <Div Style="text-align: right;">
+                    <Button Background="Background.Default" Clicked="() => ShowAdvancedFilters = !ShowAdvancedFilters">
+                        @L["SeeAdvancedFilters"]
+                        <Icon Name="@(ShowAdvancedFilters ? IconName.ExpandLess : IconName.ExpandMore)" Class="me-1" />
+                    </Button>
+                </Div>
+            </Column>
+        </Row>
+    </CardBody>
+</Card>
+
+@* ************************* DATA GRID ************************* *@
+<Card>
+    <CardBody>
+
+        <DataGrid TItem="ExtendedUserWithNavigationPropertiesDto"
+                  Data="DocList"
+                  ReadData="OnDataGridReadAsync"
+                  TotalItems="TotalCount"
+                  Sortable
+                  ShowPager
+                  Responsive
+                  ShowPageSizes
+                  PageSize="PageSize"
+                  PageSizeChanged="PageSizeChanged"
+                  SortMode="DataGridSortMode.Single"
+                  PageSizes="@(new int[] { 20, 100, 500, 2500 })"
+                  SelectedRows="SelectedDocs"
+                  SelectionMode="Blazorise.DataGrid.DataGridSelectionMode.Multiple"
+                  SelectedRowsChanged="@((List<ExtendedUserWithNavigationPropertiesDto> e) => SelectedRowsChanged(e))">
+            <LoadingTemplate>
+                <Row Class="w-100 align-items-center" Style="height: 150px;">
+                    <Column>
+                        <RadarSpinner />
+                    </Column>
+                </Row>
+            </LoadingTemplate>
+            <EmptyTemplate>
+                <Row Class="w-100 align-items-center" Style="height: 150px;">
+                    <Column>
+                        <Heading Size="HeadingSize.Is4" TextAlignment="TextAlignment.Center">@L["NoDataAvailable"]</Heading>
+                    </Column>
+                </Row>
+            </EmptyTemplate>
+            <DataGridColumns>
+                <DataGridMultiSelectColumn TItem="ExtendedUserWithNavigationPropertiesDto" Width="1rem" />
+
+                <DataGridColumn TItem="ExtendedUserWithNavigationPropertiesDto"
+                                Field="ExtendedUser.Code"
+                                Filterable="false"
+                                Sortable="false"
+                                Caption="#"
+                                Width="2rem">
+                    <DisplayTemplate>
+                        @if (context != null && DocList != null)
+                        {
+                            int index = (CurrentPage - 1) * PageSize + DocList.ToList().IndexOf(context) + 1;
+                            @index
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="ExtendedUserWithNavigationPropertiesDto"
+                                Field="ExtendedUser.Code"
+                                Caption="@L["Code"]"
+                                Sortable="true">
+                    <DisplayTemplate>
+                        @if (context.ExtendedUser.Code != null)
+                        {
+                            string truncatedCode = TruncateText(context.ExtendedUser.Code, 20);
+                            <a title="@L[$"{context.ExtendedUser.Code}"]" class="d-block text-left" href="javascript:;"
+                               @onclick="() => GotoEditPage(context.ExtendedUser.Id)">
+                                @truncatedCode
+                            </a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="ExtendedUserWithNavigationPropertiesDto"
+                                Width="20rem"
+                                Field="ExtendedUser.Name"
+                                Caption="@L["Name"]">
+                    <DisplayTemplate>
+                        @if (context.ExtendedUser.Name != null)
+                        {
+                            string truncatedCode = TruncateText(context.ExtendedUser.Name, 30);
+                            <a title="@L[$"{context.ExtendedUser.Name}"]">@truncatedCode</a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="ExtendedUserWithNavigationPropertiesDto"
+                                Width="20rem"
+                                Field="ExtendedUser.Surname"
+                                Caption="@L["Surname"]">
+                    <DisplayTemplate>
+                        @if (context.ExtendedUser.Surname != null)
+                        {
+                            string truncatedCode = TruncateText(context.ExtendedUser.Surname, 30);
+                            <a title="@L[$"{context.ExtendedUser.Surname}"]">@truncatedCode</a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="ExtendedUserWithNavigationPropertiesDto"
+                                Width="20rem"
+                                Field="ExtendedUser.TerritoryId"
+                                Caption="@L["TerritoryId"]">
+                    <DisplayTemplate>
+                        @if (context.ExtendedUser.TerritoryId != null)
+                        {
+                            var valueCode = TerritoryCollection.FirstOrDefault(x => x.Id == context.ExtendedUser.TerritoryId)?.Description;
+                            if (valueCode != null)
+                            {
+                                string truncatedCode = TruncateText(valueCode, 30);
+                                <a title="@L[$"{valueCode}"]">@truncatedCode</a>
+                            }
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="ExtendedUserWithNavigationPropertiesDto"
+                                Width="20rem"
+                                Field="ExtendedUser.ProvinceId"
+                                Caption="@L["ProvinceId"]">
+                    <DisplayTemplate>
+                        @if (context.ExtendedUser.ProvinceId != null)
+                        {
+                            var valueCode = ProvinceCollection.FirstOrDefault(x => x.Id == context.ExtendedUser.ProvinceId)?.Description;
+                            if (valueCode != null)
+                            {
+                                string truncatedCode = TruncateText(valueCode, 30);
+                                <a title="@L[$"{valueCode}"]">@truncatedCode</a>
+                            }
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="ExtendedUserWithNavigationPropertiesDto"
+                                Field="ExtendedUser.Status"
+                                Caption="@L["Status"]">
+                    <DisplayTemplate>
+                        @if (context.ExtendedUser.Status)
+                        {
+                            <Badge Color="Color.Success">@L["Active"]</Badge>
+                        }
+                        else
+                        {
+                            <Badge Color="Color.Danger">@L["UnActive"]</Badge>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+            </DataGridColumns>
+
+        </DataGrid>
+    </CardBody>
+</Card> 
+
+
+<HQSOFTBreadcrumbScreen @ref="BreadcrumbScreen"
+                        BreadcrumbItems="BreadcrumbItems" ModuleCode="SA"
+                        ScreenUrl="/SystemAdministration/Users" ScreenName="Menu:Users" IsEditForm="false" /> 

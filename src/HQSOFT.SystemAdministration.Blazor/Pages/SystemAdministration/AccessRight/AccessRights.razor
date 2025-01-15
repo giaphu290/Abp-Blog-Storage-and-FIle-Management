@@ -1,0 +1,381 @@
+﻿@page "/SystemAdministration/AccessRights"
+
+
+@using global::HQSOFT.Common.Blazor.Pages.Component
+@using global::HQSOFT.Common.Blazor.Pages.Component.Toolbar
+@using global::HQSOFT.CoreBackend.Utils
+@using global::HQSOFT.CoreBackend.EnumList
+@using global::HQSOFT.CoreBackend.Companies
+@using global::HQSOFT.CoreBackend.Localization
+@using global::HQSOFT.CoreBackend.Shared  @using global::HQSOFT.CoreBackend.Workspaces
+@using global::HQSOFT.CoreBackend.Permissions
+
+@using System.Security
+@using Microsoft.Extensions.Options
+@using System.Text.RegularExpressions
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components
+@using Microsoft.Extensions.Localization
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.Extensions.Configuration
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+@using Blazorise
+@using Blazorise.DataGrid
+@using Blazorise.Components
+@using DevExpress.Blazor
+
+@using Volo.Abp.Identity
+@using Volo.Abp.Http.Client
+@using Volo.Abp.BlazoriseUI
+@using Volo.Abp.ObjectMapping
+@using Volo.Abp.AspNetCore.Components.Web.Configuration
+@using Volo.Abp.Authorization.Permissions
+@using Volo.Abp.Localization
+@using Volo.Abp.PermissionManagement
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.AspNetCore.Components.Web
+@using Volo.Abp.AspNetCore.Components.BlockUi
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.Progression
+@using Volo.Abp.AspNetCore.Components.Notifications
+@using Volo.Abp.PermissionManagement.Localization
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+
+
+@inherits SystemAdministrationComponentBase
+@inject NavigationManager NavigationManager
+@inject ChangeIconToggleSidebar ChangeIconToggleSidebar
+@inject IOptions<AbpLocalizationOptions> LocalizationOptions
+
+@inject IBlockUiService BlockUiService
+@inject IPageProgressService PageProgressService
+@inject IUiNotificationService UiNotificationService
+@inject IUiMessageService UiMessageService
+
+@inject IJSRuntime JSRuntime
+@inject IUtilsAppService UtilsAppService
+@inject ICompaniesAppService CompaniesAppService
+@inject IPermissionAppService PermissionAppService
+@inject IIdentityRoleAppService IdentityRoleAppService
+@inject IIdentityUserAppService IdentityUserAppService
+@inject IRemoteServiceConfigurationProvider RemoteServiceConfigurationProvider  
+@inject IWorkspacesAppService WorkspacesAppService
+@inject ICurrentApplicationConfigurationCacheResetService CurrentApplicationConfigurationCacheResetService
+
+
+@* **************************************** PAGE HEADER **************************************** *@
+<PageHeader Title="@L["Menu:AccessRights"]" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
+</PageHeader>
+
+
+@* **************************************** PAGE BODY ****************************************** *@
+
+<Row>
+    <Column>
+        <Card>
+            <CardBody>
+                <Row>
+                    <Column ColumnSize="ColumnSize.Is4">
+                        <Label for="cbVirtualScrolling" class="demo-text cw-480 mb-1">
+                            @L["Access Right Types"]
+                        </Label>
+                        <DxComboBox DropDownWidthMode="DropDownWidthMode.EditorWidth" Data="@AccessTypeLists"
+                                    Value="AccessRightType"
+                                    ValueChanged="@(async(string value) => { await AuthorizeSelectedCategoryAsync(value);})"
+                                    SearchMode="@ListSearchMode.None"
+                                    TextFieldName="@nameof(AccessTypeList.Value)"
+                                    ValueFieldName="@nameof(AccessTypeList.Value)"
+                                    ListRenderMode="ListRenderMode.Virtual"
+                                    InputCssClass="focus-value"
+                                    ShowValidationIcon="true"
+                                    InputId="cbVirtualScrolling">
+
+                        </DxComboBox>
+                    </Column>
+
+                    @if (CheckAuthorization == "Group")
+                    {
+                        <Column ColumnSize="ColumnSize.Is4">
+                            <Label for="cbVirtualScrolling" class="demo-text cw-480 mb-1">
+                                @L["Group"]
+                            </Label>
+                            <DxComboBox Data="@RoleCollection"
+                                        Value="EditingRole"
+                                        ValueChanged="@(async(IdentityRoleDto value) => {
+                                                if (value != null)
+                                                {
+                                                    IsDisplayPermission = true;
+                                                    EditingRole = value;
+                                                    await OpenAsync("R", value.Name);
+                                                } })" 
+                                        TextFieldName="@nameof(IdentityRoleDto.Name)"
+                                        ValueFieldName="@nameof(IdentityRoleDto.Id)"
+                                        ListRenderMode="ListRenderMode.Virtual"
+                                        InputCssClass="focus-value"
+                                        ShowValidationIcon="true"
+                                        InputId="cbVirtualScrolling"
+                                        DropDownWidthMode="DropDownWidthMode.EditorWidth"
+                                        SearchMode="ListSearchMode.AutoSearch"
+                                        SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                        SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                        ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                            </DxComboBox>
+                        </Column>
+                    }
+                    else
+                    {
+                        <Column ColumnSize="ColumnSize.Is4">
+                            <Label for="cbVirtualScrolling" class="demo-text cw-480 mb-1">
+                                @L["User"]
+                            </Label>
+                            <DxComboBox Data="@UserCollection"
+                                        Value="EditingUser"
+                                        ValueChanged="@(async(IdentityUserDto value) => {
+                                                if (value != null)
+                                                {
+                                                    IsDisplayPermission = true;
+                                                    EditingUser = value;
+                                                    await OpenAsync("U", value.Id.ToString());
+                                                } })"
+                                        TextFieldName="@nameof(IdentityUserDto.Name)"
+                                        ValueFieldName="@nameof(IdentityUserDto.Id)"
+                                        ShowValidationIcon="true"
+                                        InputCssClass="focus-value"
+                                        DisplayFormat="{0} - {1}" 
+                                        EditFormat="{0} - {1}"
+                                        InputId="cbVirtualScrolling"
+                                        ListRenderMode="ListRenderMode.Virtual"
+                                        SearchMode="ListSearchMode.AutoSearch"
+                                        SearchTextParseMode="ListSearchTextParseMode.GroupWordsByAnd"
+                                        SearchFilterCondition="ListSearchFilterCondition.Contains"
+                                        DropDownWidthMode="DropDownWidthMode.EditorWidth">
+                                <Columns>
+                                    <DxListEditorColumn Caption="@L["UserName"]" FieldName="@nameof(IdentityUserDto.UserName)" />
+                                    <DxListEditorColumn Caption="@L["Email"]" FieldName="@nameof(IdentityUserDto.Email)" />
+                                </Columns>
+                            </DxComboBox>
+                        </Column>
+                    }
+                </Row>
+            </CardBody>
+        </Card>
+
+        <Card>
+            <CardBody>
+                <Row>
+                    <Column ColumnSize="ColumnSize.Is12">
+                        @if (IsDisplayPermission)
+                        {
+                            @if (_groups != null)
+                            {
+                                <div style="position: relative;">
+                                    <Tabs TabPosition="TabPosition.Start" Pills="true"
+                                          SelectedTab="@_selectedTabName" SelectedTabChanged="@((string newTab)=>OnTabChanged(newTab))">
+                                        <Items>
+                                            @foreach (var group in _groups)
+                                            {
+                                                <Tab Name="@GetNormalizedGroupName(group.Name)">
+                                                    @if (group.Permissions.Any(x => x.IsGranted))
+                                                    {
+                                                        <span>
+                                                            <b>@group.DisplayName ( @(group.Permissions.Count(x => x.IsGranted)) )</b>
+                                                        </span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>
+                                                            @group.DisplayName ( @(group.Permissions.Count(x => x.IsGranted)) )
+                                                        </span>
+                                                    }
+                                                </Tab>
+                                            }
+                                        </Items>
+                                        <Content>
+                                            @* ------------------------ Danh sách nhóm quyền ------------------------ *@
+                                            @foreach (var group in _groups)
+                                            {
+                                                var dropDownId = "dropDown-position-" + @group.Name;
+                                                var positionTarget = "#dropdown-position-target-container-" + @group.Name;
+
+                                                <TabPanel Name="@GetNormalizedGroupName(group.Name)">
+                                                    <Div>
+                                                        <Row>
+                                                            <Column ColumnSize="ColumnSize.Is2">
+                                                                <Heading Size="HeadingSize.Is5" TextAlignment="TextAlignment.Start">
+                                                                    <Strong>@L["Search: "]</Strong>
+                                                                </Heading>
+                                                            </Column>
+                                                            <Column ColumnSize="ColumnSize.Is6">
+                                                                <div id="dropdown-position-target-container-@group.Name">
+                                                                    <DxTextBox NullText="Please enter the exact screen name for searching..."
+                                                                               Text="@SearchKeyword"
+                                                                               TextExpression="@(() => SearchKeyword)"
+                                                                               TextChanged="OnSearchTextChanged"
+                                                                               BindValueMode="BindValueMode.OnDelayedInput"
+                                                                               InputDelay="600">
+                                                                        <Buttons>
+                                                                            <DxEditorButton IconCssClass="fa fa-angle-down"
+                                                                                            Tooltip="@L["Select permission"]"
+                                                                                            Click="@(() => ToggleDropdown(group))" />
+                                                                        </Buttons>
+                                                                    </DxTextBox>
+                                                                </div>
+                                                                @if (SelectedGroup == group && IsOpen)
+                                                                {
+                                                                    <DxDropDown IsOpen="IsOpen"
+                                                                                Id="@dropDownId"
+                                                                                Width="max(32.9rem, 250px)"
+                                                                                PositionTarget="@positionTarget"
+                                                                                PositionMode="DropDownPositionMode.Bottom"
+                                                                                CloseMode="DropDownCloseMode.Close"
+                                                                                PreventCloseOnPositionTargetClick>
+                                                                        <BodyContentTemplate>
+                                                                            <DxGrid Data="@SelectedGroup.Permissions.Where(x=>x.ParentName == null)"
+                                                                                    SelectedDataItems="@SelectedPermissions"
+                                                                                    SelectedDataItemsChanged="OnSearchSelectChanged"
+                                                                                    PageSize="5"
+                                                                                    ShowSearchBox
+                                                                                    HighlightRowOnHover
+                                                                                    AllowSelectRowByClick
+                                                                                    TextWrapEnabled="false"
+                                                                                    SelectionMode="GridSelectionMode.Multiple"
+                                                                                    PagerNavigationMode="PagerNavigationMode.NumericButtons"
+                                                                                    SearchTextParseMode="GridSearchTextParseMode.GroupWordsByAnd"
+                                                                                    SelectAllCheckboxMode="GridSelectAllCheckboxMode.AllPages"
+                                                                                    CssClass="templateGrid">
+                                                                                <Columns>
+                                                                                    <DxGridSelectionColumn Width="2%" />
+                                                                                    <DxGridDataColumn FieldName="@nameof(PermissionGroupDto.DisplayName)">
+                                                                                        <CellDisplayTemplate Context="cellContext">
+                                                                                            @{
+                                                                                                var value = cellContext.Value as string;
+                                                                                                if (value != null)
+                                                                                                {
+                                                                                                    <span>@value</span>
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    <span> </span>
+                                                                                                }
+                                                                                            }
+                                                                                        </CellDisplayTemplate>
+                                                                                    </DxGridDataColumn>
+                                                                                </Columns>
+                                                                            </DxGrid>
+                                                                        </BodyContentTemplate>
+                                                                    </DxDropDown>
+                                                                }
+                                                            </Column>
+                                                        </Row>
+                                                    </Div>
+                                                    <br />
+                                                    <Field>
+                                                        <Check Disabled="@(IsPermissionGroupDisabled(group))"
+                                                               Checked="@(group.Permissions.Where(x => !IsPermissionGroupDisabled(group)).All(x => x.IsGranted))"
+                                                               Cursor="Cursor.Pointer"
+                                                               CheckedChanged="@(b => GroupGrantAllChanged(b, group))"
+                                                               TValue="bool">
+                                                            @L["Select All"]
+                                                        </Check>
+                                                    </Field>
+
+                                                    <Divider />
+                                                    <br />
+
+                                                    <Row>
+                                                        @if (group.Permissions.Any(x => x.Name.Contains("Create") || x.Name.Contains("Edit") || x.Name.Contains("Update") || x.Name.Contains("Delete")))
+                                                        {
+                                                            <Column ColumnSize="ColumnSize.Is3">
+                                                                <Label>
+                                                                    @L["Select permissions by action group:"]
+                                                                </Label>
+                                                            </Column>
+
+                                                            @if (group.Permissions.Where(x => x.Name.Contains("Create")).Any())
+                                                            {
+                                                                <Column ColumnSize="ColumnSize.Is3">
+                                                                    <Field>
+                                                                        <Check Disabled="@(IsPermissionGroupDisabled(group))"
+                                                                               Checked="@(group.Permissions.Where(x => x.Name.Contains("Create") && !IsPermissionGroupDisabled(group)).All(x => x.IsGranted))"
+                                                                               Cursor="Cursor.Pointer"
+                                                                               CheckedChanged="@(b => CreateGrantAllChanged(b, group))"
+                                                                               TValue="bool">
+                                                                            @L["Create"]
+                                                                        </Check>
+                                                                    </Field>
+                                                                </Column>
+                                                            }
+
+                                                            @if (group.Permissions.Where(x => x.Name.Contains("Edit") || x.Name.Contains("Update")).Any())
+                                                            {
+                                                                <Column ColumnSize="ColumnSize.Is3">
+                                                                    <Field>
+                                                                        <Check Disabled="@(IsPermissionGroupDisabled(group))"
+                                                                               Checked="@(group.Permissions.Where(x => (x.Name.Contains("Edit") || x.Name.Contains("Update")) && !IsPermissionGroupDisabled(group)).All(x => x.IsGranted))"
+                                                                               Cursor="Cursor.Pointer"
+                                                                               CheckedChanged="@(b => UpdateGrantAllChanged(b, group))"
+                                                                               TValue="bool">
+                                                                            @L["Update/Edit"]
+                                                                        </Check>
+                                                                    </Field>
+                                                                </Column>
+                                                            }
+
+                                                            @if (group.Permissions.Where(x => x.Name.Contains("Delete")).Any())
+                                                            {
+                                                                <Column ColumnSize="ColumnSize.Is3">
+                                                                    <Field>
+                                                                        <Check Disabled="@(IsPermissionGroupDisabled(group))"
+                                                                               Checked="@(group.Permissions.Where(x => x.Name.Contains("Delete") && !IsPermissionGroupDisabled(group)).All(x => x.IsGranted))"
+                                                                               Cursor="Cursor.Pointer"
+                                                                               CheckedChanged="@(b => DeleteGrantAllChanged(b, group))"
+                                                                               TValue="bool">
+                                                                            @L["Delete"]
+                                                                        </Check>
+                                                                    </Field>
+                                                                </Column>
+                                                            }
+                                                        }
+                                                    </Row>
+                                                    <br />
+
+                                                </TabPanel>
+
+                                                <TabPanel Style="max-height:50rem; overflow-y: auto;" Name="@GetNormalizedGroupName(group.Name)">
+                                                    @foreach (var permission in group.Permissions.Where(p => IsPermissionSelectedVisible(p.Name) ||
+                                                                (GetParentPermissionName(p.Name) != null && IsPermissionSelectedVisible(GetParentPermissionName(p.Name)))))
+                                                    {
+                                                        <Field Style="@($"margin-inline-start: {GetPermissionDepthOrDefault(permission.Name) * 20}px")">
+                                                            <Check Disabled="@(IsDisabledPermission(permission))"
+                                                                   Cursor="Cursor.Pointer"
+                                                                   Checked="@permission.IsGranted"
+                                                                   CheckedChanged="@(b => PermissionChanged(b, group, permission))"
+                                                                   TValue="bool">
+                                                                @GetShownName(permission)
+                                                            </Check>
+                                                        </Field>
+                                                    }
+                                                </TabPanel>
+
+                                            }
+                                        </Content>
+                                    </Tabs>
+                                </div>
+                            }
+                        }
+                    </Column>
+                </Row>
+            </CardBody>
+        </Card>
+    </Column>
+</Row>
+
+
+<HotkeyHandler OnCtrlS="HandleCtrlS" />
+<HQSOFTBreadcrumbScreen @ref="BreadcrumbScreen"
+                        BreadcrumbItems="BreadcrumbItems" ModuleCode="SA"
+                        ScreenUrl="/SystemAdministration/AccessRights" ScreenName="Menu:AccessRights" IsEditForm="false" /> 

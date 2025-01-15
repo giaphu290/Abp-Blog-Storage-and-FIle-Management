@@ -1,0 +1,308 @@
+@page "/containers"
+@using HQSOFT.SystemAdministration.BlobStorages
+@using HQSOFT.SystemAdministration.Containers
+@using HQSOFT.SystemAdministration.Localization
+@using Microsoft.JSInterop
+@using System.IO
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+@inherits SystemAdministrationComponentBase
+@inject IContainerAppService ContainerAppService
+@inject IJSRuntime JSRuntime
+@inject IBlobStorageService _blob;
+<CascadingValue Value="this">
+    @* ************************* PAGE HEADER ************************* *@
+    <PageHeader Title="@L["Containers"]" Toolbar="@Toolbar">
+    </PageHeader>
+    <Card>
+        <CardBody>
+            <DataGrid TItem="ContainerDto"
+                      Data="ContainerList"
+                      ReadData="OnDataGridReadAsync"
+                      CurrentPage="CurrentPage"
+                      TotalItems="TotalCount"
+                      ShowPager="true"
+                      PageSize="PageSize">
+                <DataGridColumns>
+                    <DataGridColumn Width="150px"
+                                    TItem="ContainerDto"
+                                    Field="@nameof(ContainerDto.Id)"
+                                    Sortable="false"
+                                    Caption="@L["Actions"]">
+                        <DisplayTemplate>
+                            <Dropdown>
+                                <DropdownToggle Color="Color.Primary">
+                                    @L["Actions"]
+                                </DropdownToggle>
+                                <DropdownMenu>
+                                    @if (CanEditContainer)
+                                    {
+                                        <DropdownItem Clicked="() => OpenEditContainerModal(context)">
+                                            @L["Edit"]
+                                        </DropdownItem>
+                                    }
+                                    @if (CanDeleteContainer)
+                                    {
+                                        <DropdownItem Clicked="() => DeleteContainerAsync(context)">
+                                            @L["Delete"]
+                                        </DropdownItem>
+                                    }
+                                </DropdownMenu>
+                            </Dropdown>
+                        </DisplayTemplate>
+                    </DataGridColumn>
+                    <DataGridColumn TItem="ContainerDto"
+                                    Field="@nameof(ContainerDto.Name)"
+                                    Caption="@L["Name"]"></DataGridColumn>
+                    <DataGridColumn TItem="ContainerDto"
+                                    Field="TypeStorage"
+                                    Caption="@L["TypeStorage"]">
+                        <DisplayTemplate>
+                            @context.TypeStorage
+                        </DisplayTemplate>
+
+                    </DataGridColumn>
+                    <DataGridColumn TItem="ContainerDto"
+                                    Field="@nameof(ContainerDto.BasePath)"
+                                    Caption="@L["Base Path"]">
+                        <DisplayTemplate>
+                            @if (context.BasePath != null)
+                            {
+                                if (context.BasePath != null)
+                                {
+                                    string truncatedCode = TruncateText(context.BasePath, 10);
+                                    <a title="@L[$"{context.BasePath}"]">@truncatedCode</a>
+                                }
+                            }
+                            else
+                            {
+                                <a> </a>
+                            }
+                        </DisplayTemplate>
+                                
+                                </DataGridColumn>
+                    <DataGridColumn TItem="ContainerDto"
+                                    Field="@nameof(ContainerDto.BucketName)"
+                                    Caption="@L["AWS bucket name"]"></DataGridColumn>
+                    <DataGridColumn TItem="ContainerDto"
+                                    Field="@nameof(ContainerDto.AccessKeyId)"
+                                    Caption="@L["AWS accesskey Id"]"></DataGridColumn>
+                    <DataGridColumn TItem="ContainerDto"
+                                    Field="@nameof(ContainerDto.SecretAccessKey)"
+                                    Caption="@L["AWS access key"]"></DataGridColumn>
+                    <DataGridColumn TItem="ContainerDto"
+                                    Field="@nameof(ContainerDto.Region)"
+                                    Caption="@L["AWS Region"]"></DataGridColumn>
+                    <DataGridColumn TItem="ContainerDto"
+                                    Field="@nameof(ContainerDto.AzureContainerName)"
+                                    Caption="@L["Azure Name"]"></DataGridColumn>
+                    <DataGridColumn TItem="ContainerDto"
+                                    Field="@nameof(ContainerDto.AzureConnectionString)"
+                                    Caption="@L["Azure Connection String"]">
+                        <DisplayTemplate>
+                            @if (context.AzureConnectionString != null)
+                            {
+                                if (context.AzureConnectionString != null)
+                                {
+                                    string truncatedCode = TruncateText(context.AzureConnectionString, 10);
+                                    <a title="@L[$"{context.AzureConnectionString}"]">@truncatedCode</a>
+                                }
+                            }
+                            else
+                            {
+                                <a> </a>
+                            }
+                        </DisplayTemplate>
+                    </DataGridColumn>
+                </DataGridColumns>
+
+            </DataGrid>
+        </CardBody>
+    </Card>
+
+    <Modal @ref="CreateContainerModal">
+        <ModalBackdrop />
+        <ModalContent IsCentered="true">
+            <ModalHeader>
+                <ModalTitle>@L["New Container"]</ModalTitle>
+                <CloseButton Clicked="CloseCreateContainerModal" />
+            </ModalHeader>
+            <ModalBody>
+                <Field>
+                    <FieldLabel>@L["Name"]</FieldLabel>
+                    <FieldHelp>@L["Filetype must be unique Ex: {name}{File type}"]</FieldHelp>
+                    <TextEdit @bind-text="@NewContainer.Name" />
+                </Field>
+
+                <Field>
+                    <FieldLabel>@L["Type Storage"]</FieldLabel>
+                    <Select TValue="string" @bind-SelectedValue="@NewContainer.TypeStorage">
+                        @foreach (var option in Enum.GetValues<TypeStorage>())
+                        {
+                            <SelectItem Value="@option.ToString()">@option.ToString()</SelectItem>
+                        }
+                    </Select>
+                </Field>
+                  @if (NewContainer.TypeStorage == "FileSystem")
+                {
+                    <Field>
+                        <FieldLabel>@L["Base Path"]</FieldLabel>
+                        <Select TValue="string" @bind-SelectedValue="@NewContainer.BasePath">
+                            @foreach (var option in ContainerFolder)
+                            {
+                                var folderName = Path.GetFileName(option); 
+                                <SelectItem Value="@option">@folderName</SelectItem>
+                            }
+                        </Select>
+                    </Field>
+                }
+                @if (NewContainer.TypeStorage == "AWS")
+                {
+                    <Field>
+                        <FieldLabel>@L[" Bucket name"]</FieldLabel>
+                        <FieldHelp>Enter your bucket name</FieldHelp>
+                        <TextEdit @bind-Text="@NewContainer.BucketName"></TextEdit>
+                    </Field>
+                    <Field>
+                        <FieldLabel>@L[" Access key Id"]</FieldLabel>
+                        <FieldHelp>Enter your accessKeyId</FieldHelp>
+                        <TextEdit @bind-Text="@NewContainer.AccessKeyId"></TextEdit>
+                    </Field>
+                    <Field>
+                        <FieldLabel>@L[" Secret access key"]</FieldLabel>
+                        <FieldHelp>Enter your secret access key</FieldHelp>
+                        <TextEdit @bind-Text="@NewContainer.SecretAccessKey"></TextEdit>
+                    </Field>
+                    <Field>
+                        <FieldLabel>@L[" Region"]</FieldLabel>
+                        <FieldHelp>Enter region</FieldHelp>
+                        <TextEdit @bind-Text="@NewContainer.Region"></TextEdit>
+                    </Field>
+                }
+                @if(NewContainer.TypeStorage == "Azure")
+                {
+                    <Field>
+                        <FieldLabel>@L["Azure container name"]</FieldLabel>
+                        <FieldHelp>Enter your azure container name</FieldHelp>
+                        <TextEdit @bind-Text="@NewContainer.AzureContainerName"></TextEdit>
+                    </Field>
+                    <Field>
+                        <FieldLabel>@L["Azure connection string"]</FieldLabel>
+                        <FieldHelp>Enter your azure connection string</FieldHelp>
+                        <TextEdit @bind-Text="@NewContainer.AzureConnectionString"></TextEdit>
+                    </Field>
+                }
+
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="CloseCreateContainerModal">
+                    @L["Cancel"]
+                </Button>
+                <Button Color="Color.Primary"
+                        Clicked="CreateContainerAsync">
+                    @L["Save"]
+                </Button>
+            </ModalFooter>
+
+        </ModalContent>
+    </Modal>
+
+    <Modal @ref="EditContainerModal">
+        <ModalBackdrop />
+        <ModalContent IsCentered="true">
+            <ModalHeader>
+                <ModalTitle>@EditingContainer.Name</ModalTitle>
+                <CloseButton Clicked="CloseEditContainerModal" />
+            </ModalHeader>
+            <ModalBody>
+                <Field>
+                    <FieldLabel>@L["Name"]</FieldLabel>
+                    <FieldHelp>@L["Filetype must be unique Ex: {name}{File type}"]</FieldHelp>
+                    <TextEdit @bind-text="@EditingContainer.Name" />
+                </Field>
+                <Field>
+                    <FieldLabel>@L["Type Storage"]</FieldLabel>
+                    <Select TValue="string" @bind-SelectedValue="@EditingContainer.TypeStorage">
+                        @foreach (var option in Enum.GetValues<TypeStorage>())
+                        {
+                            <SelectItem  Value="@option.ToString()">@option.ToString()</SelectItem>
+                        }
+                    </Select>
+                </Field>
+                @if (EditingContainer.TypeStorage == "FileSystem")
+                {
+                    <Field>
+                        <FieldLabel>@L["Base Path"]</FieldLabel>
+                        <Select TValue="string" @bind-SelectedValue="@EditingContainer.BasePath">
+                            @foreach (var option in ContainerFolder)
+                            {
+                                var folderName = Path.GetFileName(option);
+                                <SelectItem Value="@option">@folderName</SelectItem>
+                            }
+                        </Select>
+                    </Field>
+                }
+                @if (EditingContainer.TypeStorage == "AWS")
+                {
+                    <Field >
+                        <FieldLabel>@L[" Bucket name"]</FieldLabel>
+                        <FieldHelp>Enter your bucket name</FieldHelp>
+                        <TextEdit @bind-Text="@EditingContainer.BucketName"></TextEdit>
+                    </Field>
+                    <Field>
+                        <FieldLabel>@L[" Access key Id"]</FieldLabel>
+                        <FieldHelp>Enter your accessKeyId</FieldHelp>
+                        <TextEdit @bind-Text="@EditingContainer.AccessKeyId"></TextEdit>
+                    </Field>
+                    <Field>
+                        <FieldLabel>@L[" Secret access key"]</FieldLabel>
+                        <FieldHelp>Enter your secret access key</FieldHelp>
+                        <TextEdit @bind-Text="@EditingContainer.SecretAccessKey"></TextEdit>
+                    </Field>
+                    <Field>
+                        <FieldLabel>@L[" Region"]</FieldLabel>
+                        <FieldHelp>Enter region</FieldHelp>
+                        <TextEdit @bind-Text="@EditingContainer.Region"></TextEdit>
+                    </Field>
+                }
+                @if (EditingContainer.TypeStorage == "Azure")
+                {
+                    <Field>
+                        <FieldLabel>@L["Azure container name"]</FieldLabel>
+                        <FieldHelp>Enter your azure container name</FieldHelp>
+                        <TextEdit @bind-Text="@EditingContainer.AzureContainerName"></TextEdit>
+                    </Field>
+                    <Field>
+                        <FieldLabel>@L["Azure connection string"]</FieldLabel>
+                        <FieldHelp>Enter your azure connection string</FieldHelp>
+                        <TextEdit @bind-Text="@EditingContainer.AzureConnectionString"></TextEdit>
+                    </Field>
+                }
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="CloseEditContainerModal">
+                    @L["Cancel"]
+                </Button>
+                <Button Color="Color.Primary"
+                        Clicked="UpdateContainerAsync">
+                    @L["Save"]
+                </Button>
+            </ModalFooter>
+        </ModalContent>
+    </Modal>
+
+    <Modal @ref="ErrorModal">
+            <ModalBackdrop />
+           <ModalContent IsCentered="true">
+        <ModalBody>
+            <div>
+                @ErrorMessage
+            </div>
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Primary" Clicked="CloseErrorModal">Close</Button>
+        </ModalFooter>
+        </ModalContent>
+    </Modal>
+</CascadingValue>

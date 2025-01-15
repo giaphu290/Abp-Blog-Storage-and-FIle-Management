@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>HQSOFT.SystemAdministration</RootNamespace>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="HQSOFT.CoreBackend.Domain.Shared" Version="1.0.0" />
+	  <PackageReference Include="Volo.Abp.BlobStoring.Database.Domain.Shared" Version="8.3.0" />
+	  <!--<PackageReference Include="HQSOFT.Common.Domain.Shared" Version="1.0.0" />-->
+    <PackageReference Include="Volo.Abp.Ddd.Domain.Shared" Version="8.3.0" />
+    <PackageReference Include="Volo.Abp.Validation" Version="8.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="8.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\SystemAdministration\*.json" />
+    <Content Remove="Localization\SystemAdministration\*.json" />
+  </ItemGroup>
+
+</Project>

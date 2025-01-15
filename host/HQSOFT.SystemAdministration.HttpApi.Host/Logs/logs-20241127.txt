@@ -1,0 +1,1012 @@
+2024-11-27 10:13:44.404 +07:00 [INF] Starting web host.
+2024-11-27 10:15:44.698 +07:00 [INF] Loaded ABP modules:
+2024-11-27 10:15:44.701 +07:00 [INF] - HQSOFT.SystemAdministration.SystemAdministrationHttpApiHostModule
+2024-11-27 10:15:44.702 +07:00 [INF]   - HQSOFT.SystemAdministration.SystemAdministrationApplicationModule
+2024-11-27 10:15:44.702 +07:00 [INF]     - HQSOFT.SystemAdministration.SystemAdministrationDomainModule
+2024-11-27 10:15:44.702 +07:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2024-11-27 10:15:44.702 +07:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.Data.AbpDataModule
+2024-11-27 10:15:44.702 +07:00 [INF]             - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-11-27 10:15:44.702 +07:00 [INF]               - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-11-27 10:15:44.702 +07:00 [INF]               - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-11-27 10:15:44.702 +07:00 [INF]             - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-11-27 10:15:44.702 +07:00 [INF]             - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2024-11-27 10:15:44.702 +07:00 [INF]             - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-11-27 10:15:44.702 +07:00 [INF]               - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-11-27 10:15:44.702 +07:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2024-11-27 10:15:44.702 +07:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2024-11-27 10:15:44.702 +07:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-11-27 10:15:44.702 +07:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2024-11-27 10:15:44.702 +07:00 [INF]                     - Volo.Abp.Security.AbpSecurityModule
+2024-11-27 10:15:44.702 +07:00 [INF]                   - Volo.Abp.Threading.AbpThreadingModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-11-27 10:15:44.702 +07:00 [INF]             - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-11-27 10:15:44.702 +07:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-11-27 10:15:44.702 +07:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-11-27 10:15:44.702 +07:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-11-27 10:15:44.702 +07:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-11-27 10:15:44.702 +07:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2024-11-27 10:15:44.702 +07:00 [INF]         - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-11-27 10:15:44.702 +07:00 [INF]       - HQSOFT.SystemAdministration.SystemAdministrationDomainSharedModule
+2024-11-27 10:15:44.702 +07:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2024-11-27 10:15:44.702 +07:00 [INF]         - HQSOFT.CoreBackend.CoreBackendDomainSharedModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.Identity.AbpIdentityProDomainSharedModule
+2024-11-27 10:15:44.702 +07:00 [INF]             - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-11-27 10:15:44.702 +07:00 [INF]               - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-11-27 10:15:44.702 +07:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-11-27 10:15:44.702 +07:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-11-27 10:15:44.702 +07:00 [INF]             - Volo.Abp.Ldap.AbpLdapAbstractionsModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainSharedModule
+2024-11-27 10:15:44.702 +07:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainSharedModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainSharedModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.FileManagement.FileManagementDomainSharedModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.LanguageManagement.LanguageManagementDomainSharedModule
+2024-11-27 10:15:44.703 +07:00 [INF]       - HQSOFT.CoreBackend.CoreBackendDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2024-11-27 10:15:44.703 +07:00 [INF]             - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.Identity.AbpIdentityProDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]             - Volo.Abp.Users.AbpUsersDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.Ldap.AbpLdapModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.Gdpr.AbpGdprAbstractionsModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.FileManagement.FileManagementDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]           - Volo.Abp.BlobStoring.AbpBlobStoringModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]         - Volo.Abp.LanguageManagement.LanguageManagementDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]       - Volo.Abp.BlobStoring.Azure.AbpBlobStoringAzureModule
+2024-11-27 10:15:44.703 +07:00 [INF]       - Volo.Abp.BlobStoring.Aws.AbpBlobStoringAwsModule
+2024-11-27 10:15:44.703 +07:00 [INF]       - Volo.Abp.BlobStoring.FileSystem.AbpBlobStoringFileSystemModule
+2024-11-27 10:15:44.703 +07:00 [INF]       - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainModule
+2024-11-27 10:15:44.703 +07:00 [INF]     - HQSOFT.SystemAdministration.SystemAdministrationApplicationContractsModule
+2024-11-27 10:15:44.703 +07:00 [INF]       - Volo.FileManagement.FileManagementApplicationContractsModule
+2024-11-27 10:15:44.704 +07:00 [INF]       - HQSOFT.CoreBackend.CoreBackendApplicationContractsModule
+2024-11-27 10:15:44.704 +07:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-11-27 10:15:44.704 +07:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-11-27 10:15:44.704 +07:00 [INF]         - Volo.Abp.TextTemplateManagement.TextTemplateManagementApplicationContractsModule
+2024-11-27 10:15:44.704 +07:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingApplicationContractsModule
+2024-11-27 10:15:44.704 +07:00 [INF]         - Volo.Abp.LanguageManagement.LanguageManagementApplicationContractsModule
+2024-11-27 10:15:44.704 +07:00 [INF]     - Volo.Abp.Application.AbpDddApplicationModule
+2024-11-27 10:15:44.704 +07:00 [INF]       - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-11-27 10:15:44.704 +07:00 [INF]       - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-11-27 10:15:44.704 +07:00 [INF]     - Volo.FileManagement.FileManagementApplicationModule
+2024-11-27 10:15:44.704 +07:00 [INF]     - HQSOFT.CoreBackend.CoreBackendApplicationModule
+2024-11-27 10:15:44.704 +07:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-11-27 10:15:44.704 +07:00 [INF]       - Volo.Abp.EntityFrameworkCore.PostgreSql.AbpEntityFrameworkCorePostgreSqlModule
+2024-11-27 10:15:44.704 +07:00 [INF]         - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-11-27 10:15:44.704 +07:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-11-27 10:15:44.704 +07:00 [INF]         - Volo.Abp.Emailing.AbpEmailingModule
+2024-11-27 10:15:44.704 +07:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-11-27 10:15:44.704 +07:00 [INF]       - Volo.Abp.BackgroundJobs.Hangfire.AbpBackgroundJobsHangfireModule
+2024-11-27 10:15:44.704 +07:00 [INF]         - Volo.Abp.Hangfire.AbpHangfireModule
+2024-11-27 10:15:44.704 +07:00 [INF]       - Volo.Abp.BackgroundWorkers.Hangfire.AbpBackgroundWorkersHangfireModule
+2024-11-27 10:15:44.704 +07:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-11-27 10:15:44.704 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.TextTemplateManagementApplicationModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingApplicationModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.LanguageManagement.LanguageManagementApplicationModule
+2024-11-27 10:15:44.705 +07:00 [INF]   - HQSOFT.SystemAdministration.EntityFrameworkCore.SystemAdministrationEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]     - HQSOFT.CoreBackend.EntityFrameworkCore.CoreBackendEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.BackgroundJobs.EntityFrameworkCore.AbpBackgroundJobsEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.BlobStoring.Database.EntityFrameworkCore.BlobStoringDatabaseEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityProEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]         - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]           - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.EntityFrameworkCore.TextTemplateManagementEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.FileManagement.EntityFrameworkCore.FileManagementEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.LanguageManagement.EntityFrameworkCore.LanguageManagementEntityFrameworkCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]   - HQSOFT.SystemAdministration.SystemAdministrationHttpApiModule
+2024-11-27 10:15:44.705 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-11-27 10:15:44.705 +07:00 [INF]         - Volo.Abp.Http.AbpHttpModule
+2024-11-27 10:15:44.705 +07:00 [INF]           - Volo.Abp.Minify.AbpMinifyModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-11-27 10:15:44.705 +07:00 [INF]         - Volo.Abp.UI.AbpUiModule
+2024-11-27 10:15:44.705 +07:00 [INF]     - HQSOFT.CoreBackend.CoreBackendHttpApiModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.TextTemplateManagementHttpApiModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.FileManagement.FileManagementHttpApiModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingHttpApiModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.LanguageManagement.LanguageManagementHttpApiModule
+2024-11-27 10:15:44.705 +07:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-11-27 10:15:44.705 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-11-27 10:15:44.705 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-11-27 10:15:44.706 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-11-27 10:15:44.706 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-11-27 10:15:44.706 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-11-27 10:15:44.706 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-11-27 10:15:44.706 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-11-27 10:15:44.706 +07:00 [INF]     - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-11-27 10:15:44.706 +07:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-11-27 10:15:44.706 +07:00 [INF]     - Volo.Abp.Castle.AbpCastleCoreModule
+2024-11-27 10:15:44.706 +07:00 [INF]   - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2024-11-27 10:15:44.706 +07:00 [INF]   - Volo.Saas.EntityFrameworkCore.SaasEntityFrameworkCoreModule
+2024-11-27 10:15:44.706 +07:00 [INF]     - Volo.Saas.SaasDomainModule
+2024-11-27 10:15:44.706 +07:00 [INF]       - Volo.Saas.SaasDomainSharedModule
+2024-11-27 10:15:44.706 +07:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-11-27 10:15:44.706 +07:00 [INF]         - Volo.Payment.AbpPaymentDomainSharedModule
+2024-11-27 10:15:44.706 +07:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-11-27 10:15:44.706 +07:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-11-27 10:15:44.706 +07:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.AbpAspNetCoreMvcUiLeptonThemeModule
+2024-11-27 10:15:44.706 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial.AbpAspNetCoreMvcUiThemeCommercialModule
+2024-11-27 10:15:44.706 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementDomainSharedModule
+2024-11-27 10:15:44.706 +07:00 [INF]   - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementApplicationModule
+2024-11-27 10:15:44.706 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementDomainModule
+2024-11-27 10:15:44.706 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementApplicationContractsModule
+2024-11-27 10:15:44.706 +07:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-11-27 10:15:44.706 +07:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-11-27 10:15:45.545 +07:00 [FTL] Host terminated unexpectedly!
+Volo.Abp.AbpInitializationException: An error occurred during the initialize Volo.Abp.Modularity.OnPreApplicationInitializationModuleLifecycleContributor phase of the module Volo.Abp.BackgroundWorkers.Hangfire.AbpBackgroundWorkersHangfireModule, Volo.Abp.BackgroundWorkers.Hangfire, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null: An exception was thrown while activating λ:Volo.Abp.Hangfire.AbpHangfireBackgroundJobServer -> λ:Hangfire.JobStorage -> λ:Hangfire.IGlobalConfiguration.. See the inner exception for details.
+ ---> Autofac.Core.DependencyResolutionException: An exception was thrown while activating λ:Volo.Abp.Hangfire.AbpHangfireBackgroundJobServer -> λ:Hangfire.JobStorage -> λ:Hangfire.IGlobalConfiguration.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 10.10.62.109:5432
+ ---> System.Net.Sockets.SocketException (10051): A socket operation was attempted to an unreachable network.
+   at Npgsql.Internal.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Hangfire.PostgreSql.PostgreSqlStorage.CreateAndOpenConnection()
+   at Hangfire.PostgreSql.PostgreSqlStorage..ctor(IConnectionFactory connectionFactory, PostgreSqlStorageOptions options)
+   at Hangfire.PostgreSql.PostgreSqlBootstrapperConfigurationExtensions.UsePostgreSqlStorage(IGlobalConfiguration configuration, Action`1 configure, PostgreSqlStorageOptions options)
+   at HQSOFT.CoreBackend.CoreBackendHttpApiModule.<>c__DisplayClass5_0.<ConfigureHangfire>b__0(IGlobalConfiguration config)
+   at Hangfire.HangfireServiceCollectionExtensions.<>c__DisplayClass0_0.<AddHangfire>b__0(IServiceProvider provider, IGlobalConfiguration config) in C:\projects\hangfire-525\src\Hangfire.NetCore\HangfireServiceCollectionExtensions.cs:line 40
+   at Hangfire.HangfireServiceCollectionExtensions.<>c__DisplayClass1_0.<AddHangfire>b__14(IServiceProvider serviceProvider) in C:\projects\hangfire-525\src\Hangfire.NetCore\HangfireServiceCollectionExtensions.cs:line 103
+   at Autofac.Extensions.DependencyInjection.AutofacRegistration.<>c__DisplayClass4_0.<Register>b__1(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Delegate.DelegateActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Delegate.DelegateActivator.<ConfigurePipeline>b__2_0(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.DelegateMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Middleware.DisposalTrackingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Pipeline.ResolvePipeline.Invoke(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Middleware.RegistrationPipelineInvokeMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.<>c__DisplayClass5_0.<Execute>b__0()
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid id, Func`1 creator)
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid primaryId, Nullable`1 qualifyingId, Func`1 creator)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Middleware.CircularDependencyDetectorMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Extensions.DependencyInjection.KeyedServiceMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Pipeline.ResolvePipeline.Invoke(ResolveRequestContext context)
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest& request)
+   at Autofac.Core.Resolving.ResolveOperation.ExecuteOperation(ResolveRequest& request)
+   at Autofac.Core.Resolving.ResolveOperation.Execute(ResolveRequest& request)
+   at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(ResolveRequest& request)
+   at Autofac.Core.Lifetime.LifetimeScope.Autofac.IComponentContext.ResolveComponent(ResolveRequest& request)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetRequiredService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Volo.Abp.BackgroundWorkers.Hangfire.HangfireBackgroundWorkerManager.Initialize()
+   at Volo.Abp.BackgroundWorkers.Hangfire.AbpBackgroundWorkersHangfireModule.OnPreApplicationInitialization(ApplicationInitializationContext context)
+   at Volo.Abp.Modularity.AbpModule.OnPreApplicationInitializationAsync(ApplicationInitializationContext context)
+   at Volo.Abp.Modularity.OnPreApplicationInitializationModuleLifecycleContributor.InitializeAsync(ApplicationInitializationContext context, IAbpModule module)
+   at Volo.Abp.Modularity.ModuleManager.InitializeModulesAsync(ApplicationInitializationContext context)
+   --- End of inner exception stack trace ---
+   at Volo.Abp.Modularity.ModuleManager.InitializeModulesAsync(ApplicationInitializationContext context)
+   at Volo.Abp.AbpApplicationBase.InitializeModulesAsync()
+   at Volo.Abp.AbpApplicationWithExternalServiceProvider.InitializeAsync(IServiceProvider serviceProvider)
+   at Microsoft.AspNetCore.Builder.AbpApplicationBuilderExtensions.InitializeApplicationAsync(IApplicationBuilder app)
+   at HQSOFT.SystemAdministration.Program.Main(String[] args) in D:\HQSoft\ABP-SA-Test-2\hqsoft.systemadministration-main\host\HQSOFT.SystemAdministration.HttpApi.Host\Program.cs:line 44
+2024-11-27 10:16:07.639 +07:00 [INF] Starting web host.
+2024-11-27 10:17:22.682 +07:00 [INF] Loaded ABP modules:
+2024-11-27 10:17:22.685 +07:00 [INF] - HQSOFT.SystemAdministration.SystemAdministrationHttpApiHostModule
+2024-11-27 10:17:22.686 +07:00 [INF]   - HQSOFT.SystemAdministration.SystemAdministrationApplicationModule
+2024-11-27 10:17:22.686 +07:00 [INF]     - HQSOFT.SystemAdministration.SystemAdministrationDomainModule
+2024-11-27 10:17:22.686 +07:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2024-11-27 10:17:22.686 +07:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.Data.AbpDataModule
+2024-11-27 10:17:22.686 +07:00 [INF]             - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-11-27 10:17:22.686 +07:00 [INF]               - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-11-27 10:17:22.686 +07:00 [INF]               - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-11-27 10:17:22.686 +07:00 [INF]             - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-11-27 10:17:22.686 +07:00 [INF]             - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2024-11-27 10:17:22.686 +07:00 [INF]             - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-11-27 10:17:22.686 +07:00 [INF]               - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-11-27 10:17:22.686 +07:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2024-11-27 10:17:22.686 +07:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2024-11-27 10:17:22.686 +07:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-11-27 10:17:22.686 +07:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2024-11-27 10:17:22.686 +07:00 [INF]                     - Volo.Abp.Security.AbpSecurityModule
+2024-11-27 10:17:22.686 +07:00 [INF]                   - Volo.Abp.Threading.AbpThreadingModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-11-27 10:17:22.686 +07:00 [INF]             - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-11-27 10:17:22.686 +07:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-11-27 10:17:22.686 +07:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-11-27 10:17:22.686 +07:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-11-27 10:17:22.686 +07:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-11-27 10:17:22.686 +07:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2024-11-27 10:17:22.686 +07:00 [INF]         - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]       - HQSOFT.SystemAdministration.SystemAdministrationDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2024-11-27 10:17:22.686 +07:00 [INF]         - HQSOFT.CoreBackend.CoreBackendDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.Identity.AbpIdentityProDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]             - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]               - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-11-27 10:17:22.686 +07:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-11-27 10:17:22.686 +07:00 [INF]             - Volo.Abp.Ldap.AbpLdapAbstractionsModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainSharedModule
+2024-11-27 10:17:22.686 +07:00 [INF]           - Volo.FileManagement.FileManagementDomainSharedModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.LanguageManagement.LanguageManagementDomainSharedModule
+2024-11-27 10:17:22.687 +07:00 [INF]       - HQSOFT.CoreBackend.CoreBackendDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2024-11-27 10:17:22.687 +07:00 [INF]             - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.Identity.AbpIdentityProDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]             - Volo.Abp.Users.AbpUsersDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.Ldap.AbpLdapModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.Gdpr.AbpGdprAbstractionsModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.FileManagement.FileManagementDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]           - Volo.Abp.BlobStoring.AbpBlobStoringModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.LanguageManagement.LanguageManagementDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]       - Volo.Abp.BlobStoring.Azure.AbpBlobStoringAzureModule
+2024-11-27 10:17:22.687 +07:00 [INF]       - Volo.Abp.BlobStoring.Aws.AbpBlobStoringAwsModule
+2024-11-27 10:17:22.687 +07:00 [INF]       - Volo.Abp.BlobStoring.FileSystem.AbpBlobStoringFileSystemModule
+2024-11-27 10:17:22.687 +07:00 [INF]       - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainModule
+2024-11-27 10:17:22.687 +07:00 [INF]     - HQSOFT.SystemAdministration.SystemAdministrationApplicationContractsModule
+2024-11-27 10:17:22.687 +07:00 [INF]       - Volo.FileManagement.FileManagementApplicationContractsModule
+2024-11-27 10:17:22.687 +07:00 [INF]       - HQSOFT.CoreBackend.CoreBackendApplicationContractsModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.TextTemplateManagement.TextTemplateManagementApplicationContractsModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingApplicationContractsModule
+2024-11-27 10:17:22.687 +07:00 [INF]         - Volo.Abp.LanguageManagement.LanguageManagementApplicationContractsModule
+2024-11-27 10:17:22.687 +07:00 [INF]     - Volo.Abp.Application.AbpDddApplicationModule
+2024-11-27 10:17:22.687 +07:00 [INF]       - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-11-27 10:17:22.687 +07:00 [INF]       - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-11-27 10:17:22.687 +07:00 [INF]     - Volo.FileManagement.FileManagementApplicationModule
+2024-11-27 10:17:22.687 +07:00 [INF]     - HQSOFT.CoreBackend.CoreBackendApplicationModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.EntityFrameworkCore.PostgreSql.AbpEntityFrameworkCorePostgreSqlModule
+2024-11-27 10:17:22.688 +07:00 [INF]         - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-11-27 10:17:22.688 +07:00 [INF]         - Volo.Abp.Emailing.AbpEmailingModule
+2024-11-27 10:17:22.688 +07:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.BackgroundJobs.Hangfire.AbpBackgroundJobsHangfireModule
+2024-11-27 10:17:22.688 +07:00 [INF]         - Volo.Abp.Hangfire.AbpHangfireModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.BackgroundWorkers.Hangfire.AbpBackgroundWorkersHangfireModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.TextTemplateManagementApplicationModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingApplicationModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.LanguageManagement.LanguageManagementApplicationModule
+2024-11-27 10:17:22.688 +07:00 [INF]   - HQSOFT.SystemAdministration.EntityFrameworkCore.SystemAdministrationEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]     - HQSOFT.CoreBackend.EntityFrameworkCore.CoreBackendEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.BackgroundJobs.EntityFrameworkCore.AbpBackgroundJobsEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.BlobStoring.Database.EntityFrameworkCore.BlobStoringDatabaseEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityProEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]         - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]           - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.EntityFrameworkCore.TextTemplateManagementEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.FileManagement.EntityFrameworkCore.FileManagementEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.LanguageManagement.EntityFrameworkCore.LanguageManagementEntityFrameworkCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]   - HQSOFT.SystemAdministration.SystemAdministrationHttpApiModule
+2024-11-27 10:17:22.688 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-11-27 10:17:22.688 +07:00 [INF]         - Volo.Abp.Http.AbpHttpModule
+2024-11-27 10:17:22.688 +07:00 [INF]           - Volo.Abp.Minify.AbpMinifyModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-11-27 10:17:22.688 +07:00 [INF]         - Volo.Abp.UI.AbpUiModule
+2024-11-27 10:17:22.688 +07:00 [INF]     - HQSOFT.CoreBackend.CoreBackendHttpApiModule
+2024-11-27 10:17:22.688 +07:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.TextTemplateManagementHttpApiModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.FileManagement.FileManagementHttpApiModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingHttpApiModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Abp.LanguageManagement.LanguageManagementHttpApiModule
+2024-11-27 10:17:22.689 +07:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-11-27 10:17:22.689 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-11-27 10:17:22.689 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-11-27 10:17:22.689 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-11-27 10:17:22.689 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-11-27 10:17:22.689 +07:00 [INF]     - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-11-27 10:17:22.689 +07:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-11-27 10:17:22.689 +07:00 [INF]     - Volo.Abp.Castle.AbpCastleCoreModule
+2024-11-27 10:17:22.689 +07:00 [INF]   - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2024-11-27 10:17:22.689 +07:00 [INF]   - Volo.Saas.EntityFrameworkCore.SaasEntityFrameworkCoreModule
+2024-11-27 10:17:22.689 +07:00 [INF]     - Volo.Saas.SaasDomainModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Saas.SaasDomainSharedModule
+2024-11-27 10:17:22.689 +07:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-11-27 10:17:22.689 +07:00 [INF]         - Volo.Payment.AbpPaymentDomainSharedModule
+2024-11-27 10:17:22.689 +07:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-11-27 10:17:22.689 +07:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-11-27 10:17:22.689 +07:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.AbpAspNetCoreMvcUiLeptonThemeModule
+2024-11-27 10:17:22.689 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial.AbpAspNetCoreMvcUiThemeCommercialModule
+2024-11-27 10:17:22.689 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementDomainSharedModule
+2024-11-27 10:17:22.689 +07:00 [INF]   - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementApplicationModule
+2024-11-27 10:17:22.689 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementDomainModule
+2024-11-27 10:17:22.689 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementApplicationContractsModule
+2024-11-27 10:17:22.689 +07:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-11-27 10:17:22.689 +07:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-11-27 10:17:22.986 +07:00 [FTL] Host terminated unexpectedly!
+Volo.Abp.AbpInitializationException: An error occurred during the initialize Volo.Abp.Modularity.OnPreApplicationInitializationModuleLifecycleContributor phase of the module Volo.Abp.BackgroundWorkers.Hangfire.AbpBackgroundWorkersHangfireModule, Volo.Abp.BackgroundWorkers.Hangfire, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null: An exception was thrown while activating λ:Volo.Abp.Hangfire.AbpHangfireBackgroundJobServer -> λ:Hangfire.JobStorage -> λ:Hangfire.IGlobalConfiguration.. See the inner exception for details.
+ ---> Autofac.Core.DependencyResolutionException: An exception was thrown while activating λ:Volo.Abp.Hangfire.AbpHangfireBackgroundJobServer -> λ:Hangfire.JobStorage -> λ:Hangfire.IGlobalConfiguration.
+ ---> Npgsql.NpgsqlException (0x80004005): Failed to connect to 10.10.62.109:5432
+ ---> System.Net.Sockets.SocketException (10051): A socket operation was attempted to an unreachable network.
+   at Npgsql.Internal.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Hangfire.PostgreSql.PostgreSqlStorage.CreateAndOpenConnection()
+   at Hangfire.PostgreSql.PostgreSqlStorage..ctor(IConnectionFactory connectionFactory, PostgreSqlStorageOptions options)
+   at Hangfire.PostgreSql.PostgreSqlBootstrapperConfigurationExtensions.UsePostgreSqlStorage(IGlobalConfiguration configuration, Action`1 configure, PostgreSqlStorageOptions options)
+   at HQSOFT.CoreBackend.CoreBackendHttpApiModule.<>c__DisplayClass5_0.<ConfigureHangfire>b__0(IGlobalConfiguration config)
+   at Hangfire.HangfireServiceCollectionExtensions.<>c__DisplayClass0_0.<AddHangfire>b__0(IServiceProvider provider, IGlobalConfiguration config) in C:\projects\hangfire-525\src\Hangfire.NetCore\HangfireServiceCollectionExtensions.cs:line 40
+   at Hangfire.HangfireServiceCollectionExtensions.<>c__DisplayClass1_0.<AddHangfire>b__14(IServiceProvider serviceProvider) in C:\projects\hangfire-525\src\Hangfire.NetCore\HangfireServiceCollectionExtensions.cs:line 103
+   at Autofac.Extensions.DependencyInjection.AutofacRegistration.<>c__DisplayClass4_0.<Register>b__1(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Delegate.DelegateActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Delegate.DelegateActivator.<ConfigurePipeline>b__2_0(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.DelegateMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Middleware.DisposalTrackingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Pipeline.ResolvePipeline.Invoke(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Middleware.RegistrationPipelineInvokeMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.<>c__DisplayClass5_0.<Execute>b__0()
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid id, Func`1 creator)
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid primaryId, Nullable`1 qualifyingId, Func`1 creator)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Resolving.Middleware.CircularDependencyDetectorMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Extensions.DependencyInjection.KeyedServiceMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Pipeline.ResolvePipelineBuilder.<>c__DisplayClass14_0.<BuildPipeline>b__1(ResolveRequestContext context)
+   at Autofac.Core.Pipeline.ResolvePipeline.Invoke(ResolveRequestContext context)
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest& request)
+   at Autofac.Core.Resolving.ResolveOperation.ExecuteOperation(ResolveRequest& request)
+   at Autofac.Core.Resolving.ResolveOperation.Execute(ResolveRequest& request)
+   at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(ResolveRequest& request)
+   at Autofac.Core.Lifetime.LifetimeScope.Autofac.IComponentContext.ResolveComponent(ResolveRequest& request)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetRequiredService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Volo.Abp.BackgroundWorkers.Hangfire.HangfireBackgroundWorkerManager.Initialize()
+   at Volo.Abp.BackgroundWorkers.Hangfire.AbpBackgroundWorkersHangfireModule.OnPreApplicationInitialization(ApplicationInitializationContext context)
+   at Volo.Abp.Modularity.AbpModule.OnPreApplicationInitializationAsync(ApplicationInitializationContext context)
+   at Volo.Abp.Modularity.OnPreApplicationInitializationModuleLifecycleContributor.InitializeAsync(ApplicationInitializationContext context, IAbpModule module)
+   at Volo.Abp.Modularity.ModuleManager.InitializeModulesAsync(ApplicationInitializationContext context)
+   --- End of inner exception stack trace ---
+   at Volo.Abp.Modularity.ModuleManager.InitializeModulesAsync(ApplicationInitializationContext context)
+   at Volo.Abp.AbpApplicationBase.InitializeModulesAsync()
+   at Volo.Abp.AbpApplicationWithExternalServiceProvider.InitializeAsync(IServiceProvider serviceProvider)
+   at Microsoft.AspNetCore.Builder.AbpApplicationBuilderExtensions.InitializeApplicationAsync(IApplicationBuilder app)
+   at HQSOFT.SystemAdministration.Program.Main(String[] args) in D:\HQSoft\ABP-SA-Test-2\hqsoft.systemadministration-main\host\HQSOFT.SystemAdministration.HttpApi.Host\Program.cs:line 44
+2024-11-27 14:30:02.232 +07:00 [INF] Starting web host.
+2024-11-27 14:31:23.492 +07:00 [INF] Starting web host.
+2024-11-27 14:31:55.021 +07:00 [INF] Loaded ABP modules:
+2024-11-27 14:31:55.022 +07:00 [INF] - HQSOFT.SystemAdministration.SystemAdministrationHttpApiHostModule
+2024-11-27 14:31:55.023 +07:00 [INF]   - HQSOFT.SystemAdministration.SystemAdministrationApplicationModule
+2024-11-27 14:31:55.023 +07:00 [INF]     - HQSOFT.SystemAdministration.SystemAdministrationDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Data.AbpDataModule
+2024-11-27 14:31:55.023 +07:00 [INF]             - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-11-27 14:31:55.023 +07:00 [INF]               - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]               - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]             - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-11-27 14:31:55.023 +07:00 [INF]             - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2024-11-27 14:31:55.023 +07:00 [INF]             - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-11-27 14:31:55.023 +07:00 [INF]               - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2024-11-27 14:31:55.023 +07:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2024-11-27 14:31:55.023 +07:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-11-27 14:31:55.023 +07:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2024-11-27 14:31:55.023 +07:00 [INF]                     - Volo.Abp.Security.AbpSecurityModule
+2024-11-27 14:31:55.023 +07:00 [INF]                   - Volo.Abp.Threading.AbpThreadingModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-11-27 14:31:55.023 +07:00 [INF]             - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - HQSOFT.SystemAdministration.SystemAdministrationDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - HQSOFT.CoreBackend.CoreBackendDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Identity.AbpIdentityProDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]             - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]               - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-11-27 14:31:55.023 +07:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]             - Volo.Abp.Ldap.AbpLdapAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.FileManagement.FileManagementDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.LanguageManagement.LanguageManagementDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - HQSOFT.CoreBackend.CoreBackendDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2024-11-27 14:31:55.023 +07:00 [INF]             - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Identity.AbpIdentityProDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]             - Volo.Abp.Users.AbpUsersDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Ldap.AbpLdapModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Gdpr.AbpGdprAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.FileManagement.FileManagementDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.BlobStoring.AbpBlobStoringModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.LanguageManagement.LanguageManagementDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.BlobStoring.Azure.AbpBlobStoringAzureModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.BlobStoring.Aws.AbpBlobStoringAwsModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.BlobStoring.FileSystem.AbpBlobStoringFileSystemModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainModule
+2024-11-27 14:31:55.023 +07:00 [INF]     - HQSOFT.SystemAdministration.SystemAdministrationApplicationContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.FileManagement.FileManagementApplicationContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - HQSOFT.CoreBackend.CoreBackendApplicationContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.TextTemplateManagement.TextTemplateManagementApplicationContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingApplicationContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.LanguageManagement.LanguageManagementApplicationContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]     - Volo.Abp.Application.AbpDddApplicationModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-11-27 14:31:55.023 +07:00 [INF]     - Volo.FileManagement.FileManagementApplicationModule
+2024-11-27 14:31:55.023 +07:00 [INF]     - HQSOFT.CoreBackend.CoreBackendApplicationModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.EntityFrameworkCore.PostgreSql.AbpEntityFrameworkCorePostgreSqlModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Emailing.AbpEmailingModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.BackgroundJobs.Hangfire.AbpBackgroundJobsHangfireModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Hangfire.AbpHangfireModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.BackgroundWorkers.Hangfire.AbpBackgroundWorkersHangfireModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.TextTemplateManagementApplicationModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingApplicationModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.LanguageManagement.LanguageManagementApplicationModule
+2024-11-27 14:31:55.023 +07:00 [INF]   - HQSOFT.SystemAdministration.EntityFrameworkCore.SystemAdministrationEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]     - HQSOFT.CoreBackend.EntityFrameworkCore.CoreBackendEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.BackgroundJobs.EntityFrameworkCore.AbpBackgroundJobsEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.BlobStoring.Database.EntityFrameworkCore.BlobStoringDatabaseEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityProEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.EntityFrameworkCore.TextTemplateManagementEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.FileManagement.EntityFrameworkCore.FileManagementEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.LanguageManagement.EntityFrameworkCore.LanguageManagementEntityFrameworkCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]   - HQSOFT.SystemAdministration.SystemAdministrationHttpApiModule
+2024-11-27 14:31:55.023 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.Http.AbpHttpModule
+2024-11-27 14:31:55.023 +07:00 [INF]           - Volo.Abp.Minify.AbpMinifyModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.UI.AbpUiModule
+2024-11-27 14:31:55.023 +07:00 [INF]     - HQSOFT.CoreBackend.CoreBackendHttpApiModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.TextTemplateManagementHttpApiModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.FileManagement.FileManagementHttpApiModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingHttpApiModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.LanguageManagement.LanguageManagementHttpApiModule
+2024-11-27 14:31:55.023 +07:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-11-27 14:31:55.023 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-11-27 14:31:55.023 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-11-27 14:31:55.023 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-11-27 14:31:55.023 +07:00 [INF]     - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-11-27 14:31:55.023 +07:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-11-27 14:31:55.024 +07:00 [INF]     - Volo.Abp.Castle.AbpCastleCoreModule
+2024-11-27 14:31:55.024 +07:00 [INF]   - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2024-11-27 14:31:55.024 +07:00 [INF]   - Volo.Saas.EntityFrameworkCore.SaasEntityFrameworkCoreModule
+2024-11-27 14:31:55.024 +07:00 [INF]     - Volo.Saas.SaasDomainModule
+2024-11-27 14:31:55.024 +07:00 [INF]       - Volo.Saas.SaasDomainSharedModule
+2024-11-27 14:31:55.024 +07:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-11-27 14:31:55.024 +07:00 [INF]         - Volo.Payment.AbpPaymentDomainSharedModule
+2024-11-27 14:31:55.024 +07:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-11-27 14:31:55.024 +07:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-11-27 14:31:55.024 +07:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.AbpAspNetCoreMvcUiLeptonThemeModule
+2024-11-27 14:31:55.024 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial.AbpAspNetCoreMvcUiThemeCommercialModule
+2024-11-27 14:31:55.024 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementDomainSharedModule
+2024-11-27 14:31:55.024 +07:00 [INF]   - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementApplicationModule
+2024-11-27 14:31:55.024 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementDomainModule
+2024-11-27 14:31:55.024 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementApplicationContractsModule
+2024-11-27 14:31:55.024 +07:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-11-27 14:31:55.024 +07:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-11-27 14:31:55.480 +07:00 [INF] Start installing Hangfire SQL objects...
+2024-11-27 14:31:55.767 +07:00 [INF] Hangfire SQL objects installed.
+2024-11-27 14:31:55.789 +07:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: 10.10.62.109, DB: eBizCloudERP_Dev_Intern, Schema: Hangfire'
+2024-11-27 14:31:55.789 +07:00 [INF] Using the following options for PostgreSQL job storage:
+2024-11-27 14:31:55.790 +07:00 [INF]     Queue poll interval: 00:00:30.
+2024-11-27 14:31:55.790 +07:00 [INF]     Invisibility timeout: 00:05:00.
+2024-11-27 14:31:55.790 +07:00 [INF]     Use sliding invisibility timeout: False.
+2024-11-27 14:31:55.790 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'gen_mcp_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-11-27 14:31:55.840 +07:00 [DBG] Execution loop BackgroundServerProcess:596fbf40 has started in 30.8602 ms
+2024-11-27 14:31:56.023 +07:00 [INF] Server giaphu:13868:36a0619a successfully announced in 178.7412 ms
+2024-11-27 14:31:56.030 +07:00 [INF] Server giaphu:13868:36a0619a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-11-27 14:31:56.030 +07:00 [DBG] Execution loop ServerHeartbeatProcess:e83b6300 has started in 5.3791 ms
+2024-11-27 14:31:56.033 +07:00 [DBG] Execution loop ServerWatchdog:f08dfaad has started in 3.2583 ms
+2024-11-27 14:31:56.037 +07:00 [DBG] Execution loop ServerJobCancellationWatcher:5f459040 has started in 6.2073 ms
+2024-11-27 14:31:56.040 +07:00 [DBG] Execution loop ExpirationManager:9ab244c1 has started in 5.7386 ms
+2024-11-27 14:31:56.043 +07:00 [DBG] Execution loop CountersAggregator:fa93abd3 has started in 6.4805 ms
+2024-11-27 14:31:56.047 +07:00 [DBG] Execution loop Worker:2794c972 has started in 6.6327 ms
+2024-11-27 14:31:56.048 +07:00 [DBG] Removing outdated records from table 'aggregatedcounter'...
+2024-11-27 14:31:56.048 +07:00 [DBG] Aggregating records in 'Counter' table...
+2024-11-27 14:31:56.050 +07:00 [DBG] Execution loop Worker:824f9bc1 has started in 10.1103 ms
+2024-11-27 14:31:56.054 +07:00 [DBG] Execution loop Worker:2aa549e6 has started in 13.9235 ms
+2024-11-27 14:31:56.058 +07:00 [DBG] Execution loop Worker:8e46f08f has started in 17.5057 ms
+2024-11-27 14:31:56.061 +07:00 [DBG] Execution loop Worker:d8a04bc9 has started in 20.9253 ms
+2024-11-27 14:31:56.064 +07:00 [DBG] Execution loop Worker:742fa32a has started in 24.3127 ms
+2024-11-27 14:31:56.065 +07:00 [INF] 1 servers were removed due to timeout
+2024-11-27 14:31:56.068 +07:00 [DBG] Execution loop Worker:836ddef1 has started in 27.581 ms
+2024-11-27 14:31:56.071 +07:00 [DBG] Execution loop Worker:a2732d24 has started in 30.8038 ms
+2024-11-27 14:31:56.075 +07:00 [DBG] Execution loop Worker:529c8c2f has started in 34.5004 ms
+2024-11-27 14:31:56.078 +07:00 [DBG] Execution loop Worker:60e1cfed has started in 37.7812 ms
+2024-11-27 14:31:56.081 +07:00 [DBG] Execution loop Worker:64861b88 has started in 41.0651 ms
+2024-11-27 14:31:56.085 +07:00 [DBG] Execution loop Worker:cc438573 has started in 44.8116 ms
+2024-11-27 14:31:56.087 +07:00 [DBG] Execution loop Worker:b1dfe3a7 has started in 46.8286 ms
+2024-11-27 14:31:56.091 +07:00 [DBG] Execution loop Worker:5228429c has started in 50.428 ms
+2024-11-27 14:31:56.094 +07:00 [DBG] Execution loop Worker:3413b70a has started in 53.611 ms
+2024-11-27 14:31:56.097 +07:00 [DBG] Execution loop Worker:f99b1c47 has started in 56.7981 ms
+2024-11-27 14:31:56.100 +07:00 [DBG] Execution loop Worker:68373c3f has started in 60.1931 ms
+2024-11-27 14:31:56.104 +07:00 [DBG] Execution loop Worker:d5f3159c has started in 63.7885 ms
+2024-11-27 14:31:56.108 +07:00 [DBG] Execution loop Worker:52484368 has started in 68.0285 ms
+2024-11-27 14:31:56.112 +07:00 [DBG] Execution loop Worker:efa7b09e has started in 71.7434 ms
+2024-11-27 14:31:56.116 +07:00 [INF] Server giaphu:13868:36a0619a all the dispatchers started
+2024-11-27 14:31:56.116 +07:00 [DBG] Execution loop DelayedJobScheduler:497634af has started in 7.8329 ms
+2024-11-27 14:31:56.119 +07:00 [DBG] Execution loop RecurringJobScheduler:03aa6489 has started in 7.405 ms
+2024-11-27 14:31:56.277 +07:00 [DBG] Removing outdated records from table 'counter'...
+2024-11-27 14:31:56.339 +07:00 [DBG] Removing outdated records from table 'job'...
+2024-11-27 14:31:56.422 +07:00 [DBG] Removing outdated records from table 'list'...
+2024-11-27 14:31:56.488 +07:00 [DBG] Removing outdated records from table 'set'...
+2024-11-27 14:31:56.510 +07:00 [WRN] Failed to process the job '4624': an exception occurred. Retry attempt 2 of 10 will be performed in 00:00:56.
+System.IO.FileNotFoundException: Could not resolve assembly 'Volo.Abp.OpenIddict.Domain'.
+   at System.Reflection.TypeNameParser.ResolveAssembly(String assemblyName)
+   at System.Reflection.TypeNameParser.GetType(String typeName, ReadOnlySpan`1 nestedTypeNames, String assemblyNameIfAny)
+   at System.Reflection.TypeNameParser.NamespaceTypeName.ResolveType(TypeNameParser& parser, String containingAssemblyIfAny)
+   at System.Reflection.TypeNameParser.GenericTypeName.ResolveType(TypeNameParser& parser, String containingAssemblyIfAny)
+   at System.Reflection.TypeNameParser.Parse()
+   at System.Reflection.TypeNameParser.GetType(String typeName, Func`2 assemblyResolver, Func`4 typeResolver, Assembly requestingAssembly, Boolean throwOnError, Boolean ignoreCase, Boolean extensibleParser)
+   at System.Type.GetType(String typeName, Func`2 assemblyResolver, Func`4 typeResolver, Boolean throwOnError)
+   at Hangfire.Common.TypeHelper.<>c.<DefaultTypeResolver>b__20_0(String name) in C:\projects\hangfire-525\src\Hangfire.Core\Common\TypeHelper.cs:line 83
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Hangfire.Common.TypeHelper.DefaultTypeResolver(String typeName) in C:\projects\hangfire-525\src\Hangfire.Core\Common\TypeHelper.cs:line 75
+   at Hangfire.Storage.InvocationData.<>c.<CachedDeserializeMethod>b__33_0(Tuple`4 tuple) in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 335
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Hangfire.Storage.InvocationData.CachedDeserializeMethod(Func`2 typeResolver, String typeName, String methodName, String parameterTypes, Type& type, MethodInfo& methodInfo) in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 332
+   at Hangfire.Storage.InvocationData.DeserializeJob() in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 100
+2024-11-27 14:31:56.602 +07:00 [DBG] Removing outdated records from table 'hash'...
+2024-11-27 14:31:56.942 +07:00 [DBG] 1 scheduled job(s) processed by scheduler.
+2024-11-27 14:32:01.236 +07:00 [DBG] Waiting to acquire the distributed lock for saving external localizations...
+2024-11-27 14:32:01.237 +07:00 [INF] Saving external localizations...
+2024-11-27 14:32:01.511 +07:00 [ERR] Failed executing DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."AccessKeyId", s."BasePath", s."BucketName", s."ConcurrencyStamp", s."CreationTime", s."CreatorId", s."ExtraProperties", s."LastModificationTime", s."LastModifierId", s."Name", s."Region", s."SecretAccessKey", s."TypeStorage"
+FROM "SystemAdministrationContainers" AS s
+2024-11-27 14:32:01.529 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'HQSOFT.SystemAdministration.EntityFrameworkCore.SystemAdministrationDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column s.AccessKeyId does not exist
+
+POSITION: 16
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.AccessKeyId does not exist
+    Position: 16
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column s.AccessKeyId does not exist
+
+POSITION: 16
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column s.AccessKeyId does not exist
+    Position: 16
+    File: parse_relation.c
+    Line: 3722
+    Routine: errorMissingColumn
+2024-11-27 14:32:01.679 +07:00 [DBG] Added 0 entity changes to the current audit log
+2024-11-27 14:32:02.550 +07:00 [DBG] Added 0 entity changes to the current audit log
+2024-11-27 14:32:02.759 +07:00 [DBG] Added 0 entity changes to the current audit log
+2024-11-27 14:32:02.785 +07:00 [DBG] Added 0 entity changes to the current audit log
+2024-11-27 14:32:02.786 +07:00 [DBG] Added 0 entity changes to the current audit log
+2024-11-27 14:32:49.325 +07:00 [INF] Starting web host.
+2024-11-27 14:33:11.485 +07:00 [INF] Starting web host.
+2024-11-27 14:33:42.669 +07:00 [INF] Loaded ABP modules:
+2024-11-27 14:33:42.670 +07:00 [INF] - HQSOFT.SystemAdministration.SystemAdministrationHttpApiHostModule
+2024-11-27 14:33:42.670 +07:00 [INF]   - HQSOFT.SystemAdministration.SystemAdministrationApplicationModule
+2024-11-27 14:33:42.670 +07:00 [INF]     - HQSOFT.SystemAdministration.SystemAdministrationDomainModule
+2024-11-27 14:33:42.670 +07:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2024-11-27 14:33:42.670 +07:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2024-11-27 14:33:42.670 +07:00 [INF]           - Volo.Abp.Data.AbpDataModule
+2024-11-27 14:33:42.670 +07:00 [INF]             - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-11-27 14:33:42.671 +07:00 [INF]               - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]               - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]             - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-11-27 14:33:42.671 +07:00 [INF]             - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2024-11-27 14:33:42.671 +07:00 [INF]             - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-11-27 14:33:42.671 +07:00 [INF]               - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2024-11-27 14:33:42.671 +07:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2024-11-27 14:33:42.671 +07:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-11-27 14:33:42.671 +07:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2024-11-27 14:33:42.671 +07:00 [INF]                     - Volo.Abp.Security.AbpSecurityModule
+2024-11-27 14:33:42.671 +07:00 [INF]                   - Volo.Abp.Threading.AbpThreadingModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-11-27 14:33:42.671 +07:00 [INF]             - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - HQSOFT.SystemAdministration.SystemAdministrationDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - HQSOFT.CoreBackend.CoreBackendDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Identity.AbpIdentityProDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]             - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]               - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-11-27 14:33:42.671 +07:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]             - Volo.Abp.Ldap.AbpLdapAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.FileManagement.FileManagementDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.LanguageManagement.LanguageManagementDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - HQSOFT.CoreBackend.CoreBackendDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2024-11-27 14:33:42.671 +07:00 [INF]             - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.Identity.AbpIdentityProDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]             - Volo.Abp.Users.AbpUsersDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Ldap.AbpLdapModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.Gdpr.AbpGdprAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.FileManagement.FileManagementDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.BlobStoring.AbpBlobStoringModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.LanguageManagement.LanguageManagementDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - Volo.Abp.BlobStoring.Azure.AbpBlobStoringAzureModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - Volo.Abp.BlobStoring.Aws.AbpBlobStoringAwsModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - Volo.Abp.BlobStoring.FileSystem.AbpBlobStoringFileSystemModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainModule
+2024-11-27 14:33:42.671 +07:00 [INF]     - HQSOFT.SystemAdministration.SystemAdministrationApplicationContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - Volo.FileManagement.FileManagementApplicationContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - HQSOFT.CoreBackend.CoreBackendApplicationContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.TextTemplateManagement.TextTemplateManagementApplicationContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingApplicationContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.LanguageManagement.LanguageManagementApplicationContractsModule
+2024-11-27 14:33:42.671 +07:00 [INF]     - Volo.Abp.Application.AbpDddApplicationModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-11-27 14:33:42.671 +07:00 [INF]     - Volo.FileManagement.FileManagementApplicationModule
+2024-11-27 14:33:42.671 +07:00 [INF]     - HQSOFT.CoreBackend.CoreBackendApplicationModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - Volo.Abp.EntityFrameworkCore.PostgreSql.AbpEntityFrameworkCorePostgreSqlModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-11-27 14:33:42.671 +07:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-11-27 14:33:42.671 +07:00 [INF]         - Volo.Abp.Emailing.AbpEmailingModule
+2024-11-27 14:33:42.671 +07:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.BackgroundJobs.Hangfire.AbpBackgroundJobsHangfireModule
+2024-11-27 14:33:42.672 +07:00 [INF]         - Volo.Abp.Hangfire.AbpHangfireModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.BackgroundWorkers.Hangfire.AbpBackgroundWorkersHangfireModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.TextTemplateManagementApplicationModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingApplicationModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.LanguageManagement.LanguageManagementApplicationModule
+2024-11-27 14:33:42.672 +07:00 [INF]   - HQSOFT.SystemAdministration.EntityFrameworkCore.SystemAdministrationEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - HQSOFT.CoreBackend.EntityFrameworkCore.CoreBackendEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.BackgroundJobs.EntityFrameworkCore.AbpBackgroundJobsEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.BlobStoring.Database.EntityFrameworkCore.BlobStoringDatabaseEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityProEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]         - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]           - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.EntityFrameworkCore.TextTemplateManagementEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.FileManagement.EntityFrameworkCore.FileManagementEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.LanguageManagement.EntityFrameworkCore.LanguageManagementEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]   - HQSOFT.SystemAdministration.SystemAdministrationHttpApiModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]         - Volo.Abp.Http.AbpHttpModule
+2024-11-27 14:33:42.672 +07:00 [INF]           - Volo.Abp.Minify.AbpMinifyModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-11-27 14:33:42.672 +07:00 [INF]         - Volo.Abp.UI.AbpUiModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - HQSOFT.CoreBackend.CoreBackendHttpApiModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.TextTemplateManagementHttpApiModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.FileManagement.FileManagementHttpApiModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingHttpApiModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.LanguageManagement.LanguageManagementHttpApiModule
+2024-11-27 14:33:42.672 +07:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-11-27 14:33:42.672 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-11-27 14:33:42.672 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-11-27 14:33:42.672 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-11-27 14:33:42.672 +07:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - Volo.Abp.Castle.AbpCastleCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]   - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2024-11-27 14:33:42.672 +07:00 [INF]   - Volo.Saas.EntityFrameworkCore.SaasEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - Volo.Saas.SaasDomainModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Saas.SaasDomainSharedModule
+2024-11-27 14:33:42.672 +07:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-11-27 14:33:42.672 +07:00 [INF]         - Volo.Payment.AbpPaymentDomainSharedModule
+2024-11-27 14:33:42.672 +07:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-11-27 14:33:42.672 +07:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.AbpAspNetCoreMvcUiLeptonThemeModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial.AbpAspNetCoreMvcUiThemeCommercialModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementDomainSharedModule
+2024-11-27 14:33:42.672 +07:00 [INF]   - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementApplicationModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementDomainModule
+2024-11-27 14:33:42.672 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementApplicationContractsModule
+2024-11-27 14:33:42.672 +07:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-11-27 14:33:42.672 +07:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-11-27 14:33:43.026 +07:00 [INF] Start installing Hangfire SQL objects...
+2024-11-27 14:33:43.250 +07:00 [INF] Hangfire SQL objects installed.
+2024-11-27 14:33:43.268 +07:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: 10.10.62.109, DB: eBizCloudERP_Dev_Intern, Schema: Hangfire'
+2024-11-27 14:33:43.269 +07:00 [INF] Using the following options for PostgreSQL job storage:
+2024-11-27 14:33:43.269 +07:00 [INF]     Queue poll interval: 00:00:30.
+2024-11-27 14:33:43.269 +07:00 [INF]     Invisibility timeout: 00:05:00.
+2024-11-27 14:33:43.269 +07:00 [INF]     Use sliding invisibility timeout: False.
+2024-11-27 14:33:43.269 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'gen_mcp_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-11-27 14:33:43.290 +07:00 [DBG] Execution loop BackgroundServerProcess:c00f6aac has started in 6.6426 ms
+2024-11-27 14:33:43.437 +07:00 [INF] Server giaphu:15544:6916c2df successfully announced in 143.9435 ms
+2024-11-27 14:33:43.442 +07:00 [DBG] Execution loop ServerHeartbeatProcess:ea6eaedf has started in 4.5205 ms
+2024-11-27 14:33:43.443 +07:00 [INF] Server giaphu:15544:6916c2df is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-11-27 14:33:43.446 +07:00 [DBG] Execution loop ServerWatchdog:12b3ca69 has started in 3.4732 ms
+2024-11-27 14:33:43.449 +07:00 [DBG] Execution loop ServerJobCancellationWatcher:1ab707be has started in 6.2492 ms
+2024-11-27 14:33:43.453 +07:00 [DBG] Execution loop ExpirationManager:135a3074 has started in 6.0594 ms
+2024-11-27 14:33:43.456 +07:00 [DBG] Execution loop CountersAggregator:c7bbc942 has started in 6.3881 ms
+2024-11-27 14:33:43.458 +07:00 [DBG] Aggregating records in 'Counter' table...
+2024-11-27 14:33:43.461 +07:00 [DBG] Execution loop Worker:e2544b8e has started in 7.9085 ms
+2024-11-27 14:33:43.461 +07:00 [DBG] Removing outdated records from table 'aggregatedcounter'...
+2024-11-27 14:33:43.465 +07:00 [DBG] Execution loop Worker:a4c0b48d has started in 11.3507 ms
+2024-11-27 14:33:43.468 +07:00 [DBG] Execution loop Worker:03e8d371 has started in 14.6966 ms
+2024-11-27 14:33:43.472 +07:00 [DBG] Execution loop Worker:80f8a501 has started in 18.1972 ms
+2024-11-27 14:33:43.475 +07:00 [DBG] Execution loop Worker:08fbd4c6 has started in 21.9438 ms
+2024-11-27 14:33:43.479 +07:00 [DBG] Execution loop Worker:5f1d4e1a has started in 25.4964 ms
+2024-11-27 14:33:43.484 +07:00 [DBG] Execution loop Worker:ca9a5020 has started in 29.7735 ms
+2024-11-27 14:33:43.486 +07:00 [DBG] Execution loop Worker:7ba5c74b has started in 32.3706 ms
+2024-11-27 14:33:43.489 +07:00 [DBG] Execution loop Worker:e54bb2f8 has started in 35.8862 ms
+2024-11-27 14:33:43.493 +07:00 [DBG] Execution loop Worker:b9e19fb2 has started in 39.1641 ms
+2024-11-27 14:33:43.497 +07:00 [DBG] Execution loop Worker:d4b8e52f has started in 43.3579 ms
+2024-11-27 14:33:43.499 +07:00 [DBG] Execution loop Worker:1a9f4185 has started in 45.7517 ms
+2024-11-27 14:33:43.502 +07:00 [DBG] Execution loop Worker:2b49e5dc has started in 48.9332 ms
+2024-11-27 14:33:43.506 +07:00 [DBG] Execution loop Worker:56fc0b83 has started in 52.2712 ms
+2024-11-27 14:33:43.509 +07:00 [DBG] Execution loop Worker:4824e1b8 has started in 55.7712 ms
+2024-11-27 14:33:43.514 +07:00 [DBG] Execution loop Worker:74461290 has started in 60.871 ms
+2024-11-27 14:33:43.517 +07:00 [DBG] Execution loop Worker:86c47b34 has started in 63.6222 ms
+2024-11-27 14:33:43.519 +07:00 [DBG] Execution loop Worker:3b5e1a5b has started in 65.863 ms
+2024-11-27 14:33:43.523 +07:00 [DBG] Execution loop Worker:b6cec3a0 has started in 69.6993 ms
+2024-11-27 14:33:43.527 +07:00 [DBG] Execution loop Worker:5864f028 has started in 73.7938 ms
+2024-11-27 14:33:43.531 +07:00 [INF] Server giaphu:15544:6916c2df all the dispatchers started
+2024-11-27 14:33:43.531 +07:00 [DBG] Execution loop DelayedJobScheduler:b7175249 has started in 7.7283 ms
+2024-11-27 14:33:43.535 +07:00 [DBG] Execution loop RecurringJobScheduler:79083c2f has started in 7.9719 ms
+2024-11-27 14:33:43.638 +07:00 [DBG] Removing outdated records from table 'counter'...
+2024-11-27 14:33:43.708 +07:00 [DBG] Removing outdated records from table 'job'...
+2024-11-27 14:33:44.484 +07:00 [DBG] Removing outdated records from table 'list'...
+2024-11-27 14:33:44.563 +07:00 [DBG] Removing outdated records from table 'set'...
+2024-11-27 14:33:44.628 +07:00 [WRN] Failed to process the job '4624': an exception occurred. Retry attempt 3 of 10 will be performed in 00:01:19.
+System.IO.FileNotFoundException: Could not resolve assembly 'Volo.Abp.OpenIddict.Domain'.
+   at System.Reflection.TypeNameParser.ResolveAssembly(String assemblyName)
+   at System.Reflection.TypeNameParser.GetType(String typeName, ReadOnlySpan`1 nestedTypeNames, String assemblyNameIfAny)
+   at System.Reflection.TypeNameParser.NamespaceTypeName.ResolveType(TypeNameParser& parser, String containingAssemblyIfAny)
+   at System.Reflection.TypeNameParser.GenericTypeName.ResolveType(TypeNameParser& parser, String containingAssemblyIfAny)
+   at System.Reflection.TypeNameParser.Parse()
+   at System.Reflection.TypeNameParser.GetType(String typeName, Func`2 assemblyResolver, Func`4 typeResolver, Assembly requestingAssembly, Boolean throwOnError, Boolean ignoreCase, Boolean extensibleParser)
+   at System.Type.GetType(String typeName, Func`2 assemblyResolver, Func`4 typeResolver, Boolean throwOnError)
+   at Hangfire.Common.TypeHelper.<>c.<DefaultTypeResolver>b__20_0(String name) in C:\projects\hangfire-525\src\Hangfire.Core\Common\TypeHelper.cs:line 83
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Hangfire.Common.TypeHelper.DefaultTypeResolver(String typeName) in C:\projects\hangfire-525\src\Hangfire.Core\Common\TypeHelper.cs:line 75
+   at Hangfire.Storage.InvocationData.<>c.<CachedDeserializeMethod>b__33_0(Tuple`4 tuple) in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 335
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Hangfire.Storage.InvocationData.CachedDeserializeMethod(Func`2 typeResolver, String typeName, String methodName, String parameterTypes, Type& type, MethodInfo& methodInfo) in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 332
+   at Hangfire.Storage.InvocationData.DeserializeJob() in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 100
+2024-11-27 14:33:44.650 +07:00 [DBG] Removing outdated records from table 'hash'...
+2024-11-27 14:33:44.898 +07:00 [DBG] 1 scheduled job(s) processed by scheduler.
+2024-11-27 14:33:49.442 +07:00 [DBG] Waiting to acquire the distributed lock for saving external localizations...
+2024-11-27 14:33:49.442 +07:00 [INF] Saving external localizations...
+2024-11-27 14:34:56.367 +07:00 [INF] Starting web host.
+2024-11-27 14:35:26.448 +07:00 [FTL] Host terminated unexpectedly!
+System.ArgumentException: The type 'Microsoft.AspNetCore.Hosting.IWebHostEnvironment' is not concrete. Only concrete types (no interfaces, abstract classes, open generics, etc.) can be registered by type.
+   at Autofac.Builder.RegistrationBuilder.ForType(Type implementationType)
+   at Autofac.RegistrationExtensions.RegisterType(ContainerBuilder builder, Type implementationType)
+   at Autofac.Extensions.DependencyInjection.AutofacRegistration.Register(ContainerBuilder builder, IServiceCollection services, Object lifetimeScopeTagForSingletons)
+   at Autofac.Extensions.DependencyInjection.AutofacRegistration.Populate(ContainerBuilder builder, IServiceCollection services, Object lifetimeScopeTagForSingletons)
+   at Autofac.Extensions.DependencyInjection.AutofacRegistration.Populate(ContainerBuilder builder, IServiceCollection services)
+   at Volo.Abp.Autofac.AbpAutofacServiceProviderFactory.CreateBuilder(IServiceCollection services)
+   at Microsoft.AspNetCore.Builder.ConfigureHostBuilder.ServiceProviderFactoryAdapter`1.CreateBuilder(IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.<>c__DisplayClass30_0`1.<ConfigureContainer>b__0()
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at HQSOFT.SystemAdministration.Program.Main(String[] args) in D:\HQSoft\ABP-SA-Test-2\hqsoft.systemadministration-main\host\HQSOFT.SystemAdministration.HttpApi.Host\Program.cs:line 43

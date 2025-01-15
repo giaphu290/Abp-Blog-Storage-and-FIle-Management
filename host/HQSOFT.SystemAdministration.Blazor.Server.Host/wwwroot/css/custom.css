@@ -1,0 +1,222 @@
+﻿div#camera {
+  width: 27rem !important;
+  height: 15rem !important;
+}
+
+video {
+  width: 27rem !important;
+  height: 15rem !important;
+  padding: 0 0 0.5rem 0 !important;
+}
+
+.modal .modal-content .modal-header {
+  padding: 15px 25px;
+  font-size: x-small;
+  background: #ffffff;
+  border-color: #fafafa;
+  color: #081449;
+}
+
+.modal .modal-content .modal-body {
+  padding: 0.1rem;
+  background: #ffffff;
+  color: #081449;
+}
+
+.zoom {
+  padding: 1rem;
+  background-color: white;
+  transition: transform 0.6s;
+  height: fit-content !important;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+
+button.button-camera {
+  height: 2.8rem;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0.5px 0px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
+  color: #646464;
+}
+
+button.btn.button-camera {
+  padding: 0.7rem;
+  margin: 1.3rem;
+}
+
+.custom-input-file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.custom-input-file::before {
+  content: "My Device";
+  display: inline-flex;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0.5px 0px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
+  color: #565656;
+  cursor: pointer;
+  margin-left: 5.16rem;
+}
+
+#custom-input-file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+#custom-input-file::before {
+  content: "Attach File";
+  display: inline-block;
+  background-color: #ccc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+input.custom-input-file {
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+}
+
+a.mention-comment {
+  background: #ececec;
+  text-decoration-line: revert-layer;
+  border-radius: 9px;
+  color: #000000;
+  padding: 4px 11px;
+}
+
+h6.mud-typography.mud-typography-subtitle2 {
+  font-weight: bold;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td {
+  border-top: 1px solid whitesmoke;
+  padding: 0.1rem 0.5rem;
+}
+.listbox-item-template {
+  display: flex;
+  border: none;
+  width: 100%;
+  align-items: center;
+}
+
+.listbox-item-template > img {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+
+img + .listbox-item-template-text {
+  margin-left: 1rem;
+}
+
+.listbox-item-template-text {
+  display: flex;
+  flex-flow: column;
+}
+
+.listbox-item-template-text-phone {
+  opacity: 0.65;
+}
+
+.my-spin input {
+  text-align: right;
+}
+
+/*Add Responsive AssignForm */
+@media (max-width: 991px) {
+  .layout-side-section .overlay-sidebar {
+    margin-top: 0 !important;
+    position: fixed;
+    background: var(--fg-color);
+    top: 0;
+    left: 0;
+    transform: translateX(-110%);
+    z-index: 9999;
+    box-shadow: var(--shadow-base);
+    height: 100%;
+    width: 40%;
+    display: block !important;
+    transition: transform 200ms ease-in-out;
+    padding: var(--padding-md);
+    background-color: #ffffff;
+  }
+
+  .layout-side-section .overlay-sidebar.opened {
+    transform: translateX(0);
+    overflow-y: auto;
+  }
+
+  .layout-side-section .overlay-sidebar .divider {
+    height: 1px;
+    background-color: var(--border-color);
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 767px) {
+  .layout-side-section .overlay-sidebar {
+    width: 60%;
+    background-color: #ffffff;
+  }
+}
+
+.layout-side-section div.close-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  opacity: 0.3;
+  background: #000;
+  z-index: 9998;
+  height: 100%;
+  width: 100%;
+}
+
+.layout-side-section {
+  margin-top: 15px;
+}
+
+@media (max-width: 991px) {
+  .layout-side-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .layout-side-section {
+    padding: 15px 15px 15px 25px;
+  }
+}
+
+.overlay-sidebar ul.dropdown-menu li {
+  padding: 0 !important;
+}
+
+.overlay-sidebar ul.dropdown-menu .badge {
+  top: 0;
+  right: 0;
+}
+
+@media (min-width: 992px) {
+  .col-lg-2 {
+    flex: 0 0 16.66666667%;
+    max-width: 16.66666667%;
+  }
+}

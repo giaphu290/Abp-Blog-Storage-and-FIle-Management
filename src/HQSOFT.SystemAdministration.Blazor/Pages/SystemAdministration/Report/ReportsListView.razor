@@ -1,0 +1,226 @@
+@page "/SystemAdministration/Reports"
+
+@attribute [Authorize(CoreBackendPermissions.Reports.Default)]
+
+@using global::HQSOFT.Common.Blazor.Pages.Component
+@using global::HQSOFT.Common.Blazor.Pages.Component.Toolbar
+
+@using global::HQSOFT.CoreBackend.Reports
+@using global::HQSOFT.CoreBackend.Shared  @using global::HQSOFT.CoreBackend.Workspaces
+@using global::HQSOFT.CoreBackend.Localization
+@using global::HQSOFT.CoreBackend.Permissions
+
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components
+
+@using DevExpress.Blazor
+@using DevExpress.Blazor.ComboBox
+@using DevExpress.Blazor.Grid
+
+@using Blazorise
+@using Blazorise.Components
+@using Blazorise.DataGrid
+
+@using Volo.Abp.BlazoriseUI
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.ObjectMapping
+@using Volo.Abp.AspNetCore.Components.BlockUi
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.Notifications
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+@using Volo.Abp.AspNetCore.Components.Web
+@using Volo.Abp.Http.Client
+
+@inherits SystemAdministrationComponentBase
+@inject NavigationManager NavigationManager
+
+@inject IBlockUiService BlockUiService
+@inject IPageProgressService PageProgressService
+@inject IUiNotificationService UiNotificationService
+@inject IUiMessageService UiMessageService
+
+@inject IJSRuntime JSRuntime
+@inject IRemoteServiceConfigurationProvider RemoteServiceConfigurationProvider  
+@inject IWorkspacesAppService WorkspacesAppService
+
+@inject IReportsAppService ReportsAppService
+
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["Reports"]" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
+
+</PageHeader>
+
+@* ************************* SEARCH ************************* *@
+<Card>
+    <CardBody>
+        <div style="display: @(!ShowAdvancedFilters ? "none" : "block")">
+            <Row>
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["ReportCode"]</FieldLabel>
+                        <DxTextBox Text="@Filter.ReportCode" BindValueMode="BindValueMode.OnInput"
+                                   TextExpression="@(() => Filter.ReportCode)"
+                                   TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.ReportCode), value))" />
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["ReportName"]</FieldLabel>
+                        <DxTextBox Text="@Filter.ReportName" BindValueMode="BindValueMode.OnInput"
+                                   TextExpression="@(() => Filter.ReportName)"
+                                   TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.ReportName), value))" />
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["FileName"]</FieldLabel>
+                        <DxTextBox Text="@Filter.FileName" BindValueMode="BindValueMode.OnInput"
+                                   TextExpression="@(() => Filter.FileName)"
+                                   TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.FileName), value))" />
+                    </Field>
+                </Column> 
+            </Row> 
+        </div>
+
+        <Row>
+            <Column ColumnSize="ColumnSize.Is6">
+                @if (!ShowAdvancedFilters)
+                {
+                    <Form id="DocSearchForm" class="mb-3">
+                        <Addons>
+                            <Addon AddonType="AddonType.Body">
+                                <TextEdit Text="@Filter.FilterText" TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.FilterText),value))"
+                                          Autofocus="true"
+                                          Placeholder="@L["Search"]">
+                                </TextEdit>
+                            </Addon>
+                            <Addon AddonType="AddonType.End">
+                                <SubmitButton Form="DocSearchForm" Clicked="@(()=>GetDataAsync(true))">
+                                    <Icon Name="IconName.Search" Class="me-1"></Icon>@L["Search"]
+                                </SubmitButton>
+                            </Addon>
+                        </Addons>
+                    </Form>
+                }
+            </Column>
+
+            <Column ColumnSize="ColumnSize.Is6">
+                <Div Style="text-align: right;">
+                    <Button Background="Background.Default" Clicked="() => ShowAdvancedFilters = !ShowAdvancedFilters">
+                        @L["SeeAdvancedFilters"]
+                        <Icon Name="@(ShowAdvancedFilters ? IconName.ExpandLess : IconName.ExpandMore)" Class="me-1" />
+                    </Button>
+                </Div>
+            </Column>
+        </Row>
+
+    </CardBody>
+</Card>
+
+@* ************************* DATA GRID ************************* *@
+<Card>
+    <CardBody>
+        <DataGrid TItem="ReportDto"
+                  Data="DocList"
+                  ReadData="OnDataGridReadAsync"
+                  TotalItems="TotalCount"
+                  Sortable
+                  ShowPager
+                  Responsive
+                  ShowPageSizes
+                  PageSize="PageSize"
+                  PageSizeChanged="PageSizeChanged"
+                  SortMode="DataGridSortMode.Single"
+                  PageSizes="@(new int[] { 20, 100, 500, 2500 })"
+                  SelectedRows="SelectedDocs"
+                  SelectionMode="Blazorise.DataGrid.DataGridSelectionMode.Multiple"
+                  SelectedRowsChanged="@((List<ReportDto> e) => SelectedRowsChanged(e))"
+                  Class="datagrid-detail">
+            <LoadingTemplate>
+                <Row Class="w-100 align-items-center" Style="height: 150px;">
+                    <Column>
+                        <RadarSpinner />
+                    </Column>
+                </Row>
+            </LoadingTemplate>
+            <EmptyTemplate>
+                <Row Class="w-100 align-items-center" Style="height: 150px;">
+                    <Column>
+                        <Heading Size="HeadingSize.Is4" TextAlignment="TextAlignment.Center">@L["NoDataAvailable"]</Heading>
+                    </Column>
+                </Row>
+            </EmptyTemplate>
+            <DataGridColumns>
+
+                <DataGridMultiSelectColumn TItem="ReportDto" Width="1rem"></DataGridMultiSelectColumn>
+
+                <DataGridColumn TItem="ReportDto"
+                                Field="Id"
+                                Filterable="false"
+                                Sortable="false"
+                                Caption="#"
+                                Width="2rem">
+                    <DisplayTemplate>
+                        @if (context != null && DocList != null)
+                        {
+                            int index = (CurrentPage - 1) * PageSize + DocList.ToList().IndexOf(context) + 1;
+                            @index
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="ReportDto"
+                                Field="ReportCode"
+                                Caption="@L["ReportCode"]"
+                                Sortable="true">
+                    <DisplayTemplate>
+                        @if (context.ReportCode != null)
+                        {
+                            string truncatedCode = TruncateText(context.ReportCode, 20);
+                            <a title="@L[$"{context.ReportCode}"]" class="d-block text-left" href="javascript:;"
+                               @onclick="() => GoToEditPage(context.Id)">
+                                @truncatedCode
+                            </a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="ReportDto"
+                                Field="ReportName"
+                                Caption="@L["ReportName"]">
+                    <DisplayTemplate>
+                        @if (context.ReportName != null)
+                        {
+                            string truncatedCode = TruncateText(context.ReportName, 30);
+                            <a title="@L[$"{context.ReportName}"]">@truncatedCode</a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="ReportDto"
+                                Field="FileName"
+                                Caption="@L["FileName"]">
+                    <DisplayTemplate>
+                        @if (context.FileName != null)
+                        {
+                            string truncatedCode = TruncateText(context.FileName, 30);
+                            <a title="@L[$"{context.FileName}"]">@truncatedCode</a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+            </DataGridColumns>
+        </DataGrid>
+    </CardBody>
+</Card>
+
+ 
+<HQSOFTBreadcrumbScreen @ref="BreadcrumbScreen"
+                        BreadcrumbItems="BreadcrumbItems" ModuleCode="SA"
+                        ScreenUrl="/SystemAdministration/Reports" ScreenName="Menu:Reports" IsEditForm="false" /> 

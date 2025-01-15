@@ -1,0 +1,2 @@
+2024-11-26 10:10:00.268 +07:00 [INF] Starting web host.
+2024-11-26 10:13:39.281 +07:00 [INF] Starting web host.

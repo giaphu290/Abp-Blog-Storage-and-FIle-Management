@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <Import Project="..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <IsPackable>true</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+		<PackageReference Include="HQSOFT.Common.Blazor.Server" Version="1.0.0" />
+        <PackageReference Include="Volo.FileManagement.Blazor.Server" Version="8.3.0" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Components.Server.Theming" Version="8.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\HQSOFT.SystemAdministration.Blazor\HQSOFT.SystemAdministration.Blazor.csproj" />
+    </ItemGroup>
+
+</Project>

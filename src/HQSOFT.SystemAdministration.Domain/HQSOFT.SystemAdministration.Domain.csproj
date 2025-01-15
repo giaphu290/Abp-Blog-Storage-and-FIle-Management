@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>HQSOFT.SystemAdministration</RootNamespace>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="HQSOFT.CoreBackend.Domain" Version="1.0.0" />
+	  <PackageReference Include="Volo.Abp.BlobStoring.Aws" Version="8.3.0" />
+	  <PackageReference Include="Volo.Abp.BlobStoring.Azure" Version="8.3.0" />
+	  <PackageReference Include="Volo.Abp.BlobStoring.Database.Domain" Version="8.3.0" />
+	  <PackageReference Include="Volo.Abp.BlobStoring.FileSystem" Version="8.3.0" />
+	  <!--<PackageReference Include="HQSOFT.Common.Domain" Version="1.0.0" />-->
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="8.3.0" />
+    <PackageReference Include="Volo.Abp.Caching" Version="8.3.0" />
+    <ProjectReference Include="..\HQSOFT.SystemAdministration.Domain.Shared\HQSOFT.SystemAdministration.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,272 @@
+@page "/SystemAdministration/SystemConfigurations"
+
+@attribute [Authorize(CoreBackendPermissions.SystemConfigurations.Default)]
+
+@using global::HQSOFT.Common.Blazor.Pages.Component
+@using global::HQSOFT.Common.Blazor.Pages.Component.Toolbar
+
+@using global::HQSOFT.CoreBackend.SystemConfigurations
+@using global::HQSOFT.CoreBackend.Modules
+@using global::HQSOFT.CoreBackend.Localization
+@using global::HQSOFT.CoreBackend.Shared  @using global::HQSOFT.CoreBackend.Workspaces
+@using global::HQSOFT.CoreBackend.Permissions
+
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components
+
+@using DevExpress.Blazor
+@using DevExpress.Blazor.ComboBox
+@using DevExpress.Blazor.Grid
+
+@using Blazorise
+@using Blazorise.Components
+@using Blazorise.DataGrid
+
+@using Volo.Abp.ObjectMapping
+@using Volo.Abp.BlazoriseUI
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.AspNetCore.Components.BlockUi
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.Notifications
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+@using Volo.Abp.AspNetCore.Components.Web
+@using Volo.Abp.Http.Client
+
+@inherits SystemAdministrationComponentBase
+@inject NavigationManager NavigationManager
+
+@inject IUiNotificationService UiNotificationService
+@inject IUiMessageService UiMessageService
+@inject IPageProgressService PageProgressService
+@inject IBlockUiService BlockUiService
+
+@inject IJSRuntime JSRuntime
+@inject IRemoteServiceConfigurationProvider RemoteServiceConfigurationProvider
+@inject IWorkspacesAppService WorkspacesAppService
+
+@inject ISystemConfigurationsAppService SystemConfigurationsAppService
+@inject IModulesAppService ModulesAppService
+
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["SystemConfigurations"]" BreadcrumbItems="BreadcrumbItems" Toolbar="Toolbar">
+
+</PageHeader>
+
+@* ************************* SEARCH ************************* *@
+<Card>
+    <CardBody>
+        <div style="display: @(!ShowAdvancedFilters ? "none" : "block")">
+            <Row>
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["Code"]</FieldLabel>
+                        <DxTextBox Text="@Filter.Code" BindValueMode="BindValueMode.OnInput"
+                                   TextExpression="@(() => Filter.Code)"
+                                   TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.Code), value))" />
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["TextVal"]</FieldLabel>
+                        <DxTextBox Text="@Filter.TextVal" BindValueMode="BindValueMode.OnInput"
+                                   TextExpression="@(() => Filter.TextVal)"
+                                   TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.TextVal), value))" />
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["IntValMin"]</FieldLabel>
+                        <DxSpinEdit Value="@Filter.IntValMin"
+                                    ValueExpression="@(() => Filter.IntValMin)"
+                                    ValueChanged="@(async (int? code) => await OnFilterChanged(nameof(Filter.IntValMin), code))"
+                                    BindValueMode="BindValueMode.OnInput"
+                                    InputCssClass="focus-value"
+                                    ShowValidationIcon="true">
+                        </DxSpinEdit>
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["IntValMax"]</FieldLabel>
+                        <DxSpinEdit Value="@Filter.IntValMax"
+                                    ValueExpression="@(() => Filter.IntValMax)"
+                                    ValueChanged="@(async (int? code) => await OnFilterChanged(nameof(Filter.IntValMax), code))"
+                                    BindValueMode="BindValueMode.OnInput"
+                                    InputCssClass="focus-value"
+                                    ShowValidationIcon="true">
+                        </DxSpinEdit>
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["FloatValMin"]</FieldLabel>
+                        <DxSpinEdit Value="@Filter.FloatValMin"
+                                    ValueExpression="@(() => Filter.FloatValMin)"
+                                    ValueChanged="@(async (float? code) => await OnFilterChanged(nameof(Filter.FloatValMin), code))"
+                                    BindValueMode="BindValueMode.OnInput"
+                                    InputCssClass="focus-value"
+                                    ShowValidationIcon="true">
+                        </DxSpinEdit>
+                    </Field>
+                </Column>
+
+                <Column ColumnSize="ColumnSize.Is3">
+                    <Field>
+                        <FieldLabel>@L["FloatValMax"]</FieldLabel>
+                        <DxSpinEdit Value="@Filter.FloatValMax"
+                                    ValueExpression="@(() => Filter.FloatValMax)"
+                                    ValueChanged="@(async (float? code) => await OnFilterChanged(nameof(Filter.FloatValMax), code))"
+                                    BindValueMode="BindValueMode.OnInput"
+                                    InputCssClass="focus-value"
+                                    ShowValidationIcon="true">
+                        </DxSpinEdit>
+                    </Field>
+                </Column> 
+            </Row> 
+        </div>
+
+        <Row>
+            <Column ColumnSize="ColumnSize.Is6">
+                @if (!ShowAdvancedFilters)
+                {
+                    <Form id="DocSearchForm" class="mb-3">
+                        <Addons>
+                            <Addon AddonType="AddonType.Body">
+                                <TextEdit Text="@Filter.FilterText" TextChanged="@(async (string value) => await OnFilterChanged(nameof(Filter.FilterText),value))"
+                                          Autofocus="true"
+                                          Placeholder="@L["Search"]">
+                                </TextEdit>
+                            </Addon>
+                            <Addon AddonType="AddonType.End">
+                                <SubmitButton Form="DocSearchForm" Clicked="@(()=>GetDataAsync(true))">
+                                    <Icon Name="IconName.Search" Class="me-1"></Icon>@L["Search"]
+                                </SubmitButton>
+                            </Addon>
+                        </Addons>
+                    </Form>
+                }
+            </Column>
+
+            <Column ColumnSize="ColumnSize.Is6">
+                <Div Style="text-align: right;">
+                    <Button Background="Background.Default" Clicked="() => ShowAdvancedFilters = !ShowAdvancedFilters">
+                        @L["SeeAdvancedFilters"]
+                        <Icon Name="@(ShowAdvancedFilters ? IconName.ExpandLess : IconName.ExpandMore)" Class="me-1" />
+                    </Button>
+                </Div>
+            </Column>
+        </Row>
+
+    </CardBody>
+</Card>
+
+@* ************************* DATA GRID ************************* *@
+<Card>
+    <CardBody>
+        <DataGrid TItem="SystemConfigurationDto"
+                  Data="DocList"
+                  ReadData="OnDataGridReadAsync"
+                  TotalItems="TotalCount"
+                  Sortable
+                  ShowPager
+                  Responsive
+                  ShowPageSizes
+                  PageSize="PageSize"
+                  PageSizeChanged="PageSizeChanged"
+                  SortMode="DataGridSortMode.Single"
+                  PageSizes="@(new int[] { 20, 100, 500, 2500 })"z
+                  SelectedRows="SelectedDocs"
+                  SelectionMode="Blazorise.DataGrid.DataGridSelectionMode.Multiple"
+                  SelectedRowsChanged="@((List<SystemConfigurationDto> e) => SelectedRowsChanged(e))"
+                  Class="datagrid-detail">
+            <LoadingTemplate>
+                <Row Class="w-100 align-items-center" Style="height: 150px;">
+                    <Column>
+                        <RadarSpinner />
+                    </Column>
+                </Row>
+            </LoadingTemplate>
+            <EmptyTemplate>
+                <Row Class="w-100 align-items-center" Style="height: 150px;">
+                    <Column>
+                        <Heading Size="HeadingSize.Is4" TextAlignment="TextAlignment.Center">@L["NoDataAvailable"]</Heading>
+                    </Column>
+                </Row>
+            </EmptyTemplate>
+            <DataGridColumns>
+                <DataGridMultiSelectColumn TItem="SystemConfigurationDto" Width="1rem" />
+
+                <DataGridColumn TItem="SystemConfigurationDto"
+                                Field="Code"
+                                Filterable="false"
+                                Sortable="false"
+                                Caption="#"
+                                Width="2rem">
+                    <DisplayTemplate>
+                        @{
+                            if (context != null && DocList != null)
+                            {
+                                int index = (CurrentPage - 1) * PageSize + DocList.ToList().IndexOf(context) + 1;
+                                @index
+                            }
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="SystemConfigurationDto"
+                                Field="Code"
+                                Caption="@L["Code"]"
+                                Sortable="true">
+                    <DisplayTemplate>
+                        @if (context.Code != null)
+                        {
+                            string truncatedCode = TruncateText(context.Code, 20);
+                            <a title="@L[$"{context.Code}"]" class="d-block text-left" href="javascript:;"
+                               @onclick="() => GoToEditPage(context.Id)">
+                                @truncatedCode
+                            </a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="SystemConfigurationDto"
+                                Field="TextVal"
+                                Caption="@L["TextVal"]">
+                    <DisplayTemplate>
+                        @if (context.TextVal != null)
+                        {
+                            string truncatedCode = TruncateText(context.TextVal, 30);
+                            <a title="@L[$"{context.TextVal}"]">@truncatedCode</a>
+                        }
+                    </DisplayTemplate>
+                </DataGridColumn>
+
+                <DataGridColumn TItem="SystemConfigurationDto"
+                                Field="IntVal"
+                                Caption="@L["IntVal"]"
+                                TextAlignment="TextAlignment.End"> 
+                </DataGridColumn>
+
+                <DataGridColumn TItem="SystemConfigurationDto"
+                                Field="FloatVal"
+                                Caption="@L["FloatVal"]"
+                                TextAlignment="TextAlignment.End"> 
+                </DataGridColumn>
+                 
+            </DataGridColumns>
+        </DataGrid>
+    </CardBody>
+</Card>
+
+
+<HQSOFTBreadcrumbScreen @ref="BreadcrumbScreen"
+                        BreadcrumbItems="BreadcrumbItems" ModuleCode="SA"
+                        ScreenUrl="/SystemAdministration/SystemConfigurations" ScreenName="Menu:SystemConfigurations" IsEditForm="false" /> 

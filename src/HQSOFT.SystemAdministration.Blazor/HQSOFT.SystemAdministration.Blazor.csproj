@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <Import Project="..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <IsPackable>true</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Pages\SystemAdministration\Company\ContainersListView.razor.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Pages\SystemAdministration\AccessRight\AccessRights.razor" />
+      <None Include="Pages\SystemAdministration\Company\Companies.razor" />
+      <None Include="Pages\SystemAdministration\Company\CompaniesListView.razor" />
+      <None Include="Pages\SystemAdministration\ElsaWorkflowDashboard\ElsaWorkflows.razor" />
+      <None Include="Pages\SystemAdministration\HangfireConfig\HangfireConfigs.razor" />
+      <None Include="Pages\SystemAdministration\HangfireConfig\HangfireConfigsListView.razor" />
+      <None Include="Pages\SystemAdministration\HangfireDashboard\HangfireDashboards.razor" />
+      <None Include="Pages\SystemAdministration\Index.razor" />
+      <None Include="Pages\SystemAdministration\Module\Modules.razor" />
+      <None Include="Pages\SystemAdministration\Module\ModulesListView.razor" />
+      <None Include="Pages\SystemAdministration\Report\Reports.razor" />
+      <None Include="Pages\SystemAdministration\Report\ReportsListView.razor" />
+      <None Include="Pages\SystemAdministration\Screen\Screens.razor" />
+      <None Include="Pages\SystemAdministration\Screen\ScreensListView.razor" />
+      <None Include="Pages\SystemAdministration\SystemConfiguration\SystemConfigurations.razor" />
+      <None Include="Pages\SystemAdministration\SystemSetting\SystemSettings.razor" />
+      <None Include="Pages\SystemAdministration\User\ExtendedUsers.razor" />
+      <None Include="Pages\SystemAdministration\User\ExtendedUsersListView.razor" />
+      <None Include="Pages\SystemAdministration\Workspace\Workspaces.razor" />
+      <None Include="Pages\SystemAdministration\Workspace\WorkspacesListView.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+		<PackageReference Include="Elsa.Designer.Components.Web" Version="2.14.1" />
+		<PackageReference Include="Elsa.Activities.Temporal.Quartz" Version="2.14.1" />
+		<PackageReference Include="HQSOFT.Common.Blazor.WebAssembly" Version="1.0.0" />
+        <PackageReference Include="Volo.Abp.AutoMapper" Version="8.3.0" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Components.Web.Theming" Version="8.3.0" />
+        <PackageReference Include="Volo.FileManagement.Blazor.WebAssembly" Version="8.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\HQSOFT.SystemAdministration.Application.Contracts\HQSOFT.SystemAdministration.Application.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>

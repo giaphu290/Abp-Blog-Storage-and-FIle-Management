@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="24.1.3.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="Report" DisplayName="Report5" VerticalContentSplitting="Smart" HorizontalContentSplitting="Smart" Margins="100, 47.916664, 100, 100" PageWidth="850" PageHeight="1100" Version="24.1" DataMember="fs_testreport" DataSource="#Ref-0">
+  <Parameters>
+    <Item1 Ref="3" Visible="false" Description="Report ID" ValueInfo="00000000-0000-0000-0000-000000000000" Name="reportid" Type="#Ref-2" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="4" ControlType="TopMarginBand" Name="TopMargin" />
+    <Item2 Ref="5" ControlType="ReportHeaderBand" Name="ReportHeader" HeightF="30.013016">
+      <Controls>
+        <Item1 Ref="6" ControlType="XRLabel" Name="label1" Text="Report Title" SizeF="133.21175,30.013016" LocationFloat="0,0" StyleName="TitleStyle" />
+      </Controls>
+    </Item2>
+    <Item3 Ref="7" ControlType="PageHeaderBand" Name="PageHeader1" HeightF="41.666664">
+      <Controls>
+        <Item1 Ref="8" ControlType="XRLabel" Name="label13" Multiline="true" Text="Tham số Y/N" SizeF="100,23" LocationFloat="591.6667,13.216151" Padding="2,2,0,0,100" />
+        <Item2 Ref="9" ControlType="XRLabel" Name="label12" Multiline="true" Text="Tham số ngày 1" SizeF="100,23" LocationFloat="480.20834,13.216151" Padding="2,2,0,0,100" />
+        <Item3 Ref="10" ControlType="XRLabel" Name="label11" Multiline="true" Text="Description 2" SizeF="100,23" LocationFloat="368.75,13.216151" Padding="2,2,0,0,100" />
+        <Item4 Ref="11" ControlType="XRLabel" Name="label10" Multiline="true" Text="Description 1" SizeF="100,23" LocationFloat="252.08333,13.216151" Padding="2,2,0,0,100" />
+        <Item5 Ref="12" ControlType="XRLabel" Name="label9" Multiline="true" Text="Status" SizeF="100,23" LocationFloat="127.083336,13.216151" Padding="2,2,0,0,100" />
+        <Item6 Ref="13" ControlType="XRLabel" Name="label8" Multiline="true" Text="Product Code" SizeF="100,23" LocationFloat="14.583333,13.216151" Padding="2,2,0,0,100" />
+      </Controls>
+    </Item3>
+    <Item4 Ref="14" ControlType="DetailBand" Name="Detail" HeightF="32.291664">
+      <Controls>
+        <Item1 Ref="15" ControlType="XRLabel" Name="label7" Multiline="true" Text="label7" SizeF="100,23" LocationFloat="591.6667,2.799484" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="16" EventName="BeforePrint" PropertyName="Text" Expression="[thamyn]" />
+          </ExpressionBindings>
+        </Item1>
+        <Item2 Ref="17" ControlType="XRLabel" Name="label6" Multiline="true" Text="label6" SizeF="100,23" LocationFloat="480.20834,2.799484" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="18" EventName="BeforePrint" PropertyName="Text" Expression="[thamsongay1]" />
+          </ExpressionBindings>
+        </Item2>
+        <Item3 Ref="19" ControlType="XRLabel" Name="label5" Multiline="true" Text="label5" SizeF="100,23" LocationFloat="252.08333,2.799484" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="20" EventName="BeforePrint" PropertyName="Text" Expression="[Description1]" />
+          </ExpressionBindings>
+        </Item3>
+        <Item4 Ref="21" ControlType="XRLabel" Name="label4" Multiline="true" Text="label4" SizeF="100,23" LocationFloat="368.75,2.799484" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="22" EventName="BeforePrint" PropertyName="Text" Expression="[Description2]" />
+          </ExpressionBindings>
+        </Item4>
+        <Item5 Ref="23" ControlType="XRLabel" Name="label3" Multiline="true" Text="label3" SizeF="100,23" LocationFloat="127.083336,2.799484" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="24" EventName="BeforePrint" PropertyName="Text" Expression="[Status]" />
+          </ExpressionBindings>
+        </Item5>
+        <Item6 Ref="25" ControlType="XRLabel" Name="label2" Multiline="true" Text="label2" SizeF="100,23" LocationFloat="14.583333,2.799484" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="26" EventName="BeforePrint" PropertyName="Text" Expression="[ProductCode]" />
+          </ExpressionBindings>
+        </Item6>
+      </Controls>
+    </Item4>
+    <Item5 Ref="27" ControlType="BottomMarginBand" Name="BottomMargin" />
+  </Bands>
+  <StyleSheet>
+    <Item1 Ref="28" Name="TitleStyle" BorderStyle="Inset" Padding="2,2,0,0,100" Font="Arial, 18pt" StringFormat="Near;Near;0;None;Character;Default" />
+  </StyleSheet>
+  <ParameterPanelLayoutItems>
+    <Item1 Ref="29" LayoutItemType="Parameter" Parameter="#Ref-3" />
+  </ParameterPanelLayoutItems>
+  <ObjectStorage>
+    <Item1 ObjectType="DevExpress.XtraReports.Serialization.ObjectStorageInfo, DevExpress.XtraReports.v24.1" Ref="2" Content="System.Guid" Type="System.Type" />
+    <Item2 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v24.1" Name="SqlDataSource" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0iU3FsRGF0YVNvdXJjZSI+PENvbm5lY3Rpb24gTmFtZT0iUmVwb3J0aW5nIiBGcm9tQXBwQ29uZmlnPSJ0cnVlIiAvPjxRdWVyeSBUeXBlPSJTdG9yZWRQcm9jUXVlcnkiIE5hbWU9ImZzX3Rlc3RyZXBvcnQiPjxQYXJhbWV0ZXIgTmFtZT0iOnJlcG9ydGlkIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5HdWlkKSg/cmVwb3J0aWQgKTwvUGFyYW1ldGVyPjxQcm9jTmFtZT5mc190ZXN0cmVwb3J0PC9Qcm9jTmFtZT48L1F1ZXJ5PjxSZXN1bHRTY2hlbWE+PERhdGFTZXQgTmFtZT0iU3FsRGF0YVNvdXJjZSI+PFZpZXcgTmFtZT0iZnNfdGVzdHJlcG9ydCI+PEZpZWxkIE5hbWU9IlByb2R1Y3RDb2RlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklzU3RvY2tJdGVtIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJTdGF0dXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRGVzY3JpcHRpb24xIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRlc2NyaXB0aW9uMiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJxdHkiIFR5cGU9IlNpbmdsZSIgLz48RmllbGQgTmFtZT0idGhhbXNvbmdheTEiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJ0aGFteW4iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0PjwvUmVzdWx0U2NoZW1hPjxDb25uZWN0aW9uT3B0aW9ucyBDbG9zZUNvbm5lY3Rpb249InRydWUiIC8+PC9TcWxEYXRhU291cmNlPg==" />
+  </ObjectStorage>
+</XtraReportsLayoutSerializer>

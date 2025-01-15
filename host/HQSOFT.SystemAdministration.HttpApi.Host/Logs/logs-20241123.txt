@@ -1,0 +1,1584 @@
+2024-11-23 11:31:42.395 +07:00 [INF] Starting web host.
+2024-11-23 11:33:48.905 +07:00 [INF] Starting web host.
+2024-11-23 11:35:26.528 +07:00 [INF] Starting web host.
+2024-11-23 11:37:23.183 +07:00 [INF] Starting web host.
+2024-11-23 11:38:10.717 +07:00 [INF] Starting web host.
+2024-11-23 11:39:11.364 +07:00 [INF] Starting web host.
+2024-11-23 11:39:38.068 +07:00 [INF] Starting web host.
+2024-11-23 12:17:02.313 +07:00 [INF] Starting web host.
+2024-11-23 12:17:47.347 +07:00 [INF] Starting web host.
+2024-11-23 12:18:14.284 +07:00 [INF] Starting web host.
+2024-11-23 13:37:41.833 +07:00 [INF] Starting web host.
+2024-11-23 13:38:04.280 +07:00 [INF] Loaded ABP modules:
+2024-11-23 13:38:04.281 +07:00 [INF] - HQSOFT.SystemAdministration.SystemAdministrationHttpApiHostModule
+2024-11-23 13:38:04.281 +07:00 [INF]   - HQSOFT.SystemAdministration.SystemAdministrationApplicationModule
+2024-11-23 13:38:04.281 +07:00 [INF]     - HQSOFT.SystemAdministration.SystemAdministrationDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]       - Volo.Abp.Domain.AbpDddDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.Auditing.AbpAuditingModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Data.AbpDataModule
+2024-11-23 13:38:04.281 +07:00 [INF]             - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-11-23 13:38:04.281 +07:00 [INF]               - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]               - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]             - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-11-23 13:38:04.281 +07:00 [INF]             - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Json.AbpJsonModule
+2024-11-23 13:38:04.281 +07:00 [INF]             - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-11-23 13:38:04.281 +07:00 [INF]               - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]               - Volo.Abp.Timing.AbpTimingModule
+2024-11-23 13:38:04.281 +07:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationModule
+2024-11-23 13:38:04.281 +07:00 [INF]                   - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-11-23 13:38:04.281 +07:00 [INF]                   - Volo.Abp.Settings.AbpSettingsModule
+2024-11-23 13:38:04.281 +07:00 [INF]                     - Volo.Abp.Security.AbpSecurityModule
+2024-11-23 13:38:04.281 +07:00 [INF]                   - Volo.Abp.Threading.AbpThreadingModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-11-23 13:38:04.281 +07:00 [INF]             - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.EventBus.AbpEventBusModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Guids.AbpGuidsModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]       - HQSOFT.SystemAdministration.SystemAdministrationDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.Validation.AbpValidationModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - HQSOFT.CoreBackend.CoreBackendDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Identity.AbpIdentityProDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]             - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]               - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-11-23 13:38:04.281 +07:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]             - Volo.Abp.Ldap.AbpLdapAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.FileManagement.FileManagementDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.LanguageManagement.LanguageManagementDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]       - HQSOFT.CoreBackend.CoreBackendDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2024-11-23 13:38:04.281 +07:00 [INF]             - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.Identity.AbpIdentityProDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]             - Volo.Abp.Users.AbpUsersDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Ldap.AbpLdapModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.Gdpr.AbpGdprAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.FileManagement.FileManagementDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]           - Volo.Abp.BlobStoring.AbpBlobStoringModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.LanguageManagement.LanguageManagementDomainModule
+2024-11-23 13:38:04.281 +07:00 [INF]       - Volo.Abp.BlobStoring.Azure.AbpBlobStoringAzureModule
+2024-11-23 13:38:04.281 +07:00 [INF]       - Volo.Abp.BlobStoring.Aws.AbpBlobStoringAwsModule
+2024-11-23 13:38:04.281 +07:00 [INF]       - Volo.Abp.BlobStoring.FileSystem.AbpBlobStoringFileSystemModule
+2024-11-23 13:38:04.281 +07:00 [INF]     - HQSOFT.SystemAdministration.SystemAdministrationApplicationContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]       - Volo.FileManagement.FileManagementApplicationContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]       - HQSOFT.CoreBackend.CoreBackendApplicationContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.TextTemplateManagement.TextTemplateManagementApplicationContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingApplicationContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]         - Volo.Abp.LanguageManagement.LanguageManagementApplicationContractsModule
+2024-11-23 13:38:04.281 +07:00 [INF]     - Volo.Abp.Application.AbpDddApplicationModule
+2024-11-23 13:38:04.281 +07:00 [INF]       - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-11-23 13:38:04.281 +07:00 [INF]       - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-11-23 13:38:04.281 +07:00 [INF]     - Volo.FileManagement.FileManagementApplicationModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - HQSOFT.CoreBackend.CoreBackendApplicationModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.EntityFrameworkCore.PostgreSql.AbpEntityFrameworkCorePostgreSqlModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.Emailing.AbpEmailingModule
+2024-11-23 13:38:04.282 +07:00 [INF]           - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.BackgroundJobs.Hangfire.AbpBackgroundJobsHangfireModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.Hangfire.AbpHangfireModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.BackgroundWorkers.Hangfire.AbpBackgroundWorkersHangfireModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.TextTemplateManagementApplicationModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingApplicationModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.LanguageManagement.LanguageManagementApplicationModule
+2024-11-23 13:38:04.282 +07:00 [INF]   - HQSOFT.SystemAdministration.EntityFrameworkCore.SystemAdministrationEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - HQSOFT.CoreBackend.EntityFrameworkCore.CoreBackendEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.BackgroundJobs.EntityFrameworkCore.AbpBackgroundJobsEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.BlobStoring.Database.EntityFrameworkCore.BlobStoringDatabaseEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityProEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]           - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.EntityFrameworkCore.TextTemplateManagementEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.FileManagement.EntityFrameworkCore.FileManagementEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.LanguageManagement.EntityFrameworkCore.LanguageManagementEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]   - HQSOFT.SystemAdministration.SystemAdministrationHttpApiModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.Http.AbpHttpModule
+2024-11-23 13:38:04.282 +07:00 [INF]           - Volo.Abp.Minify.AbpMinifyModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.UI.AbpUiModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - HQSOFT.CoreBackend.CoreBackendHttpApiModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.TextTemplateManagement.TextTemplateManagementHttpApiModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.FileManagement.FileManagementHttpApiModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingHttpApiModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.LanguageManagement.LanguageManagementHttpApiModule
+2024-11-23 13:38:04.282 +07:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-11-23 13:38:04.282 +07:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - Volo.Abp.Castle.AbpCastleCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]   - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2024-11-23 13:38:04.282 +07:00 [INF]   - Volo.Saas.EntityFrameworkCore.SaasEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - Volo.Saas.SaasDomainModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Saas.SaasDomainSharedModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-11-23 13:38:04.282 +07:00 [INF]         - Volo.Payment.AbpPaymentDomainSharedModule
+2024-11-23 13:38:04.282 +07:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-11-23 13:38:04.282 +07:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.AbpAspNetCoreMvcUiLeptonThemeModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial.AbpAspNetCoreMvcUiThemeCommercialModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementDomainSharedModule
+2024-11-23 13:38:04.282 +07:00 [INF]   - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementApplicationModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementDomainModule
+2024-11-23 13:38:04.282 +07:00 [INF]     - Volo.Abp.LeptonTheme.Management.LeptonThemeManagementApplicationContractsModule
+2024-11-23 13:38:04.282 +07:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-11-23 13:38:04.282 +07:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-11-23 13:38:04.605 +07:00 [INF] Start installing Hangfire SQL objects...
+2024-11-23 13:38:04.736 +07:00 [INF] Hangfire SQL objects installed.
+2024-11-23 13:38:04.746 +07:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: 10.10.62.109, DB: eBizCloudERP_Dev_Intern, Schema: Hangfire'
+2024-11-23 13:38:04.746 +07:00 [INF] Using the following options for PostgreSQL job storage:
+2024-11-23 13:38:04.746 +07:00 [INF]     Queue poll interval: 00:00:30.
+2024-11-23 13:38:04.746 +07:00 [INF]     Invisibility timeout: 00:05:00.
+2024-11-23 13:38:04.746 +07:00 [INF]     Use sliding invisibility timeout: False.
+2024-11-23 13:38:04.747 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'gen_mcp_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-11-23 13:38:04.755 +07:00 [DBG] Execution loop BackgroundServerProcess:932fae44 has started in 2.0689 ms
+2024-11-23 13:38:04.875 +07:00 [INF] Server giaphu:7812:21c6fc57 successfully announced in 116.3803 ms
+2024-11-23 13:38:04.876 +07:00 [DBG] Execution loop ServerHeartbeatProcess:4c4de90a has started in 0.7098 ms
+2024-11-23 13:38:04.877 +07:00 [INF] Server giaphu:7812:21c6fc57 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-11-23 13:38:04.877 +07:00 [DBG] Execution loop ServerWatchdog:21d897c1 has started in 0.3228 ms
+2024-11-23 13:38:04.877 +07:00 [DBG] Execution loop ServerJobCancellationWatcher:6bd661ad has started in 0.3451 ms
+2024-11-23 13:38:04.878 +07:00 [DBG] Execution loop ExpirationManager:e60337c8 has started in 0.3058 ms
+2024-11-23 13:38:04.878 +07:00 [DBG] Execution loop CountersAggregator:d237be4b has started in 0.2088 ms
+2024-11-23 13:38:04.878 +07:00 [DBG] Execution loop Worker:a6d42793 has started in 0.2294 ms
+2024-11-23 13:38:04.878 +07:00 [DBG] Aggregating records in 'Counter' table...
+2024-11-23 13:38:04.878 +07:00 [DBG] Execution loop Worker:3364fd4c has started in 0.3774 ms
+2024-11-23 13:38:04.879 +07:00 [DBG] Removing outdated records from table 'aggregatedcounter'...
+2024-11-23 13:38:04.879 +07:00 [DBG] Execution loop Worker:861b06a2 has started in 0.5345 ms
+2024-11-23 13:38:04.879 +07:00 [DBG] Execution loop Worker:2844c766 has started in 0.7758 ms
+2024-11-23 13:38:04.879 +07:00 [DBG] Execution loop Worker:a022fea5 has started in 0.9096 ms
+2024-11-23 13:38:04.879 +07:00 [DBG] Execution loop Worker:ee8e3f5c has started in 1.045 ms
+2024-11-23 13:38:04.879 +07:00 [DBG] Execution loop Worker:ea6be0cf has started in 1.1776 ms
+2024-11-23 13:38:04.879 +07:00 [DBG] Execution loop Worker:5ecd3c6a has started in 1.2978 ms
+2024-11-23 13:38:04.879 +07:00 [DBG] Execution loop Worker:a4d90b6a has started in 1.4207 ms
+2024-11-23 13:38:04.880 +07:00 [DBG] Execution loop Worker:992b3366 has started in 1.562 ms
+2024-11-23 13:38:04.880 +07:00 [DBG] Execution loop Worker:762b6068 has started in 1.7311 ms
+2024-11-23 13:38:04.880 +07:00 [DBG] Execution loop Worker:c2644c4a has started in 1.9286 ms
+2024-11-23 13:38:04.880 +07:00 [DBG] Execution loop Worker:a773d6e4 has started in 2.0605 ms
+2024-11-23 13:38:04.880 +07:00 [DBG] Execution loop Worker:f8afd35d has started in 2.1693 ms
+2024-11-23 13:38:04.880 +07:00 [DBG] Execution loop Worker:c2442d9b has started in 2.3872 ms
+2024-11-23 13:38:04.881 +07:00 [DBG] Execution loop Worker:ec6d322f has started in 2.5093 ms
+2024-11-23 13:38:04.881 +07:00 [DBG] Execution loop Worker:4d7973c9 has started in 2.6402 ms
+2024-11-23 13:38:04.881 +07:00 [DBG] Execution loop Worker:17a287f3 has started in 2.7856 ms
+2024-11-23 13:38:04.881 +07:00 [DBG] Execution loop Worker:fffc47e6 has started in 2.8986 ms
+2024-11-23 13:38:04.881 +07:00 [DBG] Execution loop Worker:f3affde4 has started in 3.0296 ms
+2024-11-23 13:38:04.881 +07:00 [DBG] Execution loop DelayedJobScheduler:20f3816d has started in 0.1778 ms
+2024-11-23 13:38:04.881 +07:00 [INF] Server giaphu:7812:21c6fc57 all the dispatchers started
+2024-11-23 13:38:04.881 +07:00 [DBG] Execution loop RecurringJobScheduler:ebe2edac has started in 0.1714 ms
+2024-11-23 13:38:04.883 +07:00 [INF] 2 servers were removed due to timeout
+2024-11-23 13:38:04.957 +07:00 [DBG] Removing outdated records from table 'counter'...
+2024-11-23 13:38:04.983 +07:00 [DBG] Removing outdated records from table 'job'...
+2024-11-23 13:38:05.008 +07:00 [DBG] Removing outdated records from table 'list'...
+2024-11-23 13:38:05.032 +07:00 [DBG] Removing outdated records from table 'set'...
+2024-11-23 13:38:05.057 +07:00 [DBG] Removing outdated records from table 'hash'...
+2024-11-23 13:38:05.126 +07:00 [WRN] Recurring job 'HangfirePeriodicBackgroundWorkerAdapter<TokenCleanupBackgroundWorker>.DoWorkAsync' can't be scheduled due to an error and will be retried in 00:00:15.
+Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.IO.FileNotFoundException: Could not resolve assembly 'Volo.Abp.OpenIddict.Domain'.
+   at System.Reflection.TypeNameParser.GetType(String typeName, ReadOnlySpan`1 nestedTypeNames, String assemblyNameIfAny)
+   at System.Reflection.TypeNameParser.NamespaceTypeName.ResolveType(TypeNameParser& parser, String containingAssemblyIfAny)
+   at System.Reflection.TypeNameParser.GenericTypeName.ResolveType(TypeNameParser& parser, String containingAssemblyIfAny)
+   at System.Reflection.TypeNameParser.Parse()
+   at System.Reflection.TypeNameParser.GetType(String typeName, Func`2 assemblyResolver, Func`4 typeResolver, Assembly requestingAssembly, Boolean throwOnError, Boolean ignoreCase, Boolean extensibleParser)
+   at System.Type.GetType(String typeName, Func`2 assemblyResolver, Func`4 typeResolver, Boolean throwOnError)
+   at Hangfire.Common.TypeHelper.<>c.<DefaultTypeResolver>b__20_0(String name) in C:\projects\hangfire-525\src\Hangfire.Core\Common\TypeHelper.cs:line 83
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Hangfire.Common.TypeHelper.DefaultTypeResolver(String typeName) in C:\projects\hangfire-525\src\Hangfire.Core\Common\TypeHelper.cs:line 75
+   at Hangfire.Storage.InvocationData.<>c.<CachedDeserializeMethod>b__33_0(Tuple`4 tuple) in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 335
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Hangfire.Storage.InvocationData.CachedDeserializeMethod(Func`2 typeResolver, String typeName, String methodName, String parameterTypes, Type& type, MethodInfo& methodInfo) in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 332
+   at Hangfire.Storage.InvocationData.DeserializeJob() in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 100
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob() in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 118
+   at Hangfire.RecurringJobExtensions.TriggerRecurringJob(IBackgroundJobFactory factory, JobStorage storage, IStorageConnection connection, IProfiler profiler, RecurringJobEntity recurringJob, DateTime now) in C:\projects\hangfire-525\src\Hangfire.Core\RecurringJobExtensions.cs:line 115
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now) in C:\projects\hangfire-525\src\Hangfire.Core\Server\RecurringJobScheduler.cs:line 333
+2024-11-23 13:38:05.167 +07:00 [DBG] 1 recurring job(s) processed by scheduler.
+2024-11-23 13:38:07.182 +07:00 [INF] User profile is available. Using 'C:\Users\Winnn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-23 13:38:08.095 +07:00 [DBG] Waiting to acquire the distributed lock for saving external localizations...
+2024-11-23 13:38:08.095 +07:00 [INF] Saving external localizations...
+2024-11-23 13:38:18.415 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=3,Free=32764,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=2,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=3,Free=32764,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=2,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.GetAsync(TCacheKey key, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+2024-11-23 13:38:18.415 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 2, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=2,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 2, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=2,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.GetAsync(TCacheKey key, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+2024-11-23 13:38:18.416 +07:00 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 5, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 5, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at Volo.Abp.FeatureManagement.StaticFeatureSaver.SaveAsync()
+   at Volo.Abp.FeatureManagement.StaticFeatureSaver.SaveAsync()
+   at Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule.<>c__DisplayClass8_0.<<SaveStaticFeaturesToDatabaseAsync>b__1>d.MoveNext()
+2024-11-23 13:38:18.416 +07:00 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 3, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=1,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 3, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=1,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at Volo.Abp.PermissionManagement.StaticPermissionSaver.SaveAsync()
+   at Volo.Abp.PermissionManagement.StaticPermissionSaver.SaveAsync()
+   at Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule.<>c__DisplayClass8_0.<<SaveStaticPermissionsToDatabaseAsync>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+2024-11-23 13:38:18.416 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = HMGET c:Volo.Abp.SettingManagement.Setting,k:SystemAdministration:pn:T,pk:,n:Abp.Identity.Password.RequiredLength
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 1
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 6
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=3,Free=32764,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=2,CompletedItems=144,Timers=27)
+Redis-Busy-Workers = 3
+Redis-Version = 2.7.27.49176
+redis-command = HMGET c:Volo.Abp.SettingManagement.Setting,k:SystemAdministration:pn:T,pk:,n:Abp.Identity.Password.RequiredLength
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:18.416 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = HMGET c:Volo.Abp.LanguageList,k:SystemAdministration:AllLanguages
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 2
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 6
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=2,Free=32765,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=2,CompletedItems=144,Timers=27)
+Redis-Busy-Workers = 2
+Redis-Version = 2.7.27.49176
+redis-command = HMGET c:Volo.Abp.LanguageList,k:SystemAdministration:AllLanguages
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:18.416 +07:00 [ERR] ---------- Exception Data ----------
+Redis-Message = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpPermissionsHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 3
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 6
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=2,Free=32765,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=1,CompletedItems=144,Timers=27)
+Redis-Busy-Workers = 2
+Redis-Version = 2.7.27.49176
+redis-command = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpPermissionsHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:18.416 +07:00 [ERR] ---------- Exception Data ----------
+Redis-Message = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpFeaturesHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 5
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 6
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=0,Free=32767,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=0,CompletedItems=144,Timers=27)
+Redis-Busy-Workers = 0
+Redis-Version = 2.7.27.49176
+redis-command = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpFeaturesHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:18.418 +07:00 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=6,Free=32761,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=6,Free=32761,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at Volo.Abp.TextTemplateManagement.TextTemplates.StaticTextTemplateSaver.SaveAsync()
+   at Volo.Abp.TextTemplateManagement.TextTemplates.StaticTextTemplateSaver.SaveAsync()
+   at Castle.DynamicProxy.AsyncInterceptorBase.ProceedAsynchronous(IInvocation invocation, IInvocationProceedInfo proceedInfo)
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpMethodInvocationAdapter.ProceedAsync()
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation)
+   at Volo.Abp.Castle.DynamicProxy.CastleAsyncAbpInterceptorAdapter`1.InterceptAsync(IInvocation invocation, IInvocationProceedInfo proceedInfo, Func`3 proceed)
+   at Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainModule.<>c__DisplayClass8_0.<<SaveStaticTemplatesToDatabaseAsync>b__1>d.MoveNext()
+2024-11-23 13:38:18.418 +07:00 [ERR] ---------- Exception Data ----------
+Redis-Message = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpTextTemplatesHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 0
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 6
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=6,Free=32761,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=0,CompletedItems=144,Timers=27)
+Redis-Busy-Workers = 6
+Redis-Version = 2.7.27.49176
+redis-command = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpTextTemplatesHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:18.418 +07:00 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 4, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 4, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 6, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=144,Timers=27), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at Volo.Abp.SettingManagement.StaticSettingSaver.SaveAsync()
+   at Volo.Abp.SettingManagement.StaticSettingSaver.SaveAsync()
+   at Castle.DynamicProxy.AsyncInterceptorBase.ProceedAsynchronous(IInvocation invocation, IInvocationProceedInfo proceedInfo)
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpMethodInvocationAdapter.ProceedAsync()
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation)
+   at Volo.Abp.Castle.DynamicProxy.CastleAsyncAbpInterceptorAdapter`1.InterceptAsync(IInvocation invocation, IInvocationProceedInfo proceedInfo, Func`3 proceed)
+   at Volo.Abp.SettingManagement.AbpSettingManagementDomainModule.<>c__DisplayClass8_0.<<SaveStaticSettingsToDatabaseAsync>b__1>d.MoveNext()
+2024-11-23 13:38:18.418 +07:00 [ERR] ---------- Exception Data ----------
+Redis-Message = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpSettingsHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 4
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 6
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=1,Free=32766,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=0,CompletedItems=144,Timers=27)
+Redis-Busy-Workers = 1
+Redis-Version = 2.7.27.49176
+redis-command = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpSettingsHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:20.232 +07:00 [WRN] Recurring job 'HangfirePeriodicBackgroundWorkerAdapter<TokenCleanupBackgroundWorker>.DoWorkAsync' can't be scheduled due to an error and will be retried in 00:00:15.
+Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.IO.FileNotFoundException: Could not resolve assembly 'Volo.Abp.OpenIddict.Domain'.
+   at System.Reflection.TypeNameParser.GetType(String typeName, ReadOnlySpan`1 nestedTypeNames, String assemblyNameIfAny)
+   at System.Reflection.TypeNameParser.NamespaceTypeName.ResolveType(TypeNameParser& parser, String containingAssemblyIfAny)
+   at System.Reflection.TypeNameParser.GenericTypeName.ResolveType(TypeNameParser& parser, String containingAssemblyIfAny)
+   at System.Reflection.TypeNameParser.Parse()
+   at System.Reflection.TypeNameParser.GetType(String typeName, Func`2 assemblyResolver, Func`4 typeResolver, Assembly requestingAssembly, Boolean throwOnError, Boolean ignoreCase, Boolean extensibleParser)
+   at System.Type.GetType(String typeName, Func`2 assemblyResolver, Func`4 typeResolver, Boolean throwOnError)
+   at Hangfire.Common.TypeHelper.<>c.<DefaultTypeResolver>b__20_0(String name) in C:\projects\hangfire-525\src\Hangfire.Core\Common\TypeHelper.cs:line 83
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Hangfire.Common.TypeHelper.DefaultTypeResolver(String typeName) in C:\projects\hangfire-525\src\Hangfire.Core\Common\TypeHelper.cs:line 75
+   at Hangfire.Storage.InvocationData.<>c.<CachedDeserializeMethod>b__33_0(Tuple`4 tuple) in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 335
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Hangfire.Storage.InvocationData.CachedDeserializeMethod(Func`2 typeResolver, String typeName, String methodName, String parameterTypes, Type& type, MethodInfo& methodInfo) in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 332
+   at Hangfire.Storage.InvocationData.DeserializeJob() in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 100
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob() in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 118
+   at Hangfire.RecurringJobExtensions.TriggerRecurringJob(IBackgroundJobFactory factory, JobStorage storage, IStorageConnection connection, IProfiler profiler, RecurringJobEntity recurringJob, DateTime now) in C:\projects\hangfire-525\src\Hangfire.Core\RecurringJobExtensions.cs:line 115
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now) in C:\projects\hangfire-525\src\Hangfire.Core\Server\RecurringJobScheduler.cs:line 333
+2024-11-23 13:38:20.256 +07:00 [DBG] 1 recurring job(s) processed by scheduler.
+2024-11-23 13:38:24.392 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 8, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=204,Timers=32), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 8, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=204,Timers=32), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.GetAsync(TCacheKey key, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+2024-11-23 13:38:24.393 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 8, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=204,Timers=32), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 8, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=204,Timers=32), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.GetAsync(TCacheKey key, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+2024-11-23 13:38:24.393 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = HMGET c:Volo.Abp.LanguageList,k:SystemAdministration:AllLanguages
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 1
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 8
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=0,Free=32767,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=0,CompletedItems=204,Timers=32)
+Redis-Busy-Workers = 0
+Redis-Version = 2.7.27.49176
+redis-command = HMGET c:Volo.Abp.LanguageList,k:SystemAdministration:AllLanguages
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:24.393 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = HMGET c:Volo.Abp.SettingManagement.Setting,k:SystemAdministration:pn:G,pk:,n:Abp.Identity.Password.RequiredLength
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 0
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 8
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=2,Free=32765,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=0,CompletedItems=204,Timers=32)
+Redis-Busy-Workers = 2
+Redis-Version = 2.7.27.49176
+redis-command = HMGET c:Volo.Abp.SettingManagement.Setting,k:SystemAdministration:pn:G,pk:,n:Abp.Identity.Password.RequiredLength
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:30.387 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=EVAL, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 9, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=271,Timers=31), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=EVAL, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 9, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=271,Timers=31), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at StackExchange.Redis.RedisDatabase.ScriptEvaluateAsync(String script, RedisKey[] keys, RedisValue[] values, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 1551
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.<>c__DisplayClass51_0.<<SetAsync>g__SetRealCache|0>d.MoveNext()
+2024-11-23 13:38:30.387 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = EVAL
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 0
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 9
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=1,Free=32766,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=7,QueuedItems=0,CompletedItems=271,Timers=31)
+Redis-Busy-Workers = 1
+Redis-Version = 2.7.27.49176
+redis-command = EVAL
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:34.876 +07:00 [DBG] Server giaphu:7812:21c6fc57 heartbeat successfully sent
+2024-11-23 13:38:35.339 +07:00 [WRN] Recurring job 'HangfirePeriodicBackgroundWorkerAdapter<TokenCleanupBackgroundWorker>.DoWorkAsync' can't be scheduled due to an error and will be retried in 00:00:15.
+Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.IO.FileNotFoundException: Could not resolve assembly 'Volo.Abp.OpenIddict.Domain'.
+   at System.Reflection.TypeNameParser.GetType(String typeName, ReadOnlySpan`1 nestedTypeNames, String assemblyNameIfAny)
+   at System.Reflection.TypeNameParser.NamespaceTypeName.ResolveType(TypeNameParser& parser, String containingAssemblyIfAny)
+   at System.Reflection.TypeNameParser.GenericTypeName.ResolveType(TypeNameParser& parser, String containingAssemblyIfAny)
+   at System.Reflection.TypeNameParser.Parse()
+   at System.Reflection.TypeNameParser.GetType(String typeName, Func`2 assemblyResolver, Func`4 typeResolver, Assembly requestingAssembly, Boolean throwOnError, Boolean ignoreCase, Boolean extensibleParser)
+   at System.Type.GetType(String typeName, Func`2 assemblyResolver, Func`4 typeResolver, Boolean throwOnError)
+   at Hangfire.Common.TypeHelper.<>c.<DefaultTypeResolver>b__20_0(String name) in C:\projects\hangfire-525\src\Hangfire.Core\Common\TypeHelper.cs:line 83
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Hangfire.Common.TypeHelper.DefaultTypeResolver(String typeName) in C:\projects\hangfire-525\src\Hangfire.Core\Common\TypeHelper.cs:line 75
+   at Hangfire.Storage.InvocationData.<>c.<CachedDeserializeMethod>b__33_0(Tuple`4 tuple) in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 335
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Hangfire.Storage.InvocationData.CachedDeserializeMethod(Func`2 typeResolver, String typeName, String methodName, String parameterTypes, Type& type, MethodInfo& methodInfo) in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 332
+   at Hangfire.Storage.InvocationData.DeserializeJob() in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 100
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob() in C:\projects\hangfire-525\src\Hangfire.Core\Storage\InvocationData.cs:line 118
+   at Hangfire.RecurringJobExtensions.TriggerRecurringJob(IBackgroundJobFactory factory, JobStorage storage, IStorageConnection connection, IProfiler profiler, RecurringJobEntity recurringJob, DateTime now) in C:\projects\hangfire-525\src\Hangfire.Core\RecurringJobExtensions.cs:line 115
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now) in C:\projects\hangfire-525\src\Hangfire.Core\Server\RecurringJobScheduler.cs:line 333
+2024-11-23 13:38:35.362 +07:00 [DBG] 1 recurring job(s) processed by scheduler.
+2024-11-23 13:38:36.386 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 56, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 66, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=389,Timers=32), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 56, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 66, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=389,Timers=32), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.GetAsync(TCacheKey key, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+2024-11-23 13:38:36.386 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = HMGET c:AbpExternalLocalizationSaving,k:SystemAdministration:HQSOFT.SystemAdministration.HttpApi.Host_AbpResourcesHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 56
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 66
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=0,Free=32767,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=7,QueuedItems=0,CompletedItems=389,Timers=32)
+Redis-Busy-Workers = 0
+Redis-Version = 2.7.27.49176
+redis-command = HMGET c:AbpExternalLocalizationSaving,k:SystemAdministration:HQSOFT.SystemAdministration.HttpApi.Host_AbpResourcesHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:39.391 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=EVAL, timeout: 5000, inst: 0, qu: 58, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 70, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=12,Max=32767), POOL: (Threads=5,QueuedItems=1,CompletedItems=419,Timers=29), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=EVAL, timeout: 5000, inst: 0, qu: 58, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 70, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=12,Max=32767), POOL: (Threads=5,QueuedItems=1,CompletedItems=419,Timers=29), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at StackExchange.Redis.RedisDatabase.ScriptEvaluateAsync(String script, RedisKey[] keys, RedisValue[] values, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 1551
+   at Volo.Abp.Caching.StackExchangeRedis.AbpRedisCache.SetManyAsync(IEnumerable`1 items, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.<>c__DisplayClass54_0.<<SetManyAsync>g__SetRealCache|0>d.MoveNext()
+2024-11-23 13:38:39.391 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = EVAL
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 58
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 70
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=1,Free=32766,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=5,QueuedItems=1,CompletedItems=419,Timers=29)
+Redis-Busy-Workers = 1
+Redis-Version = 2.7.27.49176
+redis-command = EVAL
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:42.397 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 60, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 127, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=499,Timers=28), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 60, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 127, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=499,Timers=28), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.GetAsync(TCacheKey key, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+2024-11-23 13:38:42.397 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = HMGET c:AbpExternalLocalizationSaving,k:SystemAdministration:HQSOFT.SystemAdministration.HttpApi.Host_AbpLocalization_ar_AbpTextsHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 60
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 127
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=0,Free=32767,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=7,QueuedItems=0,CompletedItems=499,Timers=28)
+Redis-Busy-Workers = 0
+Redis-Version = 2.7.27.49176
+redis-command = HMGET c:AbpExternalLocalizationSaving,k:SystemAdministration:HQSOFT.SystemAdministration.HttpApi.Host_AbpLocalization_ar_AbpTextsHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:44.396 +07:00 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 60, qs: 0, aw: False, bw: CheckingForTimeout, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 128, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=519,Timers=26), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 60, qs: 0, aw: False, bw: CheckingForTimeout, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 128, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=519,Timers=26), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at Volo.Abp.PermissionManagement.StaticPermissionSaver.SaveAsync()
+   at Volo.Abp.PermissionManagement.StaticPermissionSaver.SaveAsync()
+   at Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule.<>c__DisplayClass8_0.<<SaveStaticPermissionsToDatabaseAsync>b__1>d.MoveNext()
+2024-11-23 13:38:44.396 +07:00 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 59, qs: 0, aw: False, bw: CheckingForTimeout, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 128, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=3,Free=32764,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=519,Timers=26), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 59, qs: 0, aw: False, bw: CheckingForTimeout, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 128, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=3,Free=32764,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=519,Timers=26), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at Volo.Abp.TextTemplateManagement.TextTemplates.StaticTextTemplateSaver.SaveAsync()
+   at Volo.Abp.TextTemplateManagement.TextTemplates.StaticTextTemplateSaver.SaveAsync()
+   at Castle.DynamicProxy.AsyncInterceptorBase.ProceedAsynchronous(IInvocation invocation, IInvocationProceedInfo proceedInfo)
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpMethodInvocationAdapter.ProceedAsync()
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation)
+   at Volo.Abp.Castle.DynamicProxy.CastleAsyncAbpInterceptorAdapter`1.InterceptAsync(IInvocation invocation, IInvocationProceedInfo proceedInfo, Func`3 proceed)
+   at Volo.Abp.TextTemplateManagement.TextTemplateManagementDomainModule.<>c__DisplayClass8_0.<<SaveStaticTemplatesToDatabaseAsync>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2024-11-23 13:38:44.397 +07:00 [ERR] ---------- Exception Data ----------
+Redis-Message = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpTextTemplatesHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 59
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 128
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=3,Free=32764,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=7,QueuedItems=0,CompletedItems=519,Timers=26)
+Redis-Busy-Workers = 3
+Redis-Version = 2.7.27.49176
+redis-command = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpTextTemplatesHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:44.397 +07:00 [ERR] ---------- Exception Data ----------
+Redis-Message = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpPermissionsHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 60
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 128
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=1,Free=32766,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=7,QueuedItems=0,CompletedItems=519,Timers=26)
+Redis-Busy-Workers = 1
+Redis-Version = 2.7.27.49176
+redis-command = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpPermissionsHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:44.397 +07:00 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 58, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 128, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=4,Free=32763,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=519,Timers=26), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 58, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 128, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=4,Free=32763,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=0,CompletedItems=519,Timers=26), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at Volo.Abp.SettingManagement.StaticSettingSaver.SaveAsync()
+   at Volo.Abp.SettingManagement.StaticSettingSaver.SaveAsync()
+   at Castle.DynamicProxy.AsyncInterceptorBase.ProceedAsynchronous(IInvocation invocation, IInvocationProceedInfo proceedInfo)
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpMethodInvocationAdapter.ProceedAsync()
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation)
+   at Volo.Abp.Castle.DynamicProxy.CastleAsyncAbpInterceptorAdapter`1.InterceptAsync(IInvocation invocation, IInvocationProceedInfo proceedInfo, Func`3 proceed)
+   at Volo.Abp.SettingManagement.AbpSettingManagementDomainModule.<>c__DisplayClass8_0.<<SaveStaticSettingsToDatabaseAsync>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2024-11-23 13:38:44.397 +07:00 [ERR] ---------- Exception Data ----------
+Redis-Message = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpSettingsHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 58
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 128
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=4,Free=32763,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=7,QueuedItems=0,CompletedItems=519,Timers=26)
+Redis-Busy-Workers = 4
+Redis-Version = 2.7.27.49176
+redis-command = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpSettingsHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:44.398 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=EVAL, timeout: 5000, inst: 0, qu: 56, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 128, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=5,Free=32762,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=1,CompletedItems=519,Timers=26), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=EVAL, timeout: 5000, inst: 0, qu: 56, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 128, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=5,Free=32762,Min=12,Max=32767), POOL: (Threads=7,QueuedItems=1,CompletedItems=519,Timers=26), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at StackExchange.Redis.RedisDatabase.ScriptEvaluateAsync(String script, RedisKey[] keys, RedisValue[] values, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 1551
+   at Volo.Abp.Caching.StackExchangeRedis.AbpRedisCache.SetManyAsync(IEnumerable`1 items, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.<>c__DisplayClass54_0.<<SetManyAsync>g__SetRealCache|0>d.MoveNext()
+2024-11-23 13:38:44.398 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = EVAL
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 56
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 128
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=5,Free=32762,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=7,QueuedItems=1,CompletedItems=519,Timers=26)
+Redis-Busy-Workers = 5
+Redis-Version = 2.7.27.49176
+redis-command = EVAL
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:44.407 +07:00 [INF] Initialized all ABP modules.
+2024-11-23 13:38:44.588 +07:00 [INF] Running startup task RunMigrations
+2024-11-23 13:38:44.869 +07:00 [INF] Running startup task CreateSubscriptions
+2024-11-23 13:38:44.872 +07:00 [DBG] Acquiring a lock on CreateSubscriptions
+2024-11-23 13:38:44.876 +07:00 [DBG] Lock acquired on CreateSubscriptions
+2024-11-23 13:38:44.904 +07:00 [INF] Mapped Elsa.Activities.Temporal.Common.Messages.ScheduleTemporalBookmark -> "schedule-bookmark"
+2024-11-23 13:38:44.904 +07:00 [INF] Mapped Elsa.Activities.Temporal.Common.Messages.ScheduleTemporalTrigger -> "schedule-bookmark"
+2024-11-23 13:38:44.906 +07:00 [INF] Starting periodic task "CleanupTrackedErrors" with interval 00:00:10
+2024-11-23 13:38:44.907 +07:00 [INF] Bus "Rebus 1" setting number of workers to 1
+2024-11-23 13:38:44.907 +07:00 [DBG] Adding worker "Rebus 1 worker 1"
+2024-11-23 13:38:44.908 +07:00 [INF] Bus "Rebus 1" started
+2024-11-23 13:38:44.908 +07:00 [DBG] Starting (threadpool-based) worker "Rebus 1 worker 1"
+2024-11-23 13:38:44.910 +07:00 [INF] Mapped Elsa.Services.TriggerWorkflowsRequest -> "execute-workflow"
+2024-11-23 13:38:44.910 +07:00 [INF] Mapped Elsa.Services.ExecuteWorkflowDefinitionRequest -> "execute-workflow"
+2024-11-23 13:38:44.910 +07:00 [INF] Mapped Elsa.Services.ExecuteWorkflowInstanceRequest -> "execute-workflow"
+2024-11-23 13:38:44.910 +07:00 [INF] Starting periodic task "CleanupTrackedErrors" with interval 00:00:10
+2024-11-23 13:38:44.911 +07:00 [INF] Bus "Rebus 2" setting number of workers to 1
+2024-11-23 13:38:44.911 +07:00 [DBG] Adding worker "Rebus 2 worker 1"
+2024-11-23 13:38:44.911 +07:00 [INF] Bus "Rebus 2" started
+2024-11-23 13:38:44.911 +07:00 [DBG] Starting (threadpool-based) worker "Rebus 2 worker 1"
+2024-11-23 13:38:44.911 +07:00 [INF] Mapped Elsa.Services.ExecuteWorkflowDefinitionRequest -> "execute-workflow-default"
+2024-11-23 13:38:44.911 +07:00 [INF] Mapped Elsa.Services.ExecuteWorkflowInstanceRequest -> "execute-workflow-default"
+2024-11-23 13:38:44.911 +07:00 [INF] Starting periodic task "CleanupTrackedErrors" with interval 00:00:10
+2024-11-23 13:38:44.911 +07:00 [INF] Bus "Rebus 3" setting number of workers to 1
+2024-11-23 13:38:44.911 +07:00 [DBG] Adding worker "Rebus 3 worker 1"
+2024-11-23 13:38:44.912 +07:00 [INF] Bus "Rebus 3" started
+2024-11-23 13:38:44.912 +07:00 [DBG] Starting (threadpool-based) worker "Rebus 3 worker 1"
+2024-11-23 13:38:44.912 +07:00 [INF] Mapped Elsa.Events.TriggerIndexingFinished -> "giaphu-workflow-management-events"
+2024-11-23 13:38:44.912 +07:00 [INF] Mapped Elsa.Events.TriggersDeleted -> "giaphu-workflow-management-events"
+2024-11-23 13:38:44.912 +07:00 [INF] Mapped Elsa.Events.BookmarkIndexingFinished -> "giaphu-workflow-management-events"
+2024-11-23 13:38:44.912 +07:00 [INF] Mapped Elsa.Events.BookmarksDeleted -> "giaphu-workflow-management-events"
+2024-11-23 13:38:44.912 +07:00 [INF] Starting periodic task "CleanupTrackedErrors" with interval 00:00:10
+2024-11-23 13:38:44.912 +07:00 [INF] Bus "Rebus 4" setting number of workers to 1
+2024-11-23 13:38:44.912 +07:00 [DBG] Adding worker "Rebus 4 worker 1"
+2024-11-23 13:38:44.912 +07:00 [INF] Bus "Rebus 4" started
+2024-11-23 13:38:44.912 +07:00 [DBG] Starting (threadpool-based) worker "Rebus 4 worker 1"
+2024-11-23 13:38:44.913 +07:00 [INF] Running startup task UpdateRouteTableWithBookmarks
+2024-11-23 13:38:44.925 +07:00 [DBG] -- @__ModelType_1='Elsa.Activities.Http.Bookmarks.HttpEndpointBookmark, Elsa.Activities.Http'
+-- @__p_3='2147483647'
+-- @__p_2='0'
+SELECT b."Id", b."ActivityId", b."ActivityType", b."CorrelationId", b."Hash", b."Model", b."ModelType", b."TenantId", b."WorkflowInstanceId"
+FROM "Elsa"."Bookmarks" AS b
+WHERE b."TenantId" IS NULL AND b."ModelType" = @__ModelType_1
+ORDER BY b."Id"
+LIMIT @__p_3 OFFSET @__p_2
+2024-11-23 13:38:44.940 +07:00 [INF] Running startup task ContinueRunningWorkflows
+2024-11-23 13:38:44.941 +07:00 [DBG] Acquiring a lock on ContinueRunningWorkflows
+2024-11-23 13:38:44.941 +07:00 [DBG] Lock acquired on ContinueRunningWorkflows
+2024-11-23 13:38:44.948 +07:00 [DBG] -- @__WorkflowStatus_0='0'
+SELECT w."Id", w."CancelledAt", w."ContextId", w."ContextType", w."CorrelationId", w."CreatedAt", w."Data", w."DefinitionId", w."DefinitionVersionId", w."FaultedAt", w."FinishedAt", w."LastExecutedActivityId", w."LastExecutedAt", w."Name", w."TenantId", w."Version", w."WorkflowStatus"
+FROM "Elsa"."WorkflowInstances" AS w
+WHERE w."WorkflowStatus" = @__WorkflowStatus_0
+2024-11-23 13:38:44.958 +07:00 [INF] Found no workflows with status 'Idle'. Nothing to resume
+2024-11-23 13:38:44.960 +07:00 [DBG] -- @__WorkflowStatus_0='1'
+SELECT w."Id", w."CancelledAt", w."ContextId", w."ContextType", w."CorrelationId", w."CreatedAt", w."Data", w."DefinitionId", w."DefinitionVersionId", w."FaultedAt", w."FinishedAt", w."LastExecutedActivityId", w."LastExecutedAt", w."Name", w."TenantId", w."Version", w."WorkflowStatus"
+FROM "Elsa"."WorkflowInstances" AS w
+WHERE w."WorkflowStatus" = @__WorkflowStatus_0
+2024-11-23 13:38:44.965 +07:00 [INF] Found no workflows with status 'Running'. Nothing to resume
+2024-11-23 13:38:44.965 +07:00 [INF] Running startup task IndexTriggers
+2024-11-23 13:38:45.002 +07:00 [DBG] SELECT w."Id", w."CreatedAt", w."Data", w."DefinitionId", w."DeleteCompletedInstances", w."Description", w."DisplayName", w."IsLatest", w."IsPublished", w."IsSingleton", w."Name", w."PersistenceBehavior", w."Tag", w."TenantId", w."Version"
+FROM "Elsa"."WorkflowDefinitions" AS w
+WHERE w."IsPublished"
+ORDER BY w."Name"
+2024-11-23 13:38:45.232 +07:00 [WRN] Could not find the specified property 'VendorCollection' for activity type SendEmailByObject
+2024-11-23 13:38:45.232 +07:00 [WRN] Could not find the specified property 'CustomerCollection' for activity type SendEmailByObject
+2024-11-23 13:38:45.233 +07:00 [INF] Indexing triggers
+2024-11-23 13:38:45.238 +07:00 [DBG] -- @__WorkflowDefinitionId_0='bf7b9ce5f3a84dddaee4426e0e9417fd'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.290 +07:00 [DBG] TaskSchedulingThreadPool configured with max concurrency of 10 and TaskScheduler ThreadPoolTaskScheduler.
+2024-11-23 13:38:45.292 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-11-23 13:38:45.292 +07:00 [INF] Quartz Scheduler created
+2024-11-23 13:38:45.292 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-11-23 13:38:45.293 +07:00 [INF] RAMJobStore initialized.
+2024-11-23 13:38:45.293 +07:00 [INF] Quartz Scheduler 3.5.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-11-23 13:38:45.293 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-11-23 13:38:45.293 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-11-23 13:38:45.301 +07:00 [INF] Adding 2 jobs, 0 triggers.
+2024-11-23 13:38:45.302 +07:00 [INF] Adding job: DEFAULT.RunQuartzWorkflowDefinitionJob
+2024-11-23 13:38:45.304 +07:00 [INF] Adding job: DEFAULT.RunQuartzWorkflowInstanceJob
+2024-11-23 13:38:45.320 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = bf7b9ce5f3a84dddaee4426e0e9417fd, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.324 +07:00 [DBG] Deleted 1 triggers for workflow bf7b9ce5f3a84dddaee4426e0e9417fd
+2024-11-23 13:38:45.394 +07:00 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 128, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=817,Timers=35), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 128, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=817,Timers=35), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at Volo.Abp.FeatureManagement.StaticFeatureSaver.SaveAsync()
+   at Volo.Abp.FeatureManagement.StaticFeatureSaver.SaveAsync()
+   at Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule.<>c__DisplayClass8_0.<<SaveStaticFeaturesToDatabaseAsync>b__1>d.MoveNext()
+2024-11-23 13:38:45.394 +07:00 [ERR] ---------- Exception Data ----------
+Redis-Message = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpFeaturesHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 1
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Idle
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 128
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=2,Free=32765,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=0,CompletedItems=817,Timers=35)
+Redis-Busy-Workers = 2
+Redis-Version = 2.7.27.49176
+redis-command = HMGET SystemAdministration:_HQSOFT.SystemAdministration.HttpApi.Host_AbpFeaturesHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:45.476 +07:00 [DBG] -- @__WorkflowDefinitionId_0='bf7b9ce5f3a84dddaee4426e0e9417fd'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.483 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "977ddba9-510b-4f9e-9259-9e3777fe24af" to 1 handlers took 9 ms
+2024-11-23 13:38:45.491 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = bf7b9ce5f3a84dddaee4426e0e9417fd, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.491 +07:00 [DBG] -- @__WorkflowDefinitionId_0='cbfb9be9bd2e47d287f0df433c00e7f6'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.501 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = cbfb9be9bd2e47d287f0df433c00e7f6, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.501 +07:00 [DBG] Deleted 1 triggers for workflow cbfb9be9bd2e47d287f0df433c00e7f6
+2024-11-23 13:38:45.526 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = cbfb9be9bd2e47d287f0df433c00e7f6, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.526 +07:00 [DBG] -- @__WorkflowDefinitionId_0='8e85a8286dc14c54867aa053f5535f05'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.535 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = 8e85a8286dc14c54867aa053f5535f05, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.535 +07:00 [DBG] Deleted 1 triggers for workflow 8e85a8286dc14c54867aa053f5535f05
+2024-11-23 13:38:45.557 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = 8e85a8286dc14c54867aa053f5535f05, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.557 +07:00 [DBG] -- @__WorkflowDefinitionId_0='5b6939fec1794cd89f50b35d76786265'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.565 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = 5b6939fec1794cd89f50b35d76786265, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.565 +07:00 [DBG] Deleted 1 triggers for workflow 5b6939fec1794cd89f50b35d76786265
+2024-11-23 13:38:45.586 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = 5b6939fec1794cd89f50b35d76786265, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.586 +07:00 [DBG] -- @__WorkflowDefinitionId_0='8c87d147498045adb5c01debaa99db28'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.591 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "004a65f1-a9c2-438e-8ab7-0e3b9f0054b3" to 1 handlers took 0 ms
+2024-11-23 13:38:45.592 +07:00 [DBG] -- @__WorkflowDefinitionId_0='cbfb9be9bd2e47d287f0df433c00e7f6'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.592 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "e34ff8e6-4ce4-4305-8c8a-50e6faed70f7" to 1 handlers took 0 ms
+2024-11-23 13:38:45.595 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = 8c87d147498045adb5c01debaa99db28, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.595 +07:00 [DBG] Deleted 1 triggers for workflow 8c87d147498045adb5c01debaa99db28
+2024-11-23 13:38:45.597 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "3b8f0cf9-1e36-48af-931a-e38951124b18" to 1 handlers took 5 ms
+2024-11-23 13:38:45.617 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = 8c87d147498045adb5c01debaa99db28, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.617 +07:00 [DBG] -- @__WorkflowDefinitionId_0='3d5f0d593dfe4500ad989da53ce8066e'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.625 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = 3d5f0d593dfe4500ad989da53ce8066e, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.626 +07:00 [DBG] Deleted 1 triggers for workflow 3d5f0d593dfe4500ad989da53ce8066e
+2024-11-23 13:38:45.635 +07:00 [DBG] -- @__WorkflowDefinitionId_0='8e85a8286dc14c54867aa053f5535f05'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.636 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "406fc233-d2f5-4276-ab31-43b7956ed32b" to 1 handlers took 0 ms
+2024-11-23 13:38:45.637 +07:00 [DBG] -- @__WorkflowDefinitionId_0='5b6939fec1794cd89f50b35d76786265'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.637 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "4a1f72d8-ce0e-4341-b65d-031261d010e6" to 1 handlers took 0 ms
+2024-11-23 13:38:45.638 +07:00 [DBG] -- @__WorkflowDefinitionId_0='8c87d147498045adb5c01debaa99db28'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.638 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "7e31f667-c165-4d49-bd9b-e62a50686485" to 1 handlers took 0 ms
+2024-11-23 13:38:45.639 +07:00 [DBG] -- @__WorkflowDefinitionId_0='3d5f0d593dfe4500ad989da53ce8066e'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.642 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "59a4b0d9-98a9-4714-b68e-054c38669f2d" to 1 handlers took 5 ms
+2024-11-23 13:38:45.644 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "7907fd04-f83b-4e0b-ad82-e1793b248bab" to 1 handlers took 51 ms
+2024-11-23 13:38:45.644 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "c26134e0-c097-4d9d-863b-048a9e9ca7d4" to 1 handlers took 6 ms
+2024-11-23 13:38:45.648 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = 3d5f0d593dfe4500ad989da53ce8066e, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.649 +07:00 [DBG] -- @__WorkflowDefinitionId_0='91d845c10fa043deab7044c4c3dd44f7'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.657 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = 91d845c10fa043deab7044c4c3dd44f7, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.657 +07:00 [DBG] Deleted 1 triggers for workflow 91d845c10fa043deab7044c4c3dd44f7
+2024-11-23 13:38:45.679 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "f1c8299e-6e34-4859-b62f-28f0a9e09818" to 1 handlers took 40 ms
+2024-11-23 13:38:45.680 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = 91d845c10fa043deab7044c4c3dd44f7, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.680 +07:00 [DBG] -- @__WorkflowDefinitionId_0='f884d04fbdd5402d8e9dde0ff42d0d6e'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.689 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = f884d04fbdd5402d8e9dde0ff42d0d6e, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.689 +07:00 [DBG] Deleted 1 triggers for workflow f884d04fbdd5402d8e9dde0ff42d0d6e
+2024-11-23 13:38:45.718 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = f884d04fbdd5402d8e9dde0ff42d0d6e, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.718 +07:00 [DBG] -- @__WorkflowDefinitionId_0='196c087bb22e490cb71b7a149e4684a2'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.727 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = 196c087bb22e490cb71b7a149e4684a2, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.727 +07:00 [DBG] Deleted 1 triggers for workflow 196c087bb22e490cb71b7a149e4684a2
+2024-11-23 13:38:45.751 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "086a952c-4bc5-40f2-8017-3f73adf37dc6" to 1 handlers took 0 ms
+2024-11-23 13:38:45.751 +07:00 [DBG] -- @__WorkflowDefinitionId_0='91d845c10fa043deab7044c4c3dd44f7'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.752 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "5763bdc1-9414-4d0d-b5df-cf15d70f5b4c" to 1 handlers took 0 ms
+2024-11-23 13:38:45.752 +07:00 [DBG] -- @__WorkflowDefinitionId_0='f884d04fbdd5402d8e9dde0ff42d0d6e'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.753 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "cfff2a1c-3d98-43d9-9e6e-13c366d47ea9" to 1 handlers took 0 ms
+2024-11-23 13:38:45.753 +07:00 [DBG] -- @__WorkflowDefinitionId_0='196c087bb22e490cb71b7a149e4684a2'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.753 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = 196c087bb22e490cb71b7a149e4684a2, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.754 +07:00 [DBG] -- @__WorkflowDefinitionId_0='9dae78fb8eec47efbba4005e4f257be4'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.754 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "7bb05979-ea4c-4420-bdcb-321ec6fc1625" to 1 handlers took 0 ms
+2024-11-23 13:38:45.756 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "0759f46f-cee5-41b7-8a03-8c4d3d93478a" to 1 handlers took 5 ms
+2024-11-23 13:38:45.757 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "19fcfb98-950b-4c42-b108-f4ca6ba530f7" to 1 handlers took 4 ms
+2024-11-23 13:38:45.758 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "46a0550a-5e16-4d3f-b107-07b0731aa0dc" to 1 handlers took 5 ms
+2024-11-23 13:38:45.762 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = 9dae78fb8eec47efbba4005e4f257be4, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.762 +07:00 [DBG] Deleted 1 triggers for workflow 9dae78fb8eec47efbba4005e4f257be4
+2024-11-23 13:38:45.785 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = 9dae78fb8eec47efbba4005e4f257be4, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.785 +07:00 [DBG] -- @__WorkflowDefinitionId_0='174cada8401d451383f12eebda5a2777'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.794 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = 174cada8401d451383f12eebda5a2777, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.794 +07:00 [DBG] Deleted 1 triggers for workflow 174cada8401d451383f12eebda5a2777
+2024-11-23 13:38:45.816 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = 174cada8401d451383f12eebda5a2777, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.816 +07:00 [DBG] -- @__WorkflowDefinitionId_0='bb0838d74c834b6b88d5f779ea4cdbeb'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.825 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = bb0838d74c834b6b88d5f779ea4cdbeb, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.825 +07:00 [DBG] Deleted 1 triggers for workflow bb0838d74c834b6b88d5f779ea4cdbeb
+2024-11-23 13:38:45.846 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = bb0838d74c834b6b88d5f779ea4cdbeb, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.846 +07:00 [DBG] -- @__WorkflowDefinitionId_0='e938d034d04c40609bd636d2ba5f1023'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.855 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = e938d034d04c40609bd636d2ba5f1023, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.855 +07:00 [DBG] Deleted 1 triggers for workflow e938d034d04c40609bd636d2ba5f1023
+2024-11-23 13:38:45.860 +07:00 [DBG] -- @__WorkflowDefinitionId_0='9dae78fb8eec47efbba4005e4f257be4'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.861 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "0d8896a5-3164-4ead-9e12-cd12d7234afc" to 1 handlers took 0 ms
+2024-11-23 13:38:45.862 +07:00 [DBG] -- @__WorkflowDefinitionId_0='174cada8401d451383f12eebda5a2777'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.862 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "5cea212d-9c3f-4e15-b7b4-bb595b971b0d" to 1 handlers took 0 ms
+2024-11-23 13:38:45.863 +07:00 [DBG] -- @__WorkflowDefinitionId_0='bb0838d74c834b6b88d5f779ea4cdbeb'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.863 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "3177d1be-042c-4801-ba26-0671ac1449c2" to 1 handlers took 0 ms
+2024-11-23 13:38:45.864 +07:00 [DBG] -- @__WorkflowDefinitionId_0='e938d034d04c40609bd636d2ba5f1023'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.866 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "f822b9d2-94b7-47fd-87fc-711834c2400c" to 1 handlers took 5 ms
+2024-11-23 13:38:45.867 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "83295e70-a44f-494d-be26-4063f76b0fed" to 1 handlers took 5 ms
+2024-11-23 13:38:45.868 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "3a0c808b-4fe6-4e20-961b-63687e84c1dc" to 1 handlers took 4 ms
+2024-11-23 13:38:45.869 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "a6230fd6-3539-4d73-abde-aa19d79aae49" to 1 handlers took 5 ms
+2024-11-23 13:38:45.882 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = e938d034d04c40609bd636d2ba5f1023, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.882 +07:00 [DBG] -- @__WorkflowDefinitionId_0='d5df22b953df43879e863efc95ab9c8d'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.891 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = d5df22b953df43879e863efc95ab9c8d, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.891 +07:00 [DBG] Deleted 1 triggers for workflow d5df22b953df43879e863efc95ab9c8d
+2024-11-23 13:38:45.915 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = d5df22b953df43879e863efc95ab9c8d, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.916 +07:00 [DBG] -- @__WorkflowDefinitionId_0='95cd8f921849409dafe91461d93df0e6'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.925 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = 95cd8f921849409dafe91461d93df0e6, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.925 +07:00 [DBG] Deleted 1 triggers for workflow 95cd8f921849409dafe91461d93df0e6
+2024-11-23 13:38:45.949 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = 95cd8f921849409dafe91461d93df0e6, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.949 +07:00 [DBG] -- @__WorkflowDefinitionId_0='45e846bd24fe4a93b5e5aa3f12f2f304'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.958 +07:00 [DBG] Sending TriggersDeleted { WorkflowDefinitionId = 45e846bd24fe4a93b5e5aa3f12f2f304, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.958 +07:00 [DBG] Deleted 1 triggers for workflow 45e846bd24fe4a93b5e5aa3f12f2f304
+2024-11-23 13:38:45.969 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "6dba295f-88c1-4b11-9e8c-460f02fa4aae" to 1 handlers took 0 ms
+2024-11-23 13:38:45.969 +07:00 [DBG] -- @__WorkflowDefinitionId_0='d5df22b953df43879e863efc95ab9c8d'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.970 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "234b3174-e6ca-4404-b4f7-561fa4fe1dd4" to 1 handlers took 0 ms
+2024-11-23 13:38:45.970 +07:00 [DBG] -- @__WorkflowDefinitionId_0='95cd8f921849409dafe91461d93df0e6'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.971 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "c13111fc-569b-49a5-994b-b3ece18b839d" to 1 handlers took 0 ms
+2024-11-23 13:38:45.971 +07:00 [DBG] -- @__WorkflowDefinitionId_0='45e846bd24fe4a93b5e5aa3f12f2f304'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."WorkflowDefinitionId" = @__WorkflowDefinitionId_0
+2024-11-23 13:38:45.974 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "f8d461bd-d42e-43ae-89a9-196f5059d96d" to 1 handlers took 4 ms
+2024-11-23 13:38:45.975 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "71dc9291-2dee-4d45-9730-a3c63d8c2dd1" to 1 handlers took 4 ms
+2024-11-23 13:38:45.976 +07:00 [DBG] Dispatching "Elsa.Events.TriggersDeleted, Elsa.Abstractions" "e9e4e935-15f7-46a8-aa85-42673ae9b145" to 1 handlers took 4 ms
+2024-11-23 13:38:45.980 +07:00 [WRN] Could not find the specified property 'VendorCollection' for activity type SendEmailByObject
+2024-11-23 13:38:45.980 +07:00 [WRN] Could not find the specified property 'CustomerCollection' for activity type SendEmailByObject
+2024-11-23 13:38:45.981 +07:00 [DBG] Sending TriggerIndexingFinished { WorkflowDefinitionId = 45e846bd24fe4a93b5e5aa3f12f2f304, Triggers = System.Collections.Generic.List`1[Elsa.Models.Trigger] } -> "giaphu-workflow-management-events"
+2024-11-23 13:38:45.981 +07:00 [INF] Indexed triggers in "00:00:00.7473604"
+2024-11-23 13:38:45.987 +07:00 [DBG] Acquiring a lock on StartJobs
+2024-11-23 13:38:45.988 +07:00 [DBG] Lock acquired on StartJobs
+2024-11-23 13:38:45.992 +07:00 [DBG] -- @__ModelType_1='Elsa.Activities.Temporal.Common.Bookmarks.TimerBookmark, Elsa.Activities.Temporal.Common'
+-- @__p_3='250'
+-- @__p_2='0'
+SELECT b."Id", b."ActivityId", b."ActivityType", b."CorrelationId", b."Hash", b."Model", b."ModelType", b."TenantId", b."WorkflowInstanceId"
+FROM "Elsa"."Bookmarks" AS b
+WHERE b."TenantId" IS NULL AND b."ModelType" = @__ModelType_1
+ORDER BY b."Id"
+LIMIT @__p_3 OFFSET @__p_2
+2024-11-23 13:38:46.005 +07:00 [DBG] -- @__ModelType_0='Elsa.Activities.Temporal.Common.Bookmarks.TimerBookmark, Elsa.Activities.Temporal.Common'
+-- @__p_2='250'
+-- @__p_1='0'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE @__ModelType_0 = t."ModelType"
+ORDER BY t."Id"
+LIMIT @__p_2 OFFSET @__p_1
+2024-11-23 13:38:46.013 +07:00 [DBG] -- @__ModelType_1='Elsa.Activities.Temporal.Common.Bookmarks.CronBookmark, Elsa.Activities.Temporal.Common'
+-- @__p_3='250'
+-- @__p_2='0'
+SELECT b."Id", b."ActivityId", b."ActivityType", b."CorrelationId", b."Hash", b."Model", b."ModelType", b."TenantId", b."WorkflowInstanceId"
+FROM "Elsa"."Bookmarks" AS b
+WHERE b."TenantId" IS NULL AND b."ModelType" = @__ModelType_1
+ORDER BY b."Id"
+LIMIT @__p_3 OFFSET @__p_2
+2024-11-23 13:38:46.018 +07:00 [DBG] -- @__ModelType_0='Elsa.Activities.Temporal.Common.Bookmarks.CronBookmark, Elsa.Activities.Temporal.Common'
+-- @__p_2='250'
+-- @__p_1='0'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE @__ModelType_0 = t."ModelType"
+ORDER BY t."Id"
+LIMIT @__p_2 OFFSET @__p_1
+2024-11-23 13:38:46.023 +07:00 [DBG] -- @__ModelType_1='Elsa.Activities.Temporal.Common.Bookmarks.StartAtBookmark, Elsa.Activities.Temporal.Common'
+-- @__p_3='250'
+-- @__p_2='0'
+SELECT b."Id", b."ActivityId", b."ActivityType", b."CorrelationId", b."Hash", b."Model", b."ModelType", b."TenantId", b."WorkflowInstanceId"
+FROM "Elsa"."Bookmarks" AS b
+WHERE b."TenantId" IS NULL AND b."ModelType" = @__ModelType_1
+ORDER BY b."Id"
+LIMIT @__p_3 OFFSET @__p_2
+2024-11-23 13:38:46.027 +07:00 [DBG] -- @__ModelType_0='Elsa.Activities.Temporal.Common.Bookmarks.StartAtBookmark, Elsa.Activities.Temporal.Common'
+-- @__p_2='250'
+-- @__p_1='0'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE @__ModelType_0 = t."ModelType"
+ORDER BY t."Id"
+LIMIT @__p_2 OFFSET @__p_1
+2024-11-23 13:38:46.051 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44306/ - null null
+2024-11-23 13:38:46.078 +07:00 [DBG] Dispatching "Elsa.Events.TriggerIndexingFinished, Elsa.Abstractions" "481ef19d-9a85-41ed-b92d-ebd098cbd72f" to 1 handlers took 0 ms
+2024-11-23 13:38:46.114 +07:00 [ERR] An error occurred while checking the libs folder!
+System.ArgumentException: The path must be absolute. (Parameter 'root')
+   at Microsoft.Extensions.FileProviders.PhysicalFileProvider..ctor(String root, ExclusionFilters filters)
+   at Volo.Abp.AspNetCore.Mvc.Libs.AbpMvcLibsService.CheckLibsAsync(HttpContext httpContext)
+2024-11-23 13:38:46.409 +07:00 [DBG] Acquiring a lock on 69d534a8abbe464a8fec5d9c166cc7b7
+2024-11-23 13:38:46.409 +07:00 [DBG] Lock acquired on 69d534a8abbe464a8fec5d9c166cc7b7
+2024-11-23 13:38:46.418 +07:00 [DBG] -- @__CorrelationId_0='69d534a8abbe464a8fec5d9c166cc7b7'
+SELECT w."Id", w."CancelledAt", w."ContextId", w."ContextType", w."CorrelationId", w."CreatedAt", w."Data", w."DefinitionId", w."DefinitionVersionId", w."FaultedAt", w."FinishedAt", w."LastExecutedActivityId", w."LastExecutedAt", w."Name", w."TenantId", w."Version", w."WorkflowStatus"
+FROM "Elsa"."WorkflowInstances" AS w
+WHERE w."CorrelationId" = @__CorrelationId_0 AND w."WorkflowStatus" IN (0, 1, 3)
+2024-11-23 13:38:46.427 +07:00 [DBG] Found 0 workflows with correlation ID 69d534a8abbe464a8fec5d9c166cc7b7
+2024-11-23 13:38:46.428 +07:00 [DBG] Triggering workflows using HttpEndpoint
+2024-11-23 13:38:46.436 +07:00 [DBG] -- @__ActivityType_1='HttpEndpoint'
+-- @__Hashes_2={ 'c812250fa49d8f5e482cc0ae2543e50f193183f26251dcf54fe32f6f6d5d4ce9' } (DbType = Object)
+-- @__p_4='2147483647'
+-- @__p_3='0'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."TenantId" IS NULL AND t."ActivityType" = @__ActivityType_1 AND t."Hash" = ANY (@__Hashes_2)
+ORDER BY t."Id"
+LIMIT @__p_4 OFFSET @__p_3
+2024-11-23 13:38:46.447 +07:00 [DBG] Acquiring a lock on 69d534a8abbe464a8fec5d9c166cc7b7
+2024-11-23 13:38:46.448 +07:00 [DBG] Lock acquired on 69d534a8abbe464a8fec5d9c166cc7b7
+2024-11-23 13:38:46.448 +07:00 [DBG] -- @__CorrelationId_0='69d534a8abbe464a8fec5d9c166cc7b7'
+SELECT w."Id", w."CancelledAt", w."ContextId", w."ContextType", w."CorrelationId", w."CreatedAt", w."Data", w."DefinitionId", w."DefinitionVersionId", w."FaultedAt", w."FinishedAt", w."LastExecutedActivityId", w."LastExecutedAt", w."Name", w."TenantId", w."Version", w."WorkflowStatus"
+FROM "Elsa"."WorkflowInstances" AS w
+WHERE w."CorrelationId" = @__CorrelationId_0 AND w."WorkflowStatus" IN (0, 1, 3)
+2024-11-23 13:38:46.453 +07:00 [DBG] Found 0 workflows with correlation ID 69d534a8abbe464a8fec5d9c166cc7b7
+2024-11-23 13:38:46.453 +07:00 [DBG] Triggering workflows using HttpEndpoint
+2024-11-23 13:38:46.454 +07:00 [DBG] -- @__ActivityType_1='HttpEndpoint'
+-- @__Hashes_2={ '4ff44834491a39b7b85eb375e3774f605332b4fd44bb69087492a0636b298218' } (DbType = Object)
+-- @__p_4='2147483647'
+-- @__p_3='0'
+SELECT t."Id", t."ActivityId", t."ActivityType", t."Hash", t."Model", t."ModelType", t."TenantId", t."WorkflowDefinitionId"
+FROM "Elsa"."Triggers" AS t
+WHERE t."TenantId" IS NULL AND t."ActivityType" = @__ActivityType_1 AND t."Hash" = ANY (@__Hashes_2)
+ORDER BY t."Id"
+LIMIT @__p_4 OFFSET @__p_3
+2024-11-23 13:38:47.732 +07:00 [INF] Application is shutting down...
+2024-11-23 13:38:47.737 +07:00 [DBG] Hangfire Server is stopping...
+2024-11-23 13:38:47.738 +07:00 [INF] Server giaphu:7812:21c6fc57 caught stopping signal...
+2024-11-23 13:38:47.738 +07:00 [DBG] Execution loop RecurringJobScheduler:ebe2edac stopped in 0.1 ms
+2024-11-23 13:38:47.738 +07:00 [DBG] Execution loop ExpirationManager:e60337c8 stopped in 0.1164 ms
+2024-11-23 13:38:47.738 +07:00 [DBG] Execution loop CountersAggregator:d237be4b stopped in 0.1315 ms
+2024-11-23 13:38:47.738 +07:00 [DBG] Execution loop ServerWatchdog:21d897c1 stopped in 0.1323 ms
+2024-11-23 13:38:47.738 +07:00 [DBG] Execution loop DelayedJobScheduler:20f3816d stopped in 0.1567 ms
+2024-11-23 13:38:47.738 +07:00 [DBG] Execution loop ServerJobCancellationWatcher:6bd661ad stopped in 0.1776 ms
+2024-11-23 13:38:47.749 +07:00 [DBG] Execution loop Worker:f3affde4 stopped in 11.2184 ms
+2024-11-23 13:38:47.750 +07:00 [DBG] Execution loop Worker:5ecd3c6a stopped in 11.8247 ms
+2024-11-23 13:38:47.750 +07:00 [DBG] Execution loop Worker:fffc47e6 stopped in 11.9186 ms
+2024-11-23 13:38:47.750 +07:00 [DBG] Execution loop Worker:ee8e3f5c stopped in 11.9632 ms
+2024-11-23 13:38:47.750 +07:00 [DBG] Execution loop Worker:c2644c4a stopped in 11.9935 ms
+2024-11-23 13:38:47.750 +07:00 [DBG] Execution loop Worker:3364fd4c stopped in 12.0329 ms
+2024-11-23 13:38:47.751 +07:00 [DBG] Execution loop Worker:762b6068 stopped in 12.843 ms
+2024-11-23 13:38:47.751 +07:00 [DBG] Execution loop Worker:861b06a2 stopped in 12.954 ms
+2024-11-23 13:38:47.751 +07:00 [DBG] Execution loop Worker:4d7973c9 stopped in 13.0715 ms
+2024-11-23 13:38:47.751 +07:00 [DBG] Execution loop Worker:f8afd35d stopped in 13.2496 ms
+2024-11-23 13:38:47.751 +07:00 [DBG] Execution loop Worker:2844c766 stopped in 13.3196 ms
+2024-11-23 13:38:47.751 +07:00 [DBG] Execution loop Worker:a773d6e4 stopped in 13.5422 ms
+2024-11-23 13:38:47.751 +07:00 [DBG] Execution loop Worker:ec6d322f stopped in 13.6685 ms
+2024-11-23 13:38:47.751 +07:00 [DBG] Execution loop Worker:a6d42793 stopped in 13.7453 ms
+2024-11-23 13:38:47.752 +07:00 [DBG] Execution loop Worker:c2442d9b stopped in 13.8201 ms
+2024-11-23 13:38:47.752 +07:00 [DBG] Execution loop Worker:992b3366 stopped in 13.8644 ms
+2024-11-23 13:38:47.752 +07:00 [DBG] Execution loop Worker:a4d90b6a stopped in 13.9064 ms
+2024-11-23 13:38:47.770 +07:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: 10.10.62.109, DB: eBizCloudERP_Dev_Intern, Schema: Hangfire'
+2024-11-23 13:38:47.770 +07:00 [INF] Using the following options for PostgreSQL job storage:
+2024-11-23 13:38:47.770 +07:00 [INF]     Queue poll interval: 00:00:30.
+2024-11-23 13:38:47.770 +07:00 [INF]     Invisibility timeout: 00:05:00.
+2024-11-23 13:38:47.770 +07:00 [INF]     Use sliding invisibility timeout: False.
+2024-11-23 13:38:47.770 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'gen_mcp_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-11-23 13:38:47.771 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-23 13:38:47.771 +07:00 [DBG] Execution loop BackgroundServerProcess:c834242f has started in 0.5828 ms
+2024-11-23 13:38:47.771 +07:00 [INF] Hosting environment: Development
+2024-11-23 13:38:47.771 +07:00 [INF] Content root path: D:\HQSoft\ABP-SA-Test-2\hqsoft.systemadministration-main\host\HQSOFT.SystemAdministration.HttpApi.Host
+2024-11-23 13:38:47.776 +07:00 [INF] Server devserver:7812:ffaa885d successfully announced in 5.3149 ms
+2024-11-23 13:38:47.777 +07:00 [INF] Server devserver:7812:ffaa885d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-11-23 13:38:47.777 +07:00 [DBG] Execution loop ServerHeartbeatProcess:db2a83f1 has started in 0.3265 ms
+2024-11-23 13:38:47.777 +07:00 [DBG] Execution loop ServerWatchdog:ecf984a1 has started in 0.2115 ms
+2024-11-23 13:38:47.777 +07:00 [DBG] Execution loop ServerJobCancellationWatcher:6c35e839 has started in 0.226 ms
+2024-11-23 13:38:47.777 +07:00 [DBG] Execution loop ExpirationManager:56a4de04 has started in 0.2843 ms
+2024-11-23 13:38:47.777 +07:00 [DBG] Execution loop CountersAggregator:c21956e0 has started in 0.1984 ms
+2024-11-23 13:38:47.778 +07:00 [DBG] Removing outdated records from table 'aggregatedcounter'...
+2024-11-23 13:38:47.778 +07:00 [DBG] Aggregating records in 'Counter' table...
+2024-11-23 13:38:47.778 +07:00 [DBG] Execution loop Worker:34ba50c6 has started in 0.193 ms
+2024-11-23 13:38:47.778 +07:00 [DBG] Execution loop Worker:18e99144 has started in 0.3228 ms
+2024-11-23 13:38:47.778 +07:00 [DBG] Execution loop Worker:178a0daf has started in 0.4612 ms
+2024-11-23 13:38:47.778 +07:00 [DBG] Execution loop Worker:08089334 has started in 0.648 ms
+2024-11-23 13:38:47.778 +07:00 [DBG] Execution loop Worker:ad9011f0 has started in 0.8406 ms
+2024-11-23 13:38:47.778 +07:00 [DBG] Execution loop Worker:aefc7ce4 has started in 0.9615 ms
+2024-11-23 13:38:47.779 +07:00 [DBG] Execution loop Worker:2c163eb6 has started in 1.0996 ms
+2024-11-23 13:38:47.779 +07:00 [DBG] Execution loop Worker:dfbc05d3 has started in 1.2301 ms
+2024-11-23 13:38:47.779 +07:00 [DBG] Execution loop Worker:6e2036e7 has started in 1.3703 ms
+2024-11-23 13:38:47.779 +07:00 [DBG] Execution loop Worker:b02f9b50 has started in 1.4941 ms
+2024-11-23 13:38:47.779 +07:00 [DBG] Execution loop Worker:4f6c10c7 has started in 1.6297 ms
+2024-11-23 13:38:47.779 +07:00 [DBG] Execution loop Worker:f9a8daa4 has started in 1.8073 ms
+2024-11-23 13:38:47.779 +07:00 [DBG] Execution loop Worker:12a3047d has started in 1.9272 ms
+2024-11-23 13:38:47.780 +07:00 [DBG] Execution loop Worker:206d3252 has started in 2.1003 ms
+2024-11-23 13:38:47.780 +07:00 [DBG] Execution loop Worker:21359777 has started in 2.2262 ms
+2024-11-23 13:38:47.780 +07:00 [DBG] Execution loop Worker:8b011cb1 has started in 2.3534 ms
+2024-11-23 13:38:47.780 +07:00 [DBG] Execution loop Worker:dd50990f has started in 2.4906 ms
+2024-11-23 13:38:47.780 +07:00 [DBG] Execution loop Worker:e1deb8bf has started in 2.7543 ms
+2024-11-23 13:38:47.780 +07:00 [DBG] Execution loop Worker:64134202 has started in 2.9923 ms
+2024-11-23 13:38:47.781 +07:00 [DBG] Execution loop Worker:1a3bd897 has started in 3.2033 ms
+2024-11-23 13:38:47.781 +07:00 [DBG] Execution loop DelayedJobScheduler:26c5fdee has started in 0.2112 ms
+2024-11-23 13:38:47.781 +07:00 [INF] Server devserver:7812:ffaa885d all the dispatchers started
+2024-11-23 13:38:47.781 +07:00 [DBG] Execution loop RecurringJobScheduler:bf20314e has started in 0.231 ms
+2024-11-23 13:38:47.804 +07:00 [DBG] Removing outdated records from table 'counter'...
+2024-11-23 13:38:47.827 +07:00 [DBG] Removing outdated records from table 'job'...
+2024-11-23 13:38:47.851 +07:00 [DBG] Removing outdated records from table 'list'...
+2024-11-23 13:38:47.875 +07:00 [DBG] Removing outdated records from table 'set'...
+2024-11-23 13:38:47.900 +07:00 [DBG] Removing outdated records from table 'hash'...
+2024-11-23 13:38:48.241 +07:00 [INF] Server giaphu:7812:21c6fc57 caught stopped signal...
+2024-11-23 13:38:48.396 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 129, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=1828,Timers=37), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 129, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=1828,Timers=37), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.GetAsync(TCacheKey key, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+2024-11-23 13:38:48.396 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = HMGET c:AbpExternalLocalizationSaving,k:SystemAdministration:HQSOFT.SystemAdministration.HttpApi.Host_AbpLocalization_cs_AbpTextsHash
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 1
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Initializing
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 129
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=2,Free=32765,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=0,CompletedItems=1828,Timers=37)
+Redis-Busy-Workers = 2
+Redis-Version = 2.7.27.49176
+redis-command = HMGET c:AbpExternalLocalizationSaving,k:SystemAdministration:HQSOFT.SystemAdministration.HttpApi.Host_AbpLocalization_cs_AbpTextsHash
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:48.405 +07:00 [ERR] An error occurred using a transaction.
+2024-11-23 13:38:48.410 +07:00 [ERR] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Volo.Abp.LanguageManagement.EntityFrameworkCore.EfCoreLocalizationTextRecordRepository.FindAsync(String resourceName, String cultureName, CancellationToken cancellationToken)
+   at Castle.DynamicProxy.AsyncInterceptorBase.ProceedAsynchronous[TResult](IInvocation invocation, IInvocationProceedInfo proceedInfo)
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpMethodInvocationAdapterWithReturnValue`1.ProceedAsync()
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation)
+   at Volo.Abp.Castle.DynamicProxy.CastleAsyncAbpInterceptorAdapter`1.InterceptAsync[TResult](IInvocation invocation, IInvocationProceedInfo proceedInfo, Func`3 proceed)
+   at Volo.Abp.LanguageManagement.External.ExternalLocalizationSaver.VARIIMOfQP(SaveContext  , LocalizationResource  , String  , IStringLocalizer  )
+   at Volo.Abp.LanguageManagement.External.ExternalLocalizationSaver.xARI5coiic(SaveContext  , LocalizationResource  )
+   at Volo.Abp.LanguageManagement.External.ExternalLocalizationSaver.SaveAsync()
+   at Volo.Abp.LanguageManagement.External.ExternalLocalizationSaver.SaveAsync()
+   at Volo.Abp.LanguageManagement.External.ExternalLocalizationSaver.SaveAsync()
+   at Volo.Abp.LanguageManagement.External.ExternalLocalizationSaver.SaveAsync()
+   at Volo.Abp.LanguageManagement.LanguageManagementDomainModule.<>c__DisplayClass6_1.kDX3IRdJQrGLW4QRfi7.MoveNext()
+2024-11-23 13:38:48.452 +07:00 [DBG] Execution loop Worker:ea6be0cf stopped in 714.7684 ms
+2024-11-23 13:38:48.576 +07:00 [DBG] Execution loop Worker:17a287f3 stopped in 838.7391 ms
+2024-11-23 13:38:48.608 +07:00 [DBG] Execution loop Worker:a022fea5 stopped in 870.7252 ms
+2024-11-23 13:38:48.609 +07:00 [INF] Server giaphu:7812:21c6fc57 All dispatchers stopped
+2024-11-23 13:38:48.609 +07:00 [DBG] Execution loop ServerHeartbeatProcess:4c4de90a stopped in 0.0696 ms
+2024-11-23 13:38:48.615 +07:00 [INF] Server giaphu:7812:21c6fc57 successfully reported itself as stopped in 5.3258 ms
+2024-11-23 13:38:48.615 +07:00 [INF] Server giaphu:7812:21c6fc57 has been stopped in total 877.692 ms
+2024-11-23 13:38:48.615 +07:00 [DBG] Execution loop BackgroundServerProcess:932fae44 stopped in 877.7089 ms
+2024-11-23 13:38:52.395 +07:00 [WRN] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 129, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=2262,Timers=51), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 129, serverEndpoint: 127.0.0.1:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: GIAPHU(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=12,Max=32767), POOL: (Threads=12,QueuedItems=0,CompletedItems=2262,Timers=51), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 2s ago, v: 2.7.27.49176
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`2.GetAsync(TCacheKey key, Nullable`1 hideErrors, Boolean considerUow, CancellationToken token)
+2024-11-23 13:38:52.395 +07:00 [WRN] ---------- Exception Data ----------
+Redis-Message = HMGET c:Volo.Abp.LanguageList,k:SystemAdministration:AllLanguages
+Redis-Timeout = 5000
+Redis-OpsSinceLastHeartbeat = 0
+Redis-Queue-Awaiting-Write = 0
+Redis-Queue-Awaiting-Response = 0
+Redis-Active-Writer = False
+Redis-Backlog-Writer = CheckingForTimeout
+Redis-Read-State = NotStarted
+Redis-Write-State = Idle
+Redis-Inbound-Bytes = 0
+Redis-Last-Result-Bytes = 0
+Redis-Inbound-Buffer-Bytes = 0
+Redis-Sync-Ops = 0
+Redis-Async-Ops = 129
+Redis-Server-Endpoint = 127.0.0.1:6379
+Redis-Server-Connected-Seconds = n/a
+Redis-Abort-On-Connect = 0
+Redis-Multiplexer-Connects = 1/1/0
+Redis-Manager = 10 of 10 available
+Redis-Client-Name = GIAPHU(SE.Redis-v2.7.27.49176)
+Redis-ThreadPool-IO-Completion = (Busy=0,Free=1000,Min=1,Max=1000)
+Redis-ThreadPool-Workers = (Busy=1,Free=32766,Min=12,Max=32767)
+Redis-ThreadPool-Items = (Threads=12,QueuedItems=0,CompletedItems=2262,Timers=51)
+Redis-Busy-Workers = 1
+Redis-Version = 2.7.27.49176
+redis-command = HMGET c:Volo.Abp.LanguageList,k:SystemAdministration:AllLanguages
+request-sent-status = WaitingInBacklog
+redis-server = 127.0.0.1:6379
+
+2024-11-23 13:38:52.403 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44306/ - 499 null null 6352.1221ms
+2024-11-23 13:38:52.407 +07:00 [DBG] Hangfire Server is stopping...
+2024-11-23 13:38:52.407 +07:00 [INF] Server devserver:7812:ffaa885d caught stopping signal...
+2024-11-23 13:38:52.407 +07:00 [DBG] Execution loop ExpirationManager:56a4de04 stopped in 0 ms
+2024-11-23 13:38:52.407 +07:00 [DBG] Execution loop CountersAggregator:c21956e0 stopped in 0 ms
+2024-11-23 13:38:52.407 +07:00 [DBG] Execution loop RecurringJobScheduler:bf20314e stopped in 0.0482 ms
+2024-11-23 13:38:52.407 +07:00 [DBG] Execution loop ServerJobCancellationWatcher:6c35e839 stopped in 0.0521 ms
+2024-11-23 13:38:52.407 +07:00 [DBG] Execution loop ServerWatchdog:ecf984a1 stopped in 0.054 ms
+2024-11-23 13:38:52.407 +07:00 [DBG] Execution loop DelayedJobScheduler:26c5fdee stopped in 0.1588 ms
+2024-11-23 13:38:52.419 +07:00 [DBG] Execution loop Worker:dd50990f stopped in 11.7852 ms
+2024-11-23 13:38:52.420 +07:00 [DBG] Execution loop Worker:b02f9b50 stopped in 12.8483 ms
+2024-11-23 13:38:52.420 +07:00 [DBG] Execution loop Worker:8b011cb1 stopped in 12.8612 ms
+2024-11-23 13:38:52.420 +07:00 [DBG] Execution loop Worker:4f6c10c7 stopped in 12.9504 ms
+2024-11-23 13:38:52.420 +07:00 [DBG] Execution loop Worker:64134202 stopped in 13.0253 ms
+2024-11-23 13:38:52.420 +07:00 [DBG] Execution loop Worker:206d3252 stopped in 13.0639 ms
+2024-11-23 13:38:52.420 +07:00 [DBG] Execution loop Worker:18e99144 stopped in 13.1685 ms
+2024-11-23 13:38:52.420 +07:00 [DBG] Execution loop Worker:e1deb8bf stopped in 13.2082 ms
+2024-11-23 13:38:52.420 +07:00 [DBG] Execution loop Worker:12a3047d stopped in 13.2449 ms
+2024-11-23 13:38:52.420 +07:00 [DBG] Execution loop Worker:178a0daf stopped in 13.4141 ms
+2024-11-23 13:38:52.421 +07:00 [DBG] Execution loop Worker:34ba50c6 stopped in 13.4681 ms
+2024-11-23 13:38:52.421 +07:00 [DBG] Execution loop Worker:2c163eb6 stopped in 13.5303 ms
+2024-11-23 13:38:52.421 +07:00 [DBG] Execution loop Worker:aefc7ce4 stopped in 13.6711 ms
+2024-11-23 13:38:52.421 +07:00 [DBG] Execution loop Worker:ad9011f0 stopped in 13.7076 ms
+2024-11-23 13:38:52.421 +07:00 [DBG] Execution loop Worker:f9a8daa4 stopped in 13.7887 ms
+2024-11-23 13:38:52.421 +07:00 [DBG] Execution loop Worker:1a3bd897 stopped in 13.8286 ms
+2024-11-23 13:38:52.421 +07:00 [DBG] Execution loop Worker:08089334 stopped in 13.9635 ms
+2024-11-23 13:38:52.421 +07:00 [DBG] Execution loop Worker:6e2036e7 stopped in 14.0052 ms
+2024-11-23 13:38:52.421 +07:00 [DBG] Execution loop Worker:dfbc05d3 stopped in 14.0389 ms
+2024-11-23 13:38:52.912 +07:00 [INF] Server devserver:7812:ffaa885d caught stopped signal...
+2024-11-23 13:38:52.922 +07:00 [DBG] Execution loop Worker:21359777 stopped in 514.8667 ms
+2024-11-23 13:38:52.922 +07:00 [INF] Server devserver:7812:ffaa885d All dispatchers stopped
+2024-11-23 13:38:52.922 +07:00 [DBG] Execution loop ServerHeartbeatProcess:db2a83f1 stopped in 0.0933 ms
+2024-11-23 13:38:52.927 +07:00 [INF] Server devserver:7812:ffaa885d successfully reported itself as stopped in 4.2565 ms
+2024-11-23 13:38:52.927 +07:00 [INF] Server devserver:7812:ffaa885d has been stopped in total 519.5592 ms
+2024-11-23 13:38:52.927 +07:00 [DBG] Execution loop BackgroundServerProcess:c834242f stopped in 519.5791 ms
+2024-11-23 13:38:52.929 +07:00 [INF] Bus "Rebus 1" setting number of workers to 0
+2024-11-23 13:38:52.929 +07:00 [DBG] Worker "Rebus 1 worker 1" stopped
+2024-11-23 13:38:52.930 +07:00 [DBG] Removing worker "Rebus 1 worker 1"
+2024-11-23 13:38:52.931 +07:00 [INF] Stopping periodic task "CleanupTrackedErrors"
+2024-11-23 13:38:52.932 +07:00 [INF] Bus "Rebus 1" stopped
+2024-11-23 13:38:52.932 +07:00 [DBG] Worker "Rebus 2 worker 1" stopped
+2024-11-23 13:38:52.932 +07:00 [INF] Bus "Rebus 2" setting number of workers to 0
+2024-11-23 13:38:52.932 +07:00 [DBG] Removing worker "Rebus 2 worker 1"
+2024-11-23 13:38:53.043 +07:00 [INF] Stopping periodic task "CleanupTrackedErrors"
+2024-11-23 13:38:53.043 +07:00 [INF] Bus "Rebus 2" stopped
+2024-11-23 13:38:53.043 +07:00 [INF] Bus "Rebus 3" setting number of workers to 0
+2024-11-23 13:38:53.043 +07:00 [DBG] Removing worker "Rebus 3 worker 1"
+2024-11-23 13:38:53.043 +07:00 [DBG] Worker "Rebus 3 worker 1" stopped
+2024-11-23 13:38:53.154 +07:00 [INF] Stopping periodic task "CleanupTrackedErrors"
+2024-11-23 13:38:53.155 +07:00 [INF] Bus "Rebus 3" stopped
+2024-11-23 13:38:53.155 +07:00 [INF] Bus "Rebus 4" setting number of workers to 0
+2024-11-23 13:38:53.155 +07:00 [DBG] Removing worker "Rebus 4 worker 1"
+2024-11-23 13:38:53.155 +07:00 [DBG] Worker "Rebus 4 worker 1" stopped
+2024-11-23 13:38:53.155 +07:00 [INF] Stopping periodic task "CleanupTrackedErrors"
+2024-11-23 13:38:53.155 +07:00 [INF] Bus "Rebus 4" stopped

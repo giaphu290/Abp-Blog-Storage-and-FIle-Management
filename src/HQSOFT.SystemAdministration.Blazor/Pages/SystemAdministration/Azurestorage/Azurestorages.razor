@@ -1,0 +1,234 @@
+﻿@page "/azurestorages"
+@using HQSOFT.SystemAdministration.Azurestorages
+@using HQSOFT.SystemAdministration.Localization
+@using Volo.Abp.AspNetCore.Components.Web
+@inherits SystemAdministrationComponentBase
+@inject IAzurestorageAppService AzurestorageAppService
+@inject AbpBlazorMessageLocalizerHelper<SystemAdministrationResource> LH
+<Card>
+    <CardHeader>
+        <Row Class="justify-content-between">
+            <Column ColumnSize="ColumnSize.IsAuto">
+                <h2>@L["Azurestorages"]</h2>
+            </Column>
+            <Column ColumnSize="ColumnSize.IsAuto">
+                    @if (CanCreateAzurestorage)
+                    {
+                        <Button Color="Color.Primary"
+                                Clicked="OpenCreateAzurestorageModal">
+                            @L["NewAzurestorage"]
+                        </Button>
+                    }
+            </Column>
+        </Row>
+    </CardHeader>
+    <CardBody>
+        <DataGrid TItem="AzurestorageDto"
+                  Data="AzurestorageList"
+                  ReadData="OnDataGridReadAsync"
+                  TotalItems="TotalCount"
+                  ShowPager="true"
+                  PageSize="PageSize">
+            <DataGridColumns>
+                <DataGridColumn Width="150px"
+                                TItem="AzurestorageDto"
+                                Field="@nameof(AzurestorageDto.Id)"
+                                Sortable="false"
+                                Caption="@L["Actions"]">
+                    <DisplayTemplate>
+                        <Dropdown>
+                            <DropdownToggle Color="Color.Primary">
+                                @L["Actions"]
+                            </DropdownToggle>
+                            <DropdownMenu>
+                                @if (CanEditAzurestorage)
+                                {
+                                    <DropdownItem Clicked="() => OpenEditAzurestorageModal(context)">
+                                        @L["Edit"]
+                                    </DropdownItem>
+                                }
+                                @if (CanDeleteAzurestorage)
+                                {
+                                    <DropdownItem Clicked="() => DeleteAzurestorageAsync(context)">
+                                        @L["Delete"]
+                                    </DropdownItem>
+                                }
+                            </DropdownMenu>
+                        </Dropdown>
+                    </DisplayTemplate>
+                </DataGridColumn>
+                <DataGridColumn TItem="AzurestorageDto"
+                                Field="@nameof(AzurestorageDto.ContainerName)"
+                                Caption="@L["Name"]"></DataGridColumn>
+                <DataGridColumn TItem="AzurestorageDto"
+                                Field="@nameof(AzurestorageDto.ConnectionString)"
+                                Caption="@L["ConnectionString"]"></DataGridColumn>
+                <DataGridColumn TItem="AzurestorageDto"
+                                Field="@nameof(AzurestorageDto.CreateContainerIfNotExists)"
+                                Caption="@L["CreateContainerIfNotExists"]">
+                </DataGridColumn>
+                <DataGridColumn TItem="AzurestorageDto"
+                                Field="@nameof(AzurestorageDto.Name)"
+                                Caption="@L["ContainerName"]">
+                 </DataGridColumn>
+            </DataGridColumns>
+        </DataGrid>
+    </CardBody>
+</Card>
+
+<Modal @ref="CreateAzurestorageModal">
+    <ModalBackdrop />
+    <ModalContent IsCentered="true">
+        <Form>
+            <ModalHeader>
+                <ModalTitle>@L["NewAzurestorage"]</ModalTitle>
+                <CloseButton Clicked="CloseCreateAzurestorageModal" />
+            </ModalHeader>
+            <ModalBody>
+                <Validations @ref="@CreateValidationsRef" Model="@NewAzurestorage" ValidateOnLoad="false">
+                    <Validation MessageLocalizer="@LH.Localize">
+                        <Field>
+                            <FieldLabel>@L["Name"]</FieldLabel>
+                            <TextEdit @bind-Text="@NewAzurestorage.ContainerName">
+                                <Feedback>
+                                    <ValidationError/>
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+
+                    <Validation MessageLocalizer="@LH.Localize">
+                        <Field>
+                            <FieldLabel>@L["ConnectionString"]</FieldLabel>
+                            <MemoEdit Rows="5" @bind-Text="@NewAzurestorage.ConnectionString">
+                                <Feedback>
+                                    <ValidationError/>
+                                </Feedback>
+                            </MemoEdit>
+                        </Field>
+                    </Validation>
+                     <Validation MessageLocalizer="@LH.Localize">
+                        <Field>
+                            <FieldLabel>@L["CreateContainerIfNotExists"]</FieldLabel>
+                            <Check Tvalue="bool" @bind-Checked="@NewAzurestorage.CreateContainerIfNotExists">
+                              <Feedback>
+                                    <ValidationError/>
+                                </Feedback>
+                              </Check>
+                        </Field>
+                    </Validation>
+                    <Validation MessageLocalizer="@LH.Localize"> 
+                    <Field>
+                        <FieldLabel>@L["Azurestorage"]</FieldLabel>
+                        <Select TValue="Guid" @bind-SelectedValue="@NewAzurestorage.ContainerId">
+                            @foreach (var container in containerList)
+                            {
+                                <SelectItem TValue="Guid" Value="@container.Id">
+                                    @container.Name
+                                </SelectItem>
+                            }
+                        </Select>
+                    </Field>
+                        </Validation>
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="CloseCreateAzurestorageModal">
+                    @L["Cancel"]
+                </Button>
+                <Button Color="Color.Primary"
+                        Type="@ButtonType.Submit"
+                        PreventDefaultOnSubmit="true"
+                        Clicked="CreateAzurestorageAsync">
+                    @L["Save"]
+                </Button>
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+
+<Modal @ref="EditAzurestorageModal">
+    <ModalBackdrop />
+    <ModalContent IsCentered="true">
+        <Form>
+            <ModalHeader>
+                        <ModalTitle>@EditingAzurestorage.ContainerName</ModalTitle>
+                        <CloseButton Clicked="CloseEditAzurestorageModal" />
+                    </ModalHeader>
+            <ModalBody>
+                <Validations @ref="@EditValidationsRef" Model="@EditingAzurestorage" ValidateOnLoad="false">
+                    <Validation MessageLocalizer="@LH.Localize">
+                        <Field>
+                            <FieldLabel>@L["Name"]</FieldLabel>
+                            <TextEdit @bind-Text="@EditingAzurestorage.ContainerName">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </TextEdit>
+                        </Field>
+                    </Validation>
+
+                    <Validation MessageLocalizer="@LH.Localize">
+                        <Field>
+                            <FieldLabel>@L["ConnectionString"]</FieldLabel>
+                            <MemoEdit Rows="5" @bind-Text="@EditingAzurestorage.ConnectionString">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </MemoEdit>
+                        </Field>
+                    </Validation>
+                    <Validation MessageLocalizer="@LH.Localize">
+                        <Field>
+                            <FieldLabel>@L["CreateContainerIfNotExists"]</FieldLabel>
+                            <Check Tvalue="bool" @bind-Checked="@EditingAzurestorage.CreateContainerIfNotExists">
+                                <Feedback>
+                                    <ValidationError />
+                                </Feedback>
+                            </Check>
+                        </Field>
+                    </Validation>
+                    <Validation MessageLocalizer="@LH.Localize">
+                        <Field>
+                            <FieldLabel>@L["Azurestorage"]</FieldLabel>
+                            <Select TValue="Guid" @bind-SelectedValue="@EditingAzurestorage.ContainerId">
+                                @foreach (var container in containerList)
+                                {
+                                    <SelectItem TValue="Guid" Value="@container.Id">
+                                        @container.Name
+                                    </SelectItem>
+                                }
+                            </Select>
+                        </Field>
+                    </Validation>
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="CloseEditAzurestorageModal">
+                    @L["Cancel"]
+                </Button>
+                <Button Color="Color.Primary"
+                        Type="@ButtonType.Submit"
+                        PreventDefaultOnSubmit="true"
+                        Clicked="UpdateAzurestorageAsync">
+                    @L["Save"]
+                </Button>
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+    <Modal @ref="ErrorModal">
+            <ModalBackdrop />
+           <ModalContent IsCentered="true">
+        <ModalBody>
+            <div>
+                @ErrorMessage
+            </div>
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Primary" Clicked="CloseErrorModal">Close</Button>
+        </ModalFooter>
+        </ModalContent>
+    </Modal>

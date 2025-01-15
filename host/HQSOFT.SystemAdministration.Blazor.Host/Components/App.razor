@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SystemAdministration</title>
+    <base href="/" />
+
+    <!--ABP:Styles-->
+    <link href="global.css?_v=638473223834884148" rel="stylesheet"/>
+    <link href="_content/Volo.Abp.AspNetCore.Components.Web.LeptonTheme/styles/lepton1.css" rel="stylesheet" id=LeptonStyle />
+    <!--/ABP:Styles-->
+
+    <HeadOutlet @rendermode="new InteractiveWebAssemblyRenderMode(prerender: false)" />
+
+    <link href="css/custom.css" rel="stylesheet" />
+    <link href="css/bootstrap-external.bs5.min.css" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <!-- Include the Quill library -->
+    <link href="css/quill/quill.snow.css" rel="stylesheet" />
+    <link href="css/quill/quill.mention.min.css" rel="stylesheet" />
+    <link href="css/quill/quill.mention.css" rel="stylesheet" />
+    <!-- Include the Quill library -->
+
+</head>
+
+<body class="abp-application-layout">
+
+    <script src="_framework/blazor.web.js"></script>
+
+    <div id="ApplicationContainer">
+        
+        <div>
+            Loading...
+        </div>
+        
+        <Routes @rendermode="new InteractiveWebAssemblyRenderMode(prerender: false)"/>
+    </div>
+
+    <!--ABP:Scripts-->
+    <script src="global.js?_v=638473223835468867"></script>
+    <!--/ABP:Scripts-->
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- Include the Quill library -->
+    <!-- Initialize Quill editor -->
+    <script src="js/webcam.js"></script>
+    <script src="js/Configuration.js"></script>
+    <!-- Initialize Quill editor -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="js/quill/image-resize.min.js"></script>
+    <script src="js/quill/quill.mention.min.js"></script>
+    <script src="js/quill/HQSoftRichTextEdit.js"></script>
+    <!-- Initialize Quill editor -->
+    <!-- MudBlazor -->
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src="js/HQSoftUtils.js"></script>
+    <!-- MudBlazor -->
+</body>
+</html>
